@@ -98,7 +98,9 @@ public class InputHandler : Singleton<InputHandler>
     }
 
     public void Scroll(InputAction.CallbackContext ctx) {
-        this.scrollDir = ctx.ReadValue<float>();
+        var tempScroll = ctx.ReadValue<float>();
+        if (tempScroll != 0)
+            this.scrollDir = tempScroll;
         this.buttons[8].Set(ctx);
     }
 

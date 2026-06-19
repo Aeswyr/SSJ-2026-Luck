@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,11 +27,20 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float attack2Speed;
 	[SerializeField] private AnimationCurve dodgeCurve;
 	[SerializeField] private float dodgeSpeed;
+	
+	[Space]
+	[Header("Data Assets")]
+	[Space]
+	[SerializeField] private CardLibrary cardLibrary;
+	[SerializeField] private string startingDeck;
     private InputHandler input;
     private bool acting, cancellable, grounded;
     private int facing, attackRepeat;
 	private int selectedCardIndex, maxHand;
+	private CardData readiedCard;
 	private List<CardData> hand = new();
+	private List<CardData> discard = new();
+	private List<CardData> deck = new();
 	private int handSize => hand.Count;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,7 +48,10 @@ public class PlayerController : MonoBehaviour
     {
         input = InputHandler.Instance;
 
-		maxHand = 5;
+		foreach (var index in startingDeck.Split(','))
+			deck.Add(cardLibrary.GetCard(int.Parse(index)));
+
+		maxHand = 4;
 		DrawHand();
     }
 
@@ -136,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
 		if (input.scroll.pressed)
 		{
-			if (input.scrollDir < 0)
+			if (input.scrollDir >= 0)
 				selectedCardIndex = (handSize + selectedCardIndex - 1) % handSize;
 			else
 				selectedCardIndex = (selectedCardIndex + 1) % handSize;
@@ -189,8 +202,54 @@ public class PlayerController : MonoBehaviour
 
 	public void CreateAttack()
 	{
-		var card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
-		card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+		GameObject card = null;
+		Vector2 rotation = default;
+
+		switch (readiedCard.id)
+		{
+			case CardID.HIGH_CARD:
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+				break;
+			case CardID.PAIR:
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1.2f), Quaternion.identity);
+				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+				StartCoroutine(DelayCard());
+				IEnumerator DelayCard()
+				{
+					yield return new WaitForSeconds(0.1f);
+					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -0.8f), Quaternion.identity);
+					card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+				}
+				break;
+			case CardID.FULL_HOUSE:
+				rotation = new Vector2(facing, Random.Range(0.05f, 0.1f));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card.GetComponent<Rigidbody2D>().linearVelocity = (26 + Random.Range(0, 3)) * rotation.normalized;
+				rotation = new Vector2(facing, Random.Range(-0.05f, -0.1f));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card.GetComponent<Rigidbody2D>().linearVelocity = (20 + Random.Range(0, 9)) * rotation.normalized;
+				rotation = new Vector2(facing, Random.Range(0.01f, 0.04f));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card.GetComponent<Rigidbody2D>().linearVelocity = (22 + Random.Range(0, 7)) * rotation.normalized;
+				rotation = new Vector2(facing, Random.Range(-0.01f, -0.04f));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card.GetComponent<Rigidbody2D>().linearVelocity = (24 + Random.Range(0, 5)) * rotation.normalized;
+				rotation = new Vector2(facing, 0);
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card.GetComponent<Rigidbody2D>().linearVelocity = 28 * rotation.normalized;
+				break;
+			case CardID.JOKER:
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 22;
+				break;
+			case CardID.HIDDEN_ACE:
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 36;
+				break;
+			default:
+				break;
+		}
 	}
 
 	public void CreateReload()
@@ -200,37 +259,65 @@ public class PlayerController : MonoBehaviour
 
 	public void DrawHand()
 	{
-		hudController.DiscardAll();
-		hand.Clear();
+		while (hand.Count > 0)
+			DiscardCard(0);
 
 		for (int i = 0; i < maxHand; i++)
 		{
-			CardData card = new()
-			{
-				charges = Random.Range(1, 8)
-			};
-			hudController.DrawCard(card);
-			hand.Add(card);
+			DrawCard();
 		}
-		selectedCardIndex = 0;
+	}
+
+	public void DrawCard()
+	{
+		if (deck.Count == 0)
+		{
+			if (discard.Count == 0)
+				return;
+			deck.AddRange(discard);
+			discard.Clear();
+		
+		}
+		
+		int index = Random.Range(0, deck.Count);
+
+		CardData card = deck[index];
+		deck.RemoveAt(index);
+		hudController.DrawCard(card);
+		hand.Add(card);
+
+		if (selectedCardIndex == -1)
+		{
+			selectedCardIndex = 0;
+			hudController.SetIndexSelected(selectedCardIndex);
+		}
+	}
+
+	public void DiscardCard(int index)
+	{
+		discard.Add(cardLibrary.GetCard(hand[index].id));
+		hand.RemoveAt(index);
+
+		hudController.DiscardIndex(index);
+
+		if (selectedCardIndex >= handSize)
+			selectedCardIndex = handSize - 1;
+		
 		hudController.SetIndexSelected(selectedCardIndex);
 	}
 
 	public void UseSelectedCard()
 	{
 		var card = hand[selectedCardIndex];
+
+		readiedCard = card;
+
 		card.charges--;
 		hudController.UseCharge();
 
 		if (card.charges <= 0)
 		{
-			hand.RemoveAt(selectedCardIndex);
-			hudController.DiscardIndex(selectedCardIndex);
-
-			if (selectedCardIndex >= handSize)
-				selectedCardIndex = handSize - 1;
-			
-			hudController.SetIndexSelected(selectedCardIndex);
+			DiscardCard(selectedCardIndex);
 		} else
 		{
 			hand[selectedCardIndex] = card;

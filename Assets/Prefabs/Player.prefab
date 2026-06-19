@@ -58,6 +58,7 @@ MonoBehaviour:
   move: {fileID: 5004235591573229717}
   ground: {fileID: 7900746010648306594}
   vfxController: {fileID: 8902308949167513689}
+  hudController: {fileID: 0}
   cardPrefab: {fileID: 2676629492061376651, guid: a7014e36f260d954ab63130c2878b16a, type: 3}
   attackCurve:
     serializedVersion: 2
@@ -143,6 +144,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dodgeSpeed: 18
+  cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
+  startingDeck: 2,2,3,4
 --- !u!114 &8902308949167513689
 MonoBehaviour:
   m_ObjectHideFlags: 0

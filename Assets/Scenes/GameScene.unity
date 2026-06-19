@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 8
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 320, y: 180}
   m_ScreenMatchMode: 0
@@ -624,7 +624,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1164315831}
   - component: {fileID: 1164315830}
-  - component: {fileID: 1164315829}
   - component: {fileID: 1164315828}
   - component: {fileID: 1164315827}
   m_Layer: 0
@@ -702,14 +701,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &1164315829
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164315826}
-  m_Enabled: 1
 --- !u!20 &1164315830
 Camera:
   m_ObjectHideFlags: 0

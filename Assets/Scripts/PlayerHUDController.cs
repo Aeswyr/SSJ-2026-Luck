@@ -11,7 +11,7 @@ public class PlayerHUDController : MonoBehaviour
     public void DrawCard(CardData cardData)
     {
         var card = Instantiate(cardPrefab, cardHolder).GetComponent<CardController>();
-        card.AddCharges(cardData.charges);
+        card.Init(cardData);
         card.SetSelected(false);
         cards.Add(card);
     }

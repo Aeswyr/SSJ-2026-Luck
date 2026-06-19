@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1db55bd937c61840ad0c6a0cbc88aca, type: 3}
+  m_Name: CardLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::CardLibrary
+  cards:
+  - name: High Card
+    id: 0
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 4
+  - name: Pair
+    id: 1
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 3
+  - name: Full House
+    id: 2
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 2
+  - name: The Fool
+    id: 3
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 1
+  - name: Hidden Ace
+    id: 4
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 1
+  - name: Rend
+    id: 5
+    rarity: 2
+    icon: {fileID: 0}
+    charges: 1
+  - name: Recall
+    id: 6
+    rarity: 2
+    icon: {fileID: 0}
+    charges: 1
+  - name: Homecoming
+    id: 7
+    rarity: 2
+    icon: {fileID: 0}
+    charges: 1
+  - name: All In
+    id: 8
+    rarity: 2
+    icon: {fileID: 0}
+    charges: 1
+  - name: Finishing Stroke
+    id: 9
+    rarity: 2
+    icon: {fileID: 0}
+    charges: 1
+  - name: Called Shot
+    id: 10
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Callback
+    id: 11
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Peerless Focus
+    id: 12
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Double Down
+    id: 13
+    rarity: 2
+    icon: {fileID: 0}
+    charges: 1
+  - name: A Thousand Cuts
+    id: 14
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Fixin' The Deck
+    id: 15
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Clown Car
+    id: 16
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Missed Connection
+    id: 17
+    rarity: 1
+    icon: {fileID: 0}
+    charges: 1
+  - name: Insight
+    id: 18
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 1
+  - name: Foolin' Around
+    id: 19
+    rarity: 0
+    icon: {fileID: 0}
+    charges: 1

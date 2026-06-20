@@ -320,11 +320,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519420032}
+  - component: {fileID: 519420034}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -488,6 +488,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   followTarget: {fileID: 1547991127}
   lockY: 1
+  useBounds: 1
+  bounds: {x: 0, y: 24}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +527,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000001d5db318b1293c001f820026272d7fc2f5bcbc493f3caaee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -638,10 +640,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164315831}
+  - component: {fileID: 1164315832}
   - component: {fileID: 1164315830}
   - component: {fileID: 1164315828}
   - component: {fileID: 1164315827}
-  - component: {fileID: 1164315832}
   m_Layer: 0
   m_Name: WaterCamera
   m_TagString: Untagged
@@ -798,6 +800,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   followTarget: {fileID: 1547991127}
   lockY: 1
+  useBounds: 1
+  bounds: {x: 0, y: 24}
 --- !u!1001 &1375390236
 PrefabInstance:
   m_ObjectHideFlags: 0

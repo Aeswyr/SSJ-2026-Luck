@@ -15,4 +15,13 @@ public class CardLibrary : ScriptableObject
     {
         return cards[(int)id];
     }
+
+    public List<CardData> GetAllCardsOfRarity(CardRarity rarity)
+    {
+        List<CardData> selected = new();
+        foreach (var card in cards)
+            if (card.rarity == rarity)
+                selected.Add(card);
+        return selected;
+    }
 }

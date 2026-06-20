@@ -16,8 +16,8 @@ TagManager:
   - Hitbox
   - Projectile
   - Hurtbox
-  - 
-  - 
+  - Interact
+  - Interactable
   - 
   - 
   - 
@@ -40,6 +40,24 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: World
+    uniqueID: 414407965
+    locked: 0
+  - name: Object
+    uniqueID: 3942833
+    locked: 0
+  - name: Entity
+    uniqueID: 637567519
+    locked: 0
+  - name: Projectile
+    uniqueID: 3263114535
+    locked: 0
+  - name: VFX
+    uniqueID: 1237105909
+    locked: 0
+  - name: UI
+    uniqueID: 4004133951
     locked: 0
   m_RenderingLayers:
   - Default

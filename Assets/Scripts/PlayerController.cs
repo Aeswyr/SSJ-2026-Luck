@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GroundedCheck ground;
 	[SerializeField] private UnitVFXController vfxController;
 	[SerializeField] private PlayerHUDController hudController;
+	[SerializeField] private InteractboxController interactBox;
 
 	[Space]
 	[Header("Spawnables")]
@@ -156,6 +158,11 @@ public class PlayerController : MonoBehaviour
 			else
 				selectedCardIndex = (selectedCardIndex + 1) % handSize;
 			hudController.SetIndexSelected(selectedCardIndex);
+		}
+
+		if (input.interact.pressed)
+		{
+			interactBox.FireInteraction();
 		}
     }
 
@@ -560,6 +567,8 @@ public class PlayerController : MonoBehaviour
 		discard.Clear();
 		deck.Clear();
 
+		hudController.DiscardAll();
+
 		
 		foreach (var index in startingDeck.Split(','))
 			deck.Add(cardLibrary.GetCard(int.Parse(index)));
@@ -567,9 +576,15 @@ public class PlayerController : MonoBehaviour
 		DrawHand();
 	}
 
+	public void AddCardToDeck(CardID card)
+	{
+		startingDeck += $",{(int)card}";
+		ResetToBaseline();
+	}
+
 	public void ToggleInputLock(bool locked)
 	{
-		
+		inputsLocked = locked;	
 	}
 
 }

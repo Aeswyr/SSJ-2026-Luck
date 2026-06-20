@@ -126,7 +126,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7158568983499698782}
         m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
-        m_MethodName: Jump
+        m_MethodName: Interact
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

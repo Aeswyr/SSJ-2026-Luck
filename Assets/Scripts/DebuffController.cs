@@ -72,7 +72,7 @@ public class DebuffController : MonoBehaviour
             {
                 case DebuffType.LOOT:
                     debuff.misc++;
-                    if (debuff.misc >= 3)
+                    if (debuff.misc >= 4)
                     {
                         debuff.misc = 0;
                         FindAnyObjectByType<PlayerController>().DrawCard();
@@ -80,7 +80,7 @@ public class DebuffController : MonoBehaviour
                     break;
                 case DebuffType.COMEDY:
                     debuff.misc++;
-                    if (debuff.misc >= 3)
+                    if (debuff.misc >= 2)
                     {
                         debuff.misc = 0;
                         FindAnyObjectByType<PlayerController>().AddCardToHand(CardID.JOKER);

@@ -16,8 +16,6 @@ public class EntityController : MonoBehaviour
         hitData.bonusDamage += 1 * debuffs.GetDebuffCount(DebuffType.PAIN);
         int markCount = debuffs.RemoveAllDebuff(DebuffType.MARK);
         hitData.bonusDamage += 3 * markCount + (int)(hitData.baseDamage * 0.5f * markCount);
-        
-        Debug.Log($"base: {hitData.baseDamage} bonus: {hitData.bonusDamage}");
 
         ApplyDamage(hitData.totalDamage);
     }

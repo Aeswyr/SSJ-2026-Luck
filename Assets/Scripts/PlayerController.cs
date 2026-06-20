@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
     private InputHandler input;
     private bool acting, cancellable, grounded;
     private int facing, attackRepeat;
-	private int selectedCardIndex, maxHand;
+	private int selectedCardIndex;
+	private int maxHand = 4;
 	private CardData readiedCard;
 	private List<CardData> hand = new();
 	private List<CardData> discard = new();
@@ -45,23 +46,22 @@ public class PlayerController : MonoBehaviour
 
 	private UnityEvent onDrawHand = new();
 
+	private bool inputsLocked;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         input = InputHandler.Instance;
 
-		foreach (var index in startingDeck.Split(','))
-			deck.Add(cardLibrary.GetCard(int.Parse(index)));
-
-		maxHand = 4;
-		DrawHand();
+		ResetToBaseline();
     }
 
     void FixedUpdate()
     {
         grounded = ground.CheckGrounded();
 
-        HandleInputs();
+		if (!inputsLocked)
+        	HandleInputs();
 
 		animator.SetBool("grounded", grounded);
 		animator.SetBool("moving", input.move.down && !acting);
@@ -551,6 +551,25 @@ public class PlayerController : MonoBehaviour
 		{
 			hand[selectedCardIndex] = card;
 		}
+	}
+
+	public void ResetToBaseline()
+	{
+		onDrawHand.RemoveAllListeners();
+		hand.Clear();
+		discard.Clear();
+		deck.Clear();
+
+		
+		foreach (var index in startingDeck.Split(','))
+			deck.Add(cardLibrary.GetCard(int.Parse(index)));
+			
+		DrawHand();
+	}
+
+	public void ToggleInputLock(bool locked)
+	{
+		
 	}
 
 }

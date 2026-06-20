@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -473,6 +474,20 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7715645d447a53540820766ba03f4d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  followTarget: {fileID: 1547991127}
+  lockY: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +641,7 @@ GameObject:
   - component: {fileID: 1164315830}
   - component: {fileID: 1164315828}
   - component: {fileID: 1164315827}
+  - component: {fileID: 1164315832}
   m_Layer: 0
   m_Name: WaterCamera
   m_TagString: Untagged
@@ -768,6 +784,20 @@ Transform:
   - {fileID: 404857340}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164315832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164315826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7715645d447a53540820766ba03f4d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  followTarget: {fileID: 1547991127}
+  lockY: 1
 --- !u!1001 &1375390236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -937,6 +967,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2de3cb6be8fac4f83cd4ca45162f91, type: 3}
+--- !u!4 &1547991127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7337629306160625839, guid: be2de3cb6be8fac4f83cd4ca45162f91, type: 3}
+  m_PrefabInstance: {fileID: 1547991126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1847645939
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,100 +16,180 @@ MonoBehaviour:
   - name: High Card
     id: 0
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: 2956302206307816854, guid: 7ec871680b1472e4196eebf474e0fb7c, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 4
+    baseDamage: 3
+    shouldStick: 1
   - name: Pair
     id: 1
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: 6872315840094638057, guid: dda5770bfac8b9149927acf083b35c73, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 3
+    baseDamage: 2
+    shouldStick: 1
   - name: Full House
     id: 2
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: -2380761262113295394, guid: 9396c1c7058b05241823db278f192fd5, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 2
+    baseDamage: 1
+    shouldStick: 1
   - name: The Fool
     id: 3
-    rarity: 0
-    icon: {fileID: 0}
+    rarity: 3
+    icon: {fileID: 6405907386155496259, guid: e73e231458a79864abbb4b2624cfaedf, type: 3}
+    exhaust: 1
+    noDiscard: 1
     charges: 1
+    baseDamage: 0
+    shouldStick: 1
   - name: Hidden Ace
     id: 4
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: -8536194126029614151, guid: 06f82d60b25f4404c98ec2831c6b4a7c, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 10
+    shouldStick: 0
   - name: Rend
     id: 5
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: 6508335231141829869, guid: 89b0021d7e82c014cabf44f4a4a23798, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 2
+    shouldStick: 0
   - name: Recall
     id: 6
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: -8693575081402588207, guid: 12d8d30d069cbc84dbc14756115d74cd, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Homecoming
     id: 7
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: 5482841418619500598, guid: 4a9cf2957f9c1d9479893d954aee69df, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: All In
     id: 8
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: -2618124259885305570, guid: d047be872841e2d449703115c77fe3ac, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 2
+    shouldStick: 1
   - name: Finishing Stroke
     id: 9
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: -4922103070775171457, guid: cb0126b04c2678b458c0e34c0a5d94fa, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 4
+    shouldStick: 1
   - name: Called Shot
     id: 10
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: 2504371010434422237, guid: 286cdc3a0938dcd4bb85b836c9cf346c, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Callback
     id: 11
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: 3483211487471968235, guid: a573a43e646aa6444b55dba046ea43e2, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Peerless Focus
     id: 12
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: -3107164437440882409, guid: 22b51e4ebc8dfdb4ca4640a2fad36147, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Double Down
     id: 13
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: 4262228339964961926, guid: 4b3b0425f0af11b4194ed43092c58c8c, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 1
+    shouldStick: 0
   - name: A Thousand Cuts
     id: 14
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: 6008495327814675189, guid: cbdbd65bf973ce44ebb2fdfd58850c6f, type: 3}
+    exhaust: 1
+    noDiscard: 0
     charges: 1
+    baseDamage: 1
+    shouldStick: 0
   - name: Fixin' The Deck
     id: 15
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: -7050355161044659629, guid: 3e183702621a6ad48921520244dc2e45, type: 3}
+    exhaust: 1
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Clown Car
     id: 16
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: -6410837670463618364, guid: 682f94dc3dfad9742ba502dd40d5b497, type: 3}
+    exhaust: 1
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Missed Connection
     id: 17
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: -8399806738595358388, guid: c81b145f1a09cf54d883f81aabbbd3c2, type: 3}
+    exhaust: 1
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Insight
     id: 18
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: 2301598301571804544, guid: dcfaed190f0e6ad4599f02bb40e6c0e4, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0
   - name: Foolin' Around
     id: 19
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: 8629111516335876503, guid: 4e2af600bd160444f80c770809d7deaf, type: 3}
+    exhaust: 0
+    noDiscard: 0
     charges: 1
+    baseDamage: 0
+    shouldStick: 0

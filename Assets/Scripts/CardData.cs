@@ -8,13 +8,21 @@ using UnityEngine;
     public CardID id;
     public CardRarity rarity;
     public Sprite icon;
+    [Space]
+    [Header("Gameplay Info")]
+    public bool exhaust;
+    public bool noDiscard;
+    [Space]
+    [Header("Combat Info")]
     public int charges;
+    public int baseDamage;
+    public bool shouldStick;
 }
 
 
 public enum CardRarity
 {
-    COMMON, UNCOMMON, RARE
+    COMMON, UNCOMMON, RARE, NONE
 }
 
 public enum CardID

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
 	private List<CardData> discard = new();
 	private List<CardData> deck = new();
 	private int handSize => hand.Count;
+
+	private UnityEvent onDrawHand = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -147,7 +149,7 @@ public class PlayerController : MonoBehaviour
 			StartAction();
 		}
 
-		if (input.scroll.pressed)
+		if (handSize > 0 && input.scroll.pressed)
 		{
 			if (input.scrollDir >= 0)
 				selectedCardIndex = (handSize + selectedCardIndex - 1) % handSize;
@@ -205,47 +207,242 @@ public class PlayerController : MonoBehaviour
 		GameObject card = null;
 		Vector2 rotation = default;
 
+		HitData hitData = new()
+		{
+			baseDamage = readiedCard.baseDamage,
+			shouldStick = readiedCard.shouldStick
+		};
+
 		switch (readiedCard.id)
 		{
 			case CardID.HIGH_CARD:
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
-				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 28)
+					.Init(transform, hitData);
 				break;
 			case CardID.PAIR:
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1.2f), Quaternion.identity);
-				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 28)
+					.Init(transform, hitData);
 				StartCoroutine(DelayCard());
 				IEnumerator DelayCard()
 				{
 					yield return new WaitForSeconds(0.1f);
 					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -0.8f), Quaternion.identity);
-					card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 28;
+					card.GetComponent<ProjectileController>()
+						.SetVelocity(facing * 28)
+						.Init(transform, hitData);
 				}
 				break;
 			case CardID.FULL_HOUSE:
+				float shotgunLifetime = 0.2f;
+				float shotgunVariance = 0.2f;
 				rotation = new Vector2(facing, Random.Range(0.05f, 0.1f));
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
-				card.GetComponent<Rigidbody2D>().linearVelocity = (26 + Random.Range(0, 3)) * rotation.normalized;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity((26 + Random.Range(0, 3)) * rotation.normalized)
+					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
+					.Init(transform, hitData);
 				rotation = new Vector2(facing, Random.Range(-0.05f, -0.1f));
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
-				card.GetComponent<Rigidbody2D>().linearVelocity = (20 + Random.Range(0, 9)) * rotation.normalized;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity((20 + Random.Range(0, 9)) * rotation.normalized)
+					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
+					.Init(transform, hitData);
 				rotation = new Vector2(facing, Random.Range(0.01f, 0.04f));
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
-				card.GetComponent<Rigidbody2D>().linearVelocity = (22 + Random.Range(0, 7)) * rotation.normalized;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity((22 + Random.Range(0, 7)) * rotation.normalized)
+					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
+					.Init(transform, hitData);
 				rotation = new Vector2(facing, Random.Range(-0.01f, -0.04f));
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
-				card.GetComponent<Rigidbody2D>().linearVelocity = (24 + Random.Range(0, 5)) * rotation.normalized;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity((24 + Random.Range(0, 5)) * rotation.normalized)
+					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
+					.Init(transform, hitData);
 				rotation = new Vector2(facing, 0);
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
-				card.GetComponent<Rigidbody2D>().linearVelocity = 28 * rotation.normalized;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity(28 * rotation.normalized)
+					.SetLifetime(shotgunLifetime + Random.Range(0, 0.25f))
+					.Init(transform, hitData);
 				break;
 			case CardID.JOKER:
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
-				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 22;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 22)
+					.Init(transform, hitData);
 				break;
 			case CardID.HIDDEN_ACE:
 				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
-				card.GetComponent<Rigidbody2D>().linearVelocityX = facing * 36;
+				card.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 36)
+					.SetEntityPierce()
+					.Init(transform, hitData);
+				break;
+			case CardID.FINISHING_STROKE:
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 42)
+					.Init(transform, hitData);
+				break;
+			case CardID.REND:
+				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
+				{
+					var hurtbox = stick.GetComponentInChildren<HurtboxController>();
+					if (hurtbox != null) {
+						HitData hit = hitData;
+						hit.baseDamage = hit.baseDamage * stick.cards;
+						hurtbox.OnHit(hit);
+					}
+					stick.ClearCards();
+				}
+				break;
+			case CardID.RECALL:
+				{int totalStuck = 0;
+				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
+				{
+					totalStuck = stick.cards;
+					stick.ClearCards();
+				}
+
+				for (int i = 0; i < 1 + totalStuck / 3; i++)
+					DrawCard();}
+				break;
+			case CardID.HOMECOMING:
+				{int totalStuck = 0;
+				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
+				{
+					totalStuck = stick.cards;
+					stick.ClearCards();
+				}
+
+				for (int i = 0; i < totalStuck / 2; i++)
+					AddCardToHand(CardID.JOKER);}
+				break;
+			case CardID.ALL_IN:
+				for (int handSize = hand.Count; handSize > 0; handSize--){
+					rotation = new Vector2(facing, Random.Range(-0.13f, 0.13f));
+					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+					card.GetComponent<ProjectileController>()
+						.SetVelocity(25 * rotation.normalized)
+						.Init(transform, hitData);
+					rotation = new Vector2(-facing, Random.Range(-0.13f, 0.13f));
+					card = Instantiate(cardPrefab, transform.position + new Vector3(-facing * 1.5f, -1), Quaternion.FromToRotation(-facing * Vector2.right, rotation.normalized));
+					card.GetComponent<ProjectileController>()
+						.SetVelocity(25 * rotation.normalized)
+						.Init(transform, hitData);
+					rotation = new Vector2(Random.Range(-3f, 3f), 1);
+					card = Instantiate(cardPrefab, transform.position + (Vector3)(rotation.normalized * new Vector3(1.5f, 0)) + Vector3.down, Quaternion.FromToRotation(rotation.x * Vector2.right, rotation.normalized));
+					card.GetComponent<ProjectileController>()
+						.SetVelocity(25 * rotation.normalized)
+						.Init(transform, hitData);
+					rotation = new Vector2(Random.Range(-3f, 3f), 1);
+					card = Instantiate(cardPrefab, transform.position + (Vector3)(rotation.normalized * new Vector3(1.5f, 0)) + Vector3.down, Quaternion.FromToRotation(rotation.x * Vector2.right, rotation.normalized));
+					card.GetComponent<ProjectileController>()
+						.SetVelocity(25 * rotation.normalized)
+						.Init(transform, hitData);
+				}
+
+				while (hand.Count > 0)
+					DiscardCard(0);
+				break;
+			case CardID.CALLED_SHOT:
+				{
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					if (ray && ray.collider.transform.parent != null)
+					{
+						DebuffController debuff = ray.collider.transform.parent.GetComponentInChildren<DebuffController>();
+						if (debuff != null)
+						{
+							debuff.AddDebuff(DebuffType.MARK);
+						}
+					}
+				}
+				break;
+			case CardID.CALLBACK:
+				{
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					if (ray && ray.collider.transform.parent != null)
+					{
+						DebuffController debuff = ray.collider.transform.parent.GetComponentInChildren<DebuffController>();
+						if (debuff != null)
+						{
+							debuff.AddDebuff(DebuffType.COMEDY);
+						}
+					}
+				}
+				break;
+			case CardID.PEERLESS_FOCUS:
+				{
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					if (ray && ray.collider.transform.parent != null)
+					{
+						DebuffController debuff = ray.collider.transform.parent.GetComponentInChildren<DebuffController>();
+						if (debuff != null)
+						{
+							debuff.AddDebuff(DebuffType.LOOT);
+						}
+					}
+				}
+				break;
+			case CardID.DOUBLE_DOWN:
+				{
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					if (ray && ray.collider.transform.parent != null)
+					{
+						DebuffController debuff = ray.collider.transform.parent.GetComponentInChildren<DebuffController>();
+						if (debuff != null)
+						{
+							debuff.AddDebuff(DebuffType.BLEED);
+						}
+					}
+				}
+				break;
+			case CardID.THOUSAND_CUTS:
+				{
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					if (ray && ray.collider.transform.parent != null)
+					{
+						DebuffController debuff = ray.collider.transform.parent.GetComponentInChildren<DebuffController>();
+						if (debuff != null)
+						{
+							debuff.AddDebuff(DebuffType.PAIN);
+						}
+					}
+				}
+				break;
+    		case CardID.DECK_FIXING:
+				onDrawHand.AddListener(CardAction_FixingTheDeck);
+				void CardAction_FixingTheDeck()
+				{
+					DrawCard();
+					DrawCard();
+				}
+				break;
+			case CardID.CLOWN_CAR:
+				onDrawHand.AddListener(CardAction_ClownCar);
+				void CardAction_ClownCar()
+				{
+
+					AddCardToHand(CardID.JOKER);
+					AddCardToHand(CardID.JOKER);
+					AddCardToHand(CardID.JOKER);
+				}
+				break;
+			case CardID.MISSED_CONNECTION:
+				break;
+    		case CardID.INSIGHT:
+				DrawCard();
+				DrawCard();
+				break;
+			case CardID.FOOLIN_AROUND:
+				AddCardToHand(CardID.JOKER);
+				AddCardToHand(CardID.JOKER);
+				AddCardToHand(CardID.JOKER);
 				break;
 			default:
 				break;
@@ -266,6 +463,8 @@ public class PlayerController : MonoBehaviour
 		{
 			DrawCard();
 		}
+
+		onDrawHand?.Invoke();
 	}
 
 	public void DrawCard()
@@ -283,6 +482,11 @@ public class PlayerController : MonoBehaviour
 
 		CardData card = deck[index];
 		deck.RemoveAt(index);
+		AddCardToHand(card);
+	}
+
+	public void AddCardToHand(CardData card)
+	{
 		hudController.DrawCard(card);
 		hand.Add(card);
 
@@ -293,9 +497,23 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	public void DiscardCard(int index)
+	public void AddCardToHand(CardID id)
 	{
-		discard.Add(cardLibrary.GetCard(hand[index].id));
+		var card = cardLibrary.GetCard(id);
+		hudController.DrawCard(card);
+		hand.Add(card);
+
+		if (selectedCardIndex == -1)
+		{
+			selectedCardIndex = 0;
+			hudController.SetIndexSelected(selectedCardIndex);
+		}
+	}
+
+	public void DiscardCard(int index, bool shouldDiscard = true)
+	{
+		if (shouldDiscard && !hand[index].noDiscard)
+			discard.Add(cardLibrary.GetCard(hand[index].id));
 		hand.RemoveAt(index);
 
 		hudController.DiscardIndex(index);
@@ -304,6 +522,17 @@ public class PlayerController : MonoBehaviour
 			selectedCardIndex = handSize - 1;
 		
 		hudController.SetIndexSelected(selectedCardIndex);
+
+		for (int i = 0; i < hand.Count; i++)
+		{
+			if (hand[i].id == CardID.FINISHING_STROKE)
+			{
+				var cardData = hand[i];
+				cardData.baseDamage += 3;
+				hand[i] = cardData;
+			}
+			
+		}
 	}
 
 	public void UseSelectedCard()
@@ -317,7 +546,7 @@ public class PlayerController : MonoBehaviour
 
 		if (card.charges <= 0)
 		{
-			DiscardCard(selectedCardIndex);
+			DiscardCard(selectedCardIndex, !card.exhaust);
 		} else
 		{
 			hand[selectedCardIndex] = card;

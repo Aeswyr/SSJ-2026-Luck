@@ -10,6 +10,8 @@ public class RewardChoice : MonoBehaviour
     [SerializeField] private SpriteRenderer[] cardOptions;
     [SerializeField] private SpriteRenderer[] cardFrames;
     [SerializeField] private GameObject node;
+
+    [SerializeField] private bool useDialog;
     private CardData[] rewards = new CardData[3];
 
     public void Start()
@@ -43,6 +45,9 @@ public class RewardChoice : MonoBehaviour
 
     public void OpenReward()
     {
+        if (useDialog)
+            DialogManager.Instance.PlayConversation($"cardselecthi{Random.Range(1, 5)}");
+
         node.SetActive(false);
 
         foreach (var card in cardOptions)
@@ -52,18 +57,33 @@ public class RewardChoice : MonoBehaviour
     public void ChooseRewardA()
     {
         FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[0].id);
-        Destroy(gameObject);
+        node.SetActive(false);
+        foreach (var card in cardOptions)
+            card.gameObject.SetActive(false);
+
+        if (useDialog)
+            DialogManager.Instance.PlayConversation($"cardselectbye{Random.Range(1, 5)}");
     }
 
     public void ChooseRewardB()
     {
         FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[1].id);
-        Destroy(gameObject);
+        node.SetActive(false);
+        foreach (var card in cardOptions)
+            card.gameObject.SetActive(false);
+
+        if (useDialog)
+            DialogManager.Instance.PlayConversation($"cardselectbye{Random.Range(1, 5)}");
     }
 
     public void ChooseRewardC()
     {
         FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[2].id);
-        Destroy(gameObject);
+        node.SetActive(false);
+        foreach (var card in cardOptions)
+            card.gameObject.SetActive(false);
+
+        if (useDialog)
+            DialogManager.Instance.PlayConversation($"cardselectbye{Random.Range(1, 5)}");
     }
 }

@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+		InputHandler.Instance.FlushBuffer();
+		
 		foreach (var cam in FindObjectsByType<CameraFollow>(FindObjectsSortMode.None))
 			cam.SetFollow(transform);
 
@@ -226,13 +228,13 @@ public class PlayerController : MonoBehaviour
 		switch (readiedCard.id)
 		{
 			case CardID.HIGH_CARD:
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 28)
 					.Init(transform, hitData);
 				break;
 			case CardID.PAIR:
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1.2f), Quaternion.identity);
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1.2f), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 28)
 					.Init(transform, hitData);
@@ -240,7 +242,7 @@ public class PlayerController : MonoBehaviour
 				IEnumerator DelayCard()
 				{
 					yield return new WaitForSeconds(0.1f);
-					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -0.8f), Quaternion.identity);
+					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -0.8f), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 					card.GetComponent<ProjectileController>()
 						.SetVelocity(facing * 28)
 						.Init(transform, hitData);
@@ -250,51 +252,51 @@ public class PlayerController : MonoBehaviour
 				float shotgunLifetime = 0.2f;
 				float shotgunVariance = 0.2f;
 				rotation = new Vector2(facing, Random.Range(0.05f, 0.1f));
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity((26 + Random.Range(0, 3)) * rotation.normalized)
 					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
 					.Init(transform, hitData);
 				rotation = new Vector2(facing, Random.Range(-0.05f, -0.1f));
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity((20 + Random.Range(0, 9)) * rotation.normalized)
 					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
 					.Init(transform, hitData);
 				rotation = new Vector2(facing, Random.Range(0.01f, 0.04f));
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity((22 + Random.Range(0, 7)) * rotation.normalized)
 					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
 					.Init(transform, hitData);
 				rotation = new Vector2(facing, Random.Range(-0.01f, -0.04f));
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity((24 + Random.Range(0, 5)) * rotation.normalized)
 					.SetLifetime(shotgunLifetime + Random.Range(0, shotgunVariance))
 					.Init(transform, hitData);
 				rotation = new Vector2(facing, 0);
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity(28 * rotation.normalized)
 					.SetLifetime(shotgunLifetime + Random.Range(0, 0.25f))
 					.Init(transform, hitData);
 				break;
 			case CardID.JOKER:
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 22)
 					.Init(transform, hitData);
 				break;
 			case CardID.HIDDEN_ACE:
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 36)
 					.SetEntityPierce()
 					.Init(transform, hitData);
 				break;
 			case CardID.FINISHING_STROKE:
-				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity);
+				card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 				card.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 42)
 					.Init(transform, hitData);
@@ -336,22 +338,22 @@ public class PlayerController : MonoBehaviour
 			case CardID.ALL_IN:
 				for (int handSize = hand.Count; handSize > 0; handSize--){
 					rotation = new Vector2(facing, Random.Range(-0.13f, 0.13f));
-					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized));
+					card = Instantiate(cardPrefab, transform.position + new Vector3(facing * 1.5f, -1), Quaternion.FromToRotation(facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 					card.GetComponent<ProjectileController>()
 						.SetVelocity(25 * rotation.normalized)
 						.Init(transform, hitData);
 					rotation = new Vector2(-facing, Random.Range(-0.13f, 0.13f));
-					card = Instantiate(cardPrefab, transform.position + new Vector3(-facing * 1.5f, -1), Quaternion.FromToRotation(-facing * Vector2.right, rotation.normalized));
+					card = Instantiate(cardPrefab, transform.position + new Vector3(-facing * 1.5f, -1), Quaternion.FromToRotation(-facing * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 					card.GetComponent<ProjectileController>()
 						.SetVelocity(25 * rotation.normalized)
 						.Init(transform, hitData);
 					rotation = new Vector2(Random.Range(-3f, 3f), 1);
-					card = Instantiate(cardPrefab, transform.position + (Vector3)(rotation.normalized * new Vector3(1.5f, 0)) + Vector3.down, Quaternion.FromToRotation(rotation.x * Vector2.right, rotation.normalized));
+					card = Instantiate(cardPrefab, transform.position + (Vector3)(rotation.normalized * new Vector3(1.5f, 0)) + Vector3.down, Quaternion.FromToRotation(rotation.x * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 					card.GetComponent<ProjectileController>()
 						.SetVelocity(25 * rotation.normalized)
 						.Init(transform, hitData);
 					rotation = new Vector2(Random.Range(-3f, 3f), 1);
-					card = Instantiate(cardPrefab, transform.position + (Vector3)(rotation.normalized * new Vector3(1.5f, 0)) + Vector3.down, Quaternion.FromToRotation(rotation.x * Vector2.right, rotation.normalized));
+					card = Instantiate(cardPrefab, transform.position + (Vector3)(rotation.normalized * new Vector3(1.5f, 0)) + Vector3.down, Quaternion.FromToRotation(rotation.x * Vector2.right, rotation.normalized), GameManager.Instance.GetCurrentLevel().GetObjectParent());
 					card.GetComponent<ProjectileController>()
 						.SetVelocity(25 * rotation.normalized)
 						.Init(transform, hitData);

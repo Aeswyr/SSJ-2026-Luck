@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour
     }
     void Update()
     {
+        if (followTarget == null)
+            return;
         float targetX = followTarget.position.x;
         if (useBounds)
         {

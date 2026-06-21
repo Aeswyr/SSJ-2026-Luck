@@ -26,7 +26,7 @@ public class ConversationLibrary : ScriptableObject
         Conversation currentConvo = default;
         while ((line = dialogReader.ReadLine()) != null)
         {
-            string[] param = line.Split(',');
+            string[] param = line.Split('\t');
             if (!string.IsNullOrEmpty(param[0]))
             {
                 if (!param[0].Equals(currentConvo.key))

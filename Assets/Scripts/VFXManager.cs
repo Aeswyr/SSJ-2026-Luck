@@ -4,12 +4,6 @@ using UnityEngine;
 public class VFXManager : Singleton<VFXManager>
 {
     [SerializeField] private GameObject toastPrefab;
-    [SerializeField] private GameObject playerPrefab;
-
-    void Start()
-    {
-        Instantiate(playerPrefab);
-    }
 
     public void CreateToast(string text, Vector3 pos)
     {

@@ -1,0 +1,25 @@
+Key	Speaker Name	Dialog	Side	Style
+test	test	this is test dialog	Left	NONE
+intro	Roane	Wow, you really were hard to dig out.	Right	NONE
+intro	Roane	But you’re here now. Welcome to the afterlife. You’re in hell.	Right	NONE
+intro	Roane	And I know that’s really confusing-	Right	NONE
+intro	Ace	Not really.	Left	NONE
+intro	Roane	Oh. Huh.	Right	NONE
+intro	Roane	Weird, because your life was pretty ordinary.	Right	NONE
+intro	Roane	I mean, says here there was a lot of gambling.	Right	NONE
+intro	Roane	Like… a lot, but I don’t think gambling really determines your placement.	Right	NONE
+intro	Roane	I mean, literally not a speck of cheating? That would probably determine it a little.	Right	NONE
+intro	Roane	Spent time with friends, drank a lot… I mean all and all very morally neutral and you aren’t even a bit surprised?	Right	NONE
+intro	Roane	But whatever, you can thank me once you’re out of you because I’m getting you to the border.	Right	NONE
+intro	Roane	Here, I pulled these from your soul before you woke up. It’s your essence manifested into a tool to get you through the wilds.	Right	NONE
+intro	Roane	I thought it would be something cool like a big gun or maybe a sword, but uh… cards, huh? Is that cool to you?	Right	NONE
+intro	Ace	It doesn’t matter. Pass it here.	Left	NONE
+intro	Roane	Now I tested them out, so let me show you how to do the do.	Right	NONE
+cardselecthi1	Roane	Congrats, killer.	Right	NONE
+cardselecthi2	Roane	Welcome back.	Right	NONE
+cardselecthi3	Roane	Good ta’ see ya.	Right	NONE
+cardselecthi4	Roane	Hey, Ace.	Right	NONE
+cardselectbye1	Roane	Good choice.	Right	NONE
+cardselectbye2	Roane	Well... if you're sure.	Right	NONE
+cardselectbye3	Roane	Good luck out there.	Right	NONE
+cardselectbye4	Roane	The border awaits.	Right	NONE

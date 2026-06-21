@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4338cb0ae979e694fbb2483b3182b2b1, type: 3}
   m_Name: ConversationLibrary
   m_EditorClassIdentifier: Assembly-CSharp::ConversationLibrary
-  path: ./Assets/Resources/SSJ_Luck_26 - Dialog.csv
+  path: ./Assets/Resources/SSJ_Luck_26 - Dialog.tsv
   portraits:
   - name: test
     sprite: {fileID: 0}

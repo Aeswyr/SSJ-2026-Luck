@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private MovementHandler move;
     [SerializeField] private GroundedCheck ground;
 	[SerializeField] private UnitVFXController vfxController;
-	[SerializeField] private PlayerHUDController hudController;
 	[SerializeField] private InteractboxController interactBox;
+	private PlayerHUDController hudController;
 
 	[Space]
 	[Header("Spawnables")]
@@ -53,6 +53,10 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+		foreach (var cam in FindObjectsByType<CameraFollow>(FindObjectsSortMode.None))
+			cam.SetFollow(transform);
+
+		hudController = FindAnyObjectByType<PlayerHUDController>();
         input = InputHandler.Instance;
 
 		ResetToBaseline();
@@ -66,8 +70,7 @@ public class PlayerController : MonoBehaviour
         	HandleInputs();
 
 		animator.SetBool("grounded", grounded);
-		animator.SetBool("moving", input.move.down && !acting);
-
+		animator.SetBool("moving", input.move.down && !acting && !inputsLocked);
     }
 
     private void HandleInputs()
@@ -584,7 +587,12 @@ public class PlayerController : MonoBehaviour
 
 	public void ToggleInputLock(bool locked)
 	{
-		inputsLocked = locked;	
+		inputsLocked = locked;
+
+		if (inputsLocked)
+		{
+			move.StartDeceleration();
+		}
 	}
 
 }

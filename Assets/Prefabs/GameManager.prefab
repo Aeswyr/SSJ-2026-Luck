@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXManager
   toastPrefab: {fileID: 2676629492061376651, guid: a332b187b570d5b4f861c72e4d7c9ae7, type: 3}
+  playerPrefab: {fileID: 454432809615883325, guid: be2de3cb6be8fac4f83cd4ca45162f91, type: 3}

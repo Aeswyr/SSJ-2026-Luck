@@ -23,4 +23,9 @@ public class CameraFollow : MonoBehaviour
         }
         transform.position = new Vector3(targetX, lockY ? startPos.y : followTarget.position.y, startPos.z);
     }
+
+    public void SetFollow(Transform follow)
+    {
+        this.followTarget = follow;
+    }
 }

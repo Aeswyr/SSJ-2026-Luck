@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    [SerializeField] private LevelType levelType;
     [SerializeField] private Vector2 spawn;
     [SerializeField] private GameObject levelObjects;
+    [SerializeField] private Vector2 levelBounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         var player = FindAnyObjectByType<PlayerController>();
         if (player != null)
             player.transform.position = spawn;
+
+        foreach (var cam in FindObjectsByType<CameraFollow>(FindObjectsSortMode.None))
+        {
+            cam.SetBounds(levelBounds);
+        }
     }
 
     public Vector2 GetSpawn()
@@ -21,4 +28,14 @@ public class LevelController : MonoBehaviour
     {
         return levelObjects.transform;
     }
+
+    public LevelType GetLevelType()
+    {
+        return levelType;    
+    }
+}
+
+public enum LevelType
+{
+    INTRO, COMBAT, BOSS, HEAL, TREASURE_DUO, TREASURE_RARE, TREASURE_UNCOMMON, REMOVE_CARD
 }

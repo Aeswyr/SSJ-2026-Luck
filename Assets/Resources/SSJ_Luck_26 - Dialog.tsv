@@ -23,3 +23,241 @@ cardselectbye1	Roane	Good choice.	Right	NONE
 cardselectbye2	Roane	Well... if you're sure.	Right	NONE
 cardselectbye3	Roane	Good luck out there.	Right	NONE
 cardselectbye4	Roane	The border awaits.	Right	NONE
+				
+re1	Roane	Hey, you got a minute?	Right	NONE
+re1	Ace	Sure. Ain’t in a rush.	Left	NONE
+re1	Roane	See, that’s what I’m curious about.	Right	NONE
+re1	Roane	You die, you end up in hell, but you don’t seem bothered in the slightest… Why?	Right	NONE
+re1	Ace	Why’re you so bothered by it? Ain’t you supposed to be a demon?	Left	NONE
+re1	Roane	What, I can’t be multifaceted just because I’m a demon?	Right	NONE
+re1	Roane	I’ve lived for what is probably centuries to you. I’ve seen a lot of souls enter hell and most of them were pretty scared.	Right	NONE
+re1	Roane	I mean… some were happy. And those ones were REAL freaky.	Right	NONE
+re1	Roane	But you’re the first person I’ve ever seen that seems to be completely unfazed by it.	Right	NONE
+re1	Roane	Why?	Right	NONE
+re1	Ace	I just figured…	Left	NONE
+re1	Ace	I’d be ending up here anyway.	Right	NONE
+re1	Roane	But you didn’t do anything particularly bad.	Right	NONE
+re1	Ace	That so?	Left	NONE
+re1	Roane	Yeah. I mean, I’ve looked over your soul’s deed and it seemed very average.	Right	NONE
+re1	Roane	This may come as a shock to you, but people like you don’t end up here. They get to heaven.	Right	NONE
+re1	Ace	Maybe I’m bad and you just don’t know it. What makes you think your little deed can tell you everything about me?	Left	NONE
+re1	Roane	Well that’s what I want to figure out.	Right	NONE
+re1	Ace	Is it morally wrong by y’alls books to think about hurting somebody?	Left	NONE
+re1	Roane	I mean… I don’t know. I’ve never seen anything like that come up. I guess I never even thought about it.	Right	NONE
+re1	Ace	Hows about you mull that one over while I get back to doing what I’m here to do.	Left	NONE
+re1	Roane	Uh, sure. I’ll do that.	Right	NONE
+re1	Roane	Here, a card for your troubles.	Right	NONE
+re2	Roane	Now that you have a break, let’s chat.	Right	NONE
+re2	Ace	More of this morality nonsense?	Left	NONE
+re2	Roane	Sure. More.. nonsense	Right	NONE
+re2	Roane	So I looked at the books and while thinking about hurting people is generally pretty frowned upon, it’s not going to make as much of an impact as actually hurting somebody	Right	NONE
+re2	Ace	But what if someone wanted to hurt someone really bad?	Left	NONE
+re2	Ace	What if someone wanted to kill somebody?	Left	NONE
+re2	Ace	Would that little book of yours have a scenario for that?	Left	NONE
+re2	Roane	I think the action is probably more important than the thought in the long-run, don’t you?	Right	NONE
+re2	Ace	And what makes you think that? The book?	Left	NONE
+re2	Roane	… Yes?	Right	NONE
+re2	Ace	So you live your life determined to follow the moral rulins that someone else set up for you? You just decide everything that way, do ya?	Left	NONE
+re2	Roane	What? Is there supposed to be some other way?	Right	NONE
+re2	Ace	Maybe. Maybe there isn’t. I ain’t a teacher.	Left	NONE
+re2	Ace	You know, up there in the livin’ world, a whole bunch of people live their lives tellin’ other people that they deserve this place because of what they look like, who they love, everythin’ about who they are.	Left	NONE
+re2	Ace	Everyone got ideas of right and wrong.	Left	NONE
+re2	Roane	Yeah well a lot of those people are also violent and their bigotry ends them up here.	Right	NONE
+re2	Ace	Even if they pray?	Left	NONE
+re2	Roane	Even if they pray. It’s the rules.	Right	NONE
+re2	Ace	And if they don't hurt anyone physically, where do they go?	Left	NONE
+re2	Roane	Uh... I-	Right	NONE
+re2	Ace	What if they only make people feel real bad with their words, or just think it to themself?	Left	NONE
+re2	Roane	I don't know, I guess. 	Right	NONE
+re2	Ace	And what if I hurt somebody because they hurt me first? What happens to me.	Left	NONE
+re2	Roane	Uh… well… I mean you did hurt somebody in that scenario-	Right	NONE
+re2	Ace	But they hurt me first. What if it was the only thing between me and death?	Left	NONE
+re2	Roane	… huh. I- I need to look at the books some more I think.	Right	NONE
+re2	Ace	Sure. You have fun with that, Roane.	Left	NONE
+re2	Roane	Here. Take this with you.	Right	NONE
+re3	Roane	Ace-	Right	NONE
+re3	Ace	Okay, before you get into all your yappin, I got a question.	Left	NONE
+re3	Roane	Oh. Sure, go ahead.	Right	NONE
+re3	Ace	Why do you gotta read all these books? Do they not preload you with all the info you need?	Left	NONE
+re3	Roane	No?	Right	NONE
+re3	Roane	We’re born just like all you living things are.	Right	NONE
+re3	Roane	So we learn like you all do. We even have personalities and everything.	Right	NONE
+re3	Roane	Not everyone down here likes being down here.	Right	NONE
+re3	Roane	I mean, some do, but not all.	Right	NONE
+re3	Ace	Interesting.	Left	NONE
+re3	Ace	Anyway, your dilemma with morality and whatnot.	Left	NONE
+re3	Roane	I think I hate these books.	Right	NONE
+re3	Roane	I had no idea being a human was so complicated. I talked to some tortured souls and they all had really complicated lives. It honestly sounds like living is hell.	Right	NONE
+re3	Roane	It is for some people.	Right	NONE
+re3	Roane	So does… any of this matter?	Right	NONE
+re3	Roane	There are some real real bad people in your world, but…	Right	NONE
+re3	Roane	What does torturing them even do?	Right	NONE
+re3	Roane	And what if we torture the wrong people?	Right	NONE
+re3	Roane	Do you want to know how you ended up here?	Right	NONE
+re3	Ace	Sure.	Left	NONE
+re3	Roane	When you died, your soul got confused with someone else's. You were on a street car and when it crashed you both died at the same time.	Right	NONE
+re3	Roane	Your souls got sent to the wrong places and now you’re here and that guy is up there. Some-	Right	NONE
+re3	Ace	Mob boss. I know.	Left	NONE
+re3	Roane	What?	Right	NONE
+re3	Ace	I was coming here no matter what. I figured that I would find him down here, but if he’s up there, then I guess I’ll just have to march my way to heaven to finish the job I wasn’t able to in life.	Left	NONE
+re3	Ace	… What are you trying to say?	Left	NONE
+re3	Ace	I was going to kill him. That’s what I’m saying.	Left	NONE
+re3	Roane	…	Right	NONE
+re3	Ace	He took everything from my community. He killed the person that used to be my best friend.	Left	NONE
+re3	Ace	So I had to send him to his grave.	Left	NONE
+re3	Ace	And I don’t care if you think it was right or wrong.	Left	NONE
+re3	Ace	If I could go back to that moment, I wouldn’t have hesitated.	Left	NONE
+re3	Roane	Wow, Ace. I don’t really know what to say.	Right	NONE
+re3	Roane	Um. Here, take this.	Right	NONE
+re3	Ace	Thanks.	Left	NONE
+				
+re4	Ace	More questions today?	Left	NONE
+re4	Roane	No.	Right	NONE
+re4	Roane	I think… maybe trying to figure out what is good and bad in all scenarios is hard.	Right	NONE
+re4	Roane	Maybe it’s not something I can understand just by reading my manuals or grilling you.	Right	NONE
+re4	Roane	I don’t think I’m even supposed to say this, but I think this whole system is fucked.	Right	NONE
+re4	Ace	It amazes me that you ain’t even about all the death and killin and torturin.	Left	NONE
+re4	Ace	I bet the demons who like that stuff have a lot of fun. You should try not bein such a stick in the mud.	Left	NONE
+re4	Roane	Ouch.	Right	NONE
+re4	Roane	But then who would ask you overly complicated questions about reality?	Right	NONE
+re4	Roane	And who would you have to help you complete your little mission?	Right	NONE
+re4	Ace	Oh? So now killin isn’t so bad?	Left	NONE
+re4	Roane	I feel like that guy should probably be down here is all.	Right	NONE
+re4	Roane	I have about a century longer to figure out what I think of torture now, but that guy cannot be in heaven. I know that for sure.	Right	NONE
+re4	Ace	Well.	Left	NONE
+re4	Ace	Thank you, Roane.	Left	NONE
+re4	Roane	Huh? Why are you thanking me?	Right	NONE
+re4	Ace	For helping me.	Left	NONE
+re4	Roane	Hey, I’m not just helping you! I’m helping set things right.	Right	NONE
+re4	Roane	And I think you should be able to get off on the technicality of not actually assassinating him.	Right	NONE
+re4	Roane	I mean… think of how many people he would still be torturing if he hadn’t been killed. If it wasn’t for the accident, I guess dying by your hands would’ve been pretty decent karma.	Right	NONE
+re4	Ace	Well, I’m glad you have your own answer on how ya feel.	Left	NONE
+re4	Roane	I think thinking about the morality of all this is hurting my brain, but I know I want to help you. So that’s what I’m going to do.	Right	NONE
+re4	Roane	Take this. Let’s get this show on the road.	Right	NONE
+				
+ce1	Coyote	(A spectral form in the shape of a coyote stands in front of you. It looks so lifelike you forget for a moment that you’ve died.)	Right	NONE
+ce1	Coyote	(It stares at you from a few feet away, questioning if it should come closer.)	Right	NONE
+ce1	Coyote	(It sniffs the air.)	Right	NONE
+ce1	Coyote	(It steps back, glaring for a moment, then runs away into the foliage nearby.)	Right	NONE
+ce1	Ace	What did I do? You came up to me.	Left	NONE
+ce1	Coyote	(Its glare isn’t improved by your anger.)	Right	NONE
+ce1	Ace	If I smell bad, maybe consider that everythin’ down here smells bad. It’s hell. Ain’t much I can do about it.	Left	NONE
+ce1	Coyote	(It leaves, leaving you alone again.)	Right	NONE
+ce1	Coyote	(Somehow, letting off some steam by yelling at the coyote makes you feel better, you feel like you can let something go.)	Right	NONE
+				
+ce2	Coyote	(The spirit stares at you. It sits several feet away from you.)	Right	NONE
+ce2	Ace	This again.	Left	NONE
+ce2	Ace	What? What do you want?	Left	NONE
+ce2	Coyote	(It stomps the ground just once, then continues to sit still.)	Right	NONE
+ce2	Ace	(You feel compelled to get down to eye level with it. You put one knee to the ground.)	Left	NONE
+ce2	Coyote	(Its stare is piercing. You can see your reflection deep in its eyes as it approaches.)	Right	NONE
+ce2	Coyote	(Looking at yourself, you feel uneasy. It’s still you. Nothing has changed. You expected to look in much worse repair, but somehow still looking like yourself doesn’t ease your heart.)	Right	NONE
+ce2	Ace	(You see the creases on your face. The anger in your own eyes reflected back at you.)	Left	NONE
+ce2	Ace	(It feels like the anger is eating away at you like acid.)	Left	NONE
+ce2	Ace	(You’re angry at the world. You’re angry at yourself for not being stronger. You’re angry you died.)	Left	NONE
+ce2	Ace	(And you’re sad.)	Left	NONE
+ce2	Ace	(And now you’re crying.)	Left	NONE
+ce2	Coyote	(The coyote finally stops in front of you. It places its chin on your raised knee.)	Right	NONE
+ce2	Ace	(You pull the coyote close, holding it as you cry.)	Left	NONE
+ce2	Ace	(Letting yourself feel your emotions has made you feel lighter. When you finally get up, you pet the coyote on the head and head off ready to face what’s to come.)	Left	NONE
+				
+ce3	Ace	Hey there, you.	Left	NONE
+ce3	Coyote	(The coyote sniffs the air around you as it approaches, circling you.)	Right	NONE
+ce3	Ace	(You kneel down.)	Left	NONE
+ce3	Ace	Thank you for before, friend. I guess I really needed a cry.	Left	NONE
+ce3	Coyote	YIP!	Right	NONE
+ce3	Coyote	(It rubs up against you as it circles you joyously.)	Right	NONE
+ce3	Ace	Strange to see such a friendly animal down here. But I’m glad I get a little peace and quiet.	Left	NONE
+ce3	Ace	I think that maybe it’s hard to carry all these feelins.	Left	NONE
+ce3	Ace	I wanted more outta my life.	Left	NONE
+ce3	Ace	Even when I knew it was gonna end, I had hope that somehow I’d make it through. Maybe fall in love, maybe dance and drink and gamble some more.	Left	NONE
+ce3	Ace	Man, I miss cards. Playin them I mean, not… fightin with em.	Left	NONE
+ce3	Coyote	(The coyote sits and listens intently.)	Right	NONE
+ce3	Ace	But I ain’t gettin it back. This is what I got now. I got you, I got Roane, and I got this fight ahead of me.	Right	NONE
+ce3	Ace	(You feel a weight lift off of your shoulders. You’re ready to continue.)	Right	NONE
+				
+ae1	Anne	(There’s a spirit in this room. A young girl in tattered dress attire.)	Right	NONE
+ae1	Anne	Oh! I didn’t see you there. Wow, you look strangely… concrete for someone down. You must have all your memories from when you were alive.	Right	NONE
+ae1	Ace	Maybe.	Left	NONE
+ae1	Anne	I’ve seen a few other spirits that have more form than I do. I want to get a more solid body like them.	Right	NONE
+ae1	Anne	Hey, do you think you could give me a hand?	Right	NONE
+ae1	Anne	I know it’s hell and all. For all I know you’re some serial killer or bank robber or just a really mean person who probably doesn’t want to help me.	Right	NONE
+ae1	Anne	And for all YOU know I might actually be the super dangerous one.	Right	NONE
+ae1	Anne	And I would say, hey, that makes two of us who know nothing about me.	Right	NONE
+ae1	Anne	So, help a gal out?	Right	NONE
+ae1	Ace	What’s in it for me? Don’t you think someone in hell might be the kind of person to want compensation?	Left	NONE
+ae1	Anne	Hm.	Right	NONE
+ae1	Anne	Well, there isn’t real money down here as far as I know, and I can’t pick stuff up currently, so… Maybe I can give you something after you help me?	Right	NONE
+ae1	Ace	Sure, I’ll take it.	Left	NONE
+ae1	Anne	Okay great!	Right	NONE
+ae1	Anne	Hm, I feel kinda hazy right now, how about you come back later. We’ll talk then.	Right	NONE
+ae1	Anne	(As she vanishes, two cards fall to the ground.)	Right	NONE
+				
+ae2	Anne	You came back!	Right	NONE
+ae2	Ace	Yup.	Left	NONE
+ae2	Anne	Okay, I did some research. We just need to sit here and hold hands.	Right	NONE
+ae2	Ace	…	Left	NONE
+ae2	Ace	Not happening.	Left	NONE
+ae2	Anne	No! Trust me. Come on, just sit down.	Right	NONE
+ae2	Anne	(The two of you sit down cross-legged in front of each other and you hold out your hands. Her hands are passing through yours, which is supposedly holding hands in a way.)	Right	NONE
+ae2	Anne	Now close your eyes. We’re going back into my mind. You’re going to have to guide me through my head.	Right	NONE
+ae2	Ace	(Suddenly, your eyes are open, yet not open.)	Left	NONE
+ae2	Anne	(It’s like you’re lucid dreaming. You and Anne, who is now in full human form, are sitting across from you at an old wooden desk. There are stacks of files in front of you.)	Right	NONE
+ae2	Anne	(Each file is labeled with what the file contains. Embarrassing secrets, the entire history of Anne’s bowel movements, every sneeze, every yawn, it’s all cataloged. Most of it you don’t even bother to look at.)	Right	NONE
+ae2	Anne	(The two of you spend a lot of time desperately sifting to find something relevant.)	Right	NONE
+ae2	Ace	(Then you see it.)	Left	NONE
+ae2	Anne	Hey, did you find something? I found my birth records!	Right	NONE
+ae2	Ace	(You hesitate, then pass the file over. It’s labeled “Mob affiliation and subsequent death”.)	Left	NONE
+ae2	Anne	(You watch as Anne pours over the files and pages. When she’s finally read enough, she gets up and sits a bit away from you in the black void.)	Right	NONE
+ae2	Ace	(You walk over and sit down next to her.)	Left	NONE
+ae2	Anne	I was a rich girl who ran away from home.	Right	NONE
+ae2	Anne	And I didn’t have any money… but I had friends… and I gambled… and I drank… and I danced…	Right	NONE
+ae2	Anne	I guess at some point the money I had ran dry. I was in debt and needed to do something to make quick money.	Right	NONE
+ae2	Anne	I didn’t want to sell myself, so I dressed up as a man and started working for the mob.	Right	NONE
+ae2	Anne	I did… horrible things for them… why did I do any of that? Why was money ever that important?	Right	NONE
+ae2	Anne	Why didn’t I just lean on my friends?	Right	NONE
+ae2	Anne	(She starts sobbing.)	Right	NONE
+ae2	Anne	I killed people. I hurt people. For WHAT?	Right	NONE
+ae2	Anne	And all of it just to die in a shoot out. Why? Why did I have to do that?	Right	NONE
+ae2	Anne	(She’s shaking and crying.)	Right	NONE
+ae2	Anne	I get it now. Why I’m down here.	Right	NONE
+ae2	Anne	I… I deserve this.	Right	NONE
+ae2	Ace	(You don’t say anything. You don’t know what to say.)	Left	NONE
+ae2	Ace	(A small part of you wishes you could say she didn't deserve this, but you can't find it in you to say anything.)	Left	NONE
+ae2	Anne	(When you finally awaken from the trance, Anne is sitting in front of you, holding your hands. She quickly bolts up and away from you without another word.)	Right	NONE
+ae2	Ace	(Two cards are laying on the ground.)	Left	NONE
+				
+ae3	Anne	(She’s back, pacing back and forth.)	Right	NONE
+ae3	Anne	Oh. I didn’t think I would see you again.	Right	NONE
+ae3	Anne	But then again, maybe you came back because you did something way worse than me and I don’t scare you.	Right	NONE
+ae3	Ace	Oh no. You’re definitely worse than me.	Left	NONE
+ae3	Anne	(She looks stunned and uncomfortable.)	Right	NONE
+ae3	Anne	Huh. I guess that’s fair.	Right	NONE
+ae3	Ace	I tried to kill someone. I didn’t end up doing it though.	Left	NONE
+ae3	Anne	Oh. And you got down here for that?	Right	NONE
+ae3	Ace	Who knows. Could’ve been anything. I’m not dwelling on it.	Left	NONE
+ae3	Ace	There’s nothin I can do now.	Left	NONE
+ae3	Anne	But don’t you feel miserable?	Right	NONE
+ae3	Ace	Sure. I do feel miserable that I’m dead. Not particularly about the attempted murderin though.	Left	NONE
+ae3	Anne	But why?	Right	NONE
+ae3	Ace	The guy deserved it.	Left	NONE
+ae3	Anne	Well I’m sorry I can’t be as relaxed as you! I was a genuinely bad person.	Right	NONE
+ae3	Ace	Yeah, you were at one point. You were also a desperate person someone preyed on.	Left	NONE
+ae3	Ace	And before all that you were someone else entirely.	Left	NONE
+ae3	Anne	That doesn’t excuse anything I did.	Right	NONE
+ae3	Ace	No. It don’t.	Left	NONE
+ae3	Ace	And I ain’t tellin you to not feel bad about it, but maybe also try to remember who you were before that.	Left	NONE
+ae3	Ace	Hell ain’t exactly a great place to start your life for eternity over in, but…	Left	NONE
+ae3	Ace	In a way, you got a second chance here to do somethin else.	Left	NONE
+ae3	Anne	I guess you’re right.	Right	NONE
+ae3	Anne	I just don’t know what to do with myself.	Right	NONE
+ae3	Anne	I was so desperate to find the answer to why I was down here because I thought maybe I would find out that secretly… I wasn’t supposed to be here.	Right	NONE
+ae3	Anne	But I guess none of that matters. Belong here, don’t belong here, I’m here now and that’s what matters.	Right	NONE
+ae3	Anne	So I guess, I’ll have to figure it out from here.	Right	NONE
+ae3	Anne	I just wish I could say sorry to my friends. I abandoned them when I should’ve just told them what was happening.	Right	NONE
+ae3	Anne	I was so scared they’d tell me to go back to my family and my arranged marriage… but none of them were the type.	Right	NONE
+ae3	Anne	I would give anything to remember their faces…	Right	NONE
+ae3	Ace	…	Left	NONE
+ae3	Anne	Thank you, Ace. I’ll find my way from here.	Right	NONE
+ae3	Ace	Take care, Anne.	Left	NONE
+ae3	Anne	(As she vanishes, two cards fall to the ground.)	Right	NONE

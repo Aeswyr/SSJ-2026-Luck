@@ -4,19 +4,26 @@ using UnityEngine.Events;
 public class InteractableController : MonoBehaviour
 {
     [SerializeField] private UnityEvent onInteract;
+    [SerializeField] private UnityEvent onEnter, onExit;
+
+    [SerializeField] private Collider2D col;
+    [SerializeField] private bool singleUse;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        onEnter?.Invoke();
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        
+        onExit?.Invoke();
     }
 
     public void OnInteract()
     {
         onInteract.Invoke();
+
+        if (singleUse)
+            col.enabled = false;
     }
 
 }

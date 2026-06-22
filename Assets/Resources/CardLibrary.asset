@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1db55bd937c61840ad0c6a0cbc88aca, type: 3}
   m_Name: CardLibrary
   m_EditorClassIdentifier: Assembly-CSharp::CardLibrary
+  path: ./Assets/Resources/SSJ_Luck_26 - CardDescriptions.tsv
   cards:
   - name: High Card
     id: 0
@@ -40,7 +41,7 @@ MonoBehaviour:
     charges: 2
     baseDamage: 1
     shouldStick: 1
-  - name: The Fool
+  - name: Fool
     id: 3
     rarity: 3
     icon: {fileID: 6405907386155496259, guid: e73e231458a79864abbb4b2624cfaedf, type: 3}

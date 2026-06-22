@@ -1,0 +1,21 @@
+ID	Description
+HIGH_CARD	Deal 3 damage. 4 uses.
+PAIR	Throw 2 cards. Deal 2 damage each. 3 uses. 
+FULL_HOUSE	Throw 5 cards in a cone. Deal 1 damage each. 2 uses.
+JOKER	Throw a fast card. Deal 0 damage.
+HIDDEN_ACE	Throw a card that pierces the enemy. Deal 10 damage, but doesn't stick.
+REND	Remove all stuck cards. Deal 2 damage per removed card.
+RECALL	Remove all stuck cards. Draws the number of cards removed divided by 3. Draw 1 additional card.
+HOMECOMING	Remove all stuck cards. Manifests 2 Fools to hand per 2 cards removed. 
+ALL_IN	Discard your hand. Throw 4 cards per each discarded card.
+FINISHING_STROKE	When discarding a card, enhance Finishing Stroke adding 3 damage. Begins with 4 damage.
+CALLED_SHOT	Mark target. Multiply the damage of the next card to hit.
+CALLBACK	Mark target. Manifest a Fool per 2 hits.
+PEERLESS_FOCUS	Mark target. Draws a card per 4 hits on the marked target.
+DOUBLE_DOWN	Mark target. Target takes damage over time equal to the number of stuck cards divided by 3.
+THOUSAND_CUTS	Mark target. Target takes 1 extra damage per hit. Lasts until target dies. Remove this card from deck until the end of room after use.
+DECK_FIXING	Draw 2 extra cards when drawing new hand. Remove this card from deck until the end of room after use.
+CLOWN_CAR	Manifest 3 Fools when drawing new hand. Remove this card from deck until the end of room after use.
+MISSED_CONNECTION	Dodging an attack manifests a Fool. 
+INSIGHT	Draw 2 cards.
+FOOLIN_AROUND	Manifest 3 Fools.

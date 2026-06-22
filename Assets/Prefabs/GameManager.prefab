@@ -47,7 +47,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   playerPrefab: {fileID: 454432809615883325, guid: be2de3cb6be8fac4f83cd4ca45162f91, type: 3}
   levels:
+  - {fileID: 2676629492061376651, guid: a4e0b2a1539b5c546b018b70b23218fc, type: 3}
+  - {fileID: 2676629492061376651, guid: ec9056eeed5dcc44b8c5f3135f8db440, type: 3}
+  - {fileID: 2676629492061376651, guid: 05f034d9d0dea55499325a3ee1ec6faa, type: 3}
   - {fileID: 2676629492061376651, guid: 0a6f3aec3f752bb4a92c03e9b514ca84, type: 3}
+  - {fileID: 2676629492061376651, guid: 30b94b27034da874097ac12cfe3425a3, type: 3}
+  - {fileID: 2676629492061376651, guid: 492ef8ba86006fd4ebac170d90a103f5, type: 3}
+  - {fileID: 2676629492061376651, guid: e2fb1ab474eb435488d05e9a37a173cf, type: 3}
+  - {fileID: 2676629492061376651, guid: c59e2b1bdcd749c419c15e93677c5665, type: 3}
 --- !u!114 &5805419451833955563
 MonoBehaviour:
   m_ObjectHideFlags: 0

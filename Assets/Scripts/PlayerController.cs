@@ -587,6 +587,36 @@ public class PlayerController : MonoBehaviour
 		ResetToBaseline();
 	}
 
+	public void RemoveCardFromDeck(CardID card)
+	{
+		List<string> deck = new(startingDeck.Split(','));
+		for (int i = 0; i < deck.Count; i++)
+		{
+			if (int.Parse(deck[i]) == (int)card)
+			{
+				deck.RemoveAt(i);
+				break;
+			}
+		}
+
+		startingDeck = deck[0];
+		for (int i = 1; i < deck.Count; i++) {
+			startingDeck += ',' + deck[i]; 
+		}
+
+		ResetToBaseline();
+	}
+
+	public List<CardID> GetBaselineDeck()
+	{
+		List<CardID> deck = new();
+
+		foreach (var index in startingDeck.Split(','))
+			deck.Add((CardID)int.Parse(index));
+
+		return deck;
+	}
+
 	public void ToggleInputLock(bool locked)
 	{
 		inputsLocked = locked;

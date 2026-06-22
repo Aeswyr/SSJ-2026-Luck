@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c82c0c977ffc049a85359dc9d6dfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BootHandler
+  cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
   conversationLibrary: {fileID: 11400000, guid: 583cdba2fc7332e4fbc4ec571faf8792, type: 2}
 --- !u!1001 &2143230041
 PrefabInstance:

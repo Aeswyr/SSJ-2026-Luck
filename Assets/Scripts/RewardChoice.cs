@@ -11,31 +11,47 @@ public class RewardChoice : MonoBehaviour
     [SerializeField] private SpriteRenderer[] cardFrames;
     [SerializeField] private GameObject node;
 
-    [SerializeField] private bool useDialog;
+    [SerializeField] private string dialog;
+    [SerializeField] private CardTooltip tooltip;
     private CardData[] rewards = new CardData[3];
 
     public void Start()
     {
-        int roll = Random.Range(0, 100);
+        tooltip.gameObject.SetActive(false);
 
-        if (roll < 50) 
-            rarity = CardRarity.COMMON;
-        else if (roll < 85) 
-            rarity = CardRarity.UNCOMMON;
-        else 
-            rarity = CardRarity.RARE;
-        
-        foreach (var frame in cardFrames)
-            frame.sprite = frameSprites[(int)rarity];
+        if (rarity == CardRarity.NONE) {
+            int roll = Random.Range(0, 100);
 
-        var cardSelection = cardLibrary.GetAllCardsOfRarity(rarity);
-        for (int i = 0; i < rewards.Length; i++)
+            if (roll < 5) 
+                rarity = CardRarity.RARE;
+        }     
+
+        if (rarity != CardRarity.NONE){
+            var cardSelection = cardLibrary.GetAllCardsOfRarity(rarity);
+            for (int i = 0; i < rewards.Length; i++)
+            {
+                int index = Random.Range(0, cardSelection.Count);
+                rewards[i] = cardSelection[index];
+                cardSelection.RemoveAt(index);
+
+                cardOptions[i].sprite = rewards[i].icon;
+                cardFrames[i].sprite = frameSprites[(int)rewards[i].rarity];
+            }
+        } else
         {
-            int index = Random.Range(0, cardSelection.Count);
-            rewards[i] = cardSelection[index];
-            cardSelection.RemoveAt(index);
+            var commonSelection = cardLibrary.GetAllCardsOfRarity(CardRarity.COMMON);
+            var uncommonSelection = cardLibrary.GetAllCardsOfRarity(CardRarity.UNCOMMON);
 
-            cardOptions[i].sprite = rewards[i].icon;
+            for (int i = 0; i < rewards.Length; i++)
+            {
+                var cardSelection = (Random.Range(0, 100) < 80) ? ref commonSelection : ref uncommonSelection;
+                int index = Random.Range(0, cardSelection.Count);
+                rewards[i] = cardSelection[index];
+                cardSelection.RemoveAt(index);
+
+                cardOptions[i].sprite = rewards[i].icon;
+                cardFrames[i].sprite = frameSprites[(int)rewards[i].rarity];
+            }
         }
         
         node.SetActive(true);
@@ -45,13 +61,17 @@ public class RewardChoice : MonoBehaviour
 
     public void OpenReward()
     {
-        if (useDialog)
-            DialogManager.Instance.PlayConversation($"cardselecthi{Random.Range(1, 5)}");
+        if (string.IsNullOrEmpty(dialog))
+            FinishOpen();
+        else
+            DialogManager.Instance.PlayConversation(dialog, FinishOpen);
+            
+        void FinishOpen() {
+            node.SetActive(false);
 
-        node.SetActive(false);
-
-        foreach (var card in cardOptions)
-            card.gameObject.SetActive(true);
+            foreach (var card in cardOptions)
+                card.gameObject.SetActive(true);
+        }
     }
 
     public void ChooseRewardA()
@@ -61,8 +81,7 @@ public class RewardChoice : MonoBehaviour
         foreach (var card in cardOptions)
             card.gameObject.SetActive(false);
 
-        if (useDialog)
-            DialogManager.Instance.PlayConversation($"cardselectbye{Random.Range(1, 5)}");
+        tooltip.gameObject.SetActive(false);
     }
 
     public void ChooseRewardB()
@@ -72,8 +91,7 @@ public class RewardChoice : MonoBehaviour
         foreach (var card in cardOptions)
             card.gameObject.SetActive(false);
 
-        if (useDialog)
-            DialogManager.Instance.PlayConversation($"cardselectbye{Random.Range(1, 5)}");
+        tooltip.gameObject.SetActive(false);
     }
 
     public void ChooseRewardC()
@@ -83,7 +101,35 @@ public class RewardChoice : MonoBehaviour
         foreach (var card in cardOptions)
             card.gameObject.SetActive(false);
 
-        if (useDialog)
-            DialogManager.Instance.PlayConversation($"cardselectbye{Random.Range(1, 5)}");
+        tooltip.gameObject.SetActive(false);
+    }
+
+    public void HoverRewardA()
+    {
+        tooltip.LoadCard(rewards[0].id);
+
+        tooltip.transform.localPosition = new Vector2(-4, tooltip.transform.localPosition.y);
+        tooltip.gameObject.SetActive(true);
+    }
+
+    public void HoverRewardB()
+    {
+        tooltip.LoadCard(rewards[1].id);
+
+        tooltip.transform.localPosition = new Vector2(0, tooltip.transform.localPosition.y);
+        tooltip.gameObject.SetActive(true);
+    }
+
+    public void HoverRewardC()
+    {
+        tooltip.LoadCard(rewards[2].id);
+
+        tooltip.transform.localPosition = new Vector2(4, tooltip.transform.localPosition.y);
+        tooltip.gameObject.SetActive(true);
+    }
+
+    public void EndHover()
+    {
+        tooltip.gameObject.SetActive(false);
     }
 }

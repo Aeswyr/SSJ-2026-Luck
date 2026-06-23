@@ -8,6 +8,7 @@ public class ProjectileController : MonoBehaviour
     private bool doesPierce;
     private Transform owner;
     private HitData payload;
+    bool isEnemy;
     
     public ProjectileController SetVelocity(float x, float y = 0)
     {
@@ -34,6 +35,7 @@ public class ProjectileController : MonoBehaviour
     {
         this.owner = owner;
         this.payload = payload;
+        isEnemy = !owner.TryGetComponent(out PlayerController enemy);
     }
 
 
@@ -44,10 +46,16 @@ public class ProjectileController : MonoBehaviour
 
     public void OnEntityImpact(Collider2D collider)
     {
+        if (isEnemy && !collider.transform.parent.TryGetComponent(out PlayerController player))
+            return;
+
         if (collider.transform.parent == owner)
             return;
 
-        collider.transform.GetComponent<HurtboxController>().OnHit(payload);
+        var hurtbox = collider.transform.GetComponent<HurtboxController>();
+        hurtbox.OnHit(payload);
+        if (hurtbox.intangible)
+            return;
 
         if (doesPierce)
             return;

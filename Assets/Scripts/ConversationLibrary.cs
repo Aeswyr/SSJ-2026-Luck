@@ -41,7 +41,7 @@ public class ConversationLibrary : ScriptableObject
                     currentConvo.key = param[0];
                 }
                 
-                currentConvo.lines.Add(new DialogLine().Parse(param));
+                currentConvo.lines.Add(new DialogLine().Parse(param, this));
             }
         }
 
@@ -58,7 +58,7 @@ public class ConversationLibrary : ScriptableObject
 
     public Sprite GetPortrait(string key)
     {
-        return portraitTable[key];
+        return portraitTable.ContainsKey(key) ? portraitTable[key] : null;
     }
 
     [Serializable] private struct Portrait
@@ -80,12 +80,15 @@ public struct DialogLine
     public string name;
     public string text;
     public bool flip;
+    public Sprite portrait;
 
-    public DialogLine Parse(string[] param)
+    public DialogLine Parse(string[] param, ConversationLibrary library)
     {
         name = param[1];
         text = param[2];
-        flip =  param[3].ToLower().Equals("right");
+        portrait = library.GetPortrait(param[3]);
+        flip =  param[4].ToLower().Equals("right");
+        
         return this;
     }
 }

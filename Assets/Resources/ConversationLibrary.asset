@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConversationLibrary
   path: ./Assets/Resources/SSJ_Luck_26 - Dialog.tsv
   portraits:
-  - name: test
-    sprite: {fileID: 0}
+  - name: ace_neutral
+    sprite: {fileID: -3487438023490082363, guid: 30327a54dccd8dd4597953e2b13f50b4, type: 3}
+  - name: roane_neutral
+    sprite: {fileID: -3487438023490082363, guid: 31b6d85fe2c174146a53b44b1ef75eac, type: 3}
+  - name: coyote_neutral
+    sprite: {fileID: -3487438023490082363, guid: 27b149b8563efc44cafe3417d71553c5, type: 3}
+  - name: anne_neutral
+    sprite: {fileID: -3487438023490082363, guid: 8cd23175acda2e446be8dfccc74db415, type: 3}

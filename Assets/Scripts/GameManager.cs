@@ -53,7 +53,7 @@ public class GameManager : Singleton<GameManager>
                                 LevelType.COMBAT, LevelType.COMBAT};
         if (levelIndex == 5)
         {
-            validNextLevels = new (){LevelType.HEAL};
+            validNextLevels = new (){LevelType.HEAL, LevelType.REMOVE_CARD};
         } else if (levelIndex == 6)
         {
             validNextLevels = new (){LevelType.BOSS};

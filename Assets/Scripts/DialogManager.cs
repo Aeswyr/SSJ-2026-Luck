@@ -3,13 +3,16 @@ using System;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class DialogManager : Singleton<DialogManager>
 {
     [SerializeField] private ConversationLibrary conversationLibrary;
     [SerializeField] private TextMeshProUGUI bodyText;
     [SerializeField] private TextMeshProUGUI nameplateLeft;
+    [SerializeField] private Image portraitLeft;
     [SerializeField] private TextMeshProUGUI nameplateRight;
+    [SerializeField] private Image portraitRight;
     [SerializeField] private GameObject dialogParent;
 
     private Conversation? activeDialog;
@@ -63,11 +66,13 @@ public class DialogManager : Singleton<DialogManager>
 
 
         conversationsHeard.Add(key);
+
+        InputHandler.Instance.FlushBuffer();
     }
 
     public void FixedUpdate()
     {
-        if (activeDialog != null && InputHandler.Instance.interact.pressed)
+        if (activeDialog != null && InputHandler.Instance.any.pressed)
         {
             conversationIndex++;
             if (conversationIndex < activeDialog.Value.lines.Count)
@@ -91,14 +96,30 @@ public class DialogManager : Singleton<DialogManager>
 
         if (line.flip)
         {
-            nameplateLeft.transform.parent.gameObject.SetActive(false);
-            nameplateRight.transform.parent.gameObject.SetActive(true);
+            nameplateLeft.transform.parent.parent.gameObject.SetActive(false);
+            nameplateRight.transform.parent.parent.gameObject.SetActive(true);
             nameplateRight.text = line.name;
+            if (line.portrait != null)
+            {
+                portraitRight.sprite = line.portrait;
+                portraitRight.SetNativeSize();
+                portraitRight.color = Color.white;
+            } else
+                portraitRight.color = Color.clear;
+            
+            
         } else
         {
-            nameplateRight.transform.parent.gameObject.SetActive(false);
-            nameplateLeft.transform.parent.gameObject.SetActive(true);
+            nameplateRight.transform.parent.parent.gameObject.SetActive(false);
+            nameplateLeft.transform.parent.parent.gameObject.SetActive(true);
             nameplateLeft.text = line.name;
+            if (line.portrait != null)
+            {
+                portraitLeft.sprite = line.portrait;
+                portraitLeft.SetNativeSize();
+                portraitLeft.color = Color.white;
+            } else
+                portraitLeft.color = Color.clear;
         }
     }
 }

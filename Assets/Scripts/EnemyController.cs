@@ -1,0 +1,110 @@
+using UnityEngine;
+
+public class EnemyController : MonoBehaviour
+{
+    [SerializeField] private Rigidbody2D rbody;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private HurtboxController hurtbox;
+    [SerializeField] private float preferredRange, speed;
+    [SerializeField] private bool flee;
+    [SerializeField] private float attackCooldown, specialCooldown;
+    [SerializeField] private int attackRange, specialRange;
+
+    [Space]
+    [Header("attack prefabs")]
+    [SerializeField] private GameObject attackPrefab_WingDemon;
+    private float nextAttack, nextSpecial;
+    private PlayerController target;
+    private bool acting;
+    private int facing;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        nextAttack = Time.time + Random.Range(0, attackCooldown);
+        nextSpecial = Time.time + Random.Range(0, specialCooldown);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (target != null)
+        {
+            facing = (int)Mathf.Sign(target.transform.position.x - transform.position.x);
+            spriteRenderer.flipX = facing >= 0;
+            float dist = Vector2.Distance(transform.position, target.transform.position);
+
+            if (!acting) {
+
+                if (Time.time > nextSpecial && dist < specialRange)
+                {
+                    animator.Play("special");
+                    acting = true;
+                    nextSpecial = Time.time + specialCooldown * Random.Range(0.8f, 1.2f);
+                } else if (Time.time > nextAttack && dist < attackRange)
+                {
+                    animator.Play("attack");
+                    acting = true;
+                    nextAttack = Time.time + attackCooldown * Random.Range(0.8f, 1.2f);
+                } else {
+                    rbody.linearVelocityX = dist > preferredRange 
+                        ? facing * speed : (flee ? (dist < preferredRange - 1 ? facing * -speed : 0) : 0);
+                    if (!animator.GetCurrentAnimatorStateInfo(0).IsName("move"))
+                    {
+                        animator.Play("move");
+                    }
+                }
+            }
+        } else
+        {
+            target = FindAnyObjectByType<PlayerController>();
+        }
+    }
+
+    public void EndAction()
+    {
+        acting = false;
+        hurtbox.invincible = false;
+    }
+
+    public void OnHPEmpty()
+    {
+        Destroy(gameObject);
+    }
+
+    public void FireAttack_WingDemon()
+    {
+        var attack = Instantiate(attackPrefab_WingDemon, transform.position + facing * 2 * Vector3.right, Quaternion.identity);
+        attack.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 16)
+                    .SetLifetime(3f)
+					.Init(transform, new HitData()
+                    {
+                        baseDamage = 1
+                    });
+    
+    }
+
+    public void FireSpecial_WingDemon()
+    {
+        rbody.linearVelocityX = -facing * 18;
+    }
+
+    public void FireAttack_AnglerDemon()
+    {
+        var attack = Instantiate(attackPrefab_WingDemon, transform.position + facing * 2 * Vector3.right, Quaternion.identity);
+        attack.GetComponent<ProjectileController>()
+					.SetVelocity(facing * 0.5f)
+                    .SetLifetime(1f)
+					.Init(transform, new HitData()
+                    {
+                        baseDamage = 1
+                    });
+    
+    }
+
+    public void FireSpecial_AnglerDemon()
+    {
+        hurtbox.invincible = true;
+    }
+}

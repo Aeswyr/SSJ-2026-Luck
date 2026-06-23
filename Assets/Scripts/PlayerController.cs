@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GroundedCheck ground;
 	[SerializeField] private UnitVFXController vfxController;
 	[SerializeField] private InteractboxController interactBox;
+	[SerializeField] private HurtboxController hurtbox;
 	private PlayerHUDController hudController;
 
 	[Space]
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
 	private int handSize => hand.Count;
 
 	private UnityEvent onDrawHand = new();
+	private UnityEvent onDodge = new();
 
 	private bool inputsLocked;
 
@@ -62,6 +64,8 @@ public class PlayerController : MonoBehaviour
         input = InputHandler.Instance;
 
 		ResetToBaseline();
+
+		hudController.SetHealth(3);
     }
 
     void FixedUpdate()
@@ -145,6 +149,8 @@ public class PlayerController : MonoBehaviour
 			move.OverrideCurve(dodgeSpeed, dodgeCurve, facing);
 
 			StartAction();
+
+			hurtbox.intangible = true;
 		}
 
 		if ((!acting || cancellable) && (input.reload.pressed || (handSize == 0 && input.attack.pressed))) {
@@ -195,6 +201,7 @@ public class PlayerController : MonoBehaviour
 	{
 		acting = true;
 		cancellable = false;
+		hurtbox.intangible = false;
 	}
 
 	public void EndAction()
@@ -205,6 +212,7 @@ public class PlayerController : MonoBehaviour
 			move.StartDeceleration();
 		}
 
+		hurtbox.intangible = false;
 		acting = false;
 		cancellable = false;
 	}
@@ -446,6 +454,11 @@ public class PlayerController : MonoBehaviour
 				}
 				break;
 			case CardID.MISSED_CONNECTION:
+				onDodge.AddListener(CardAction_MissedConnection);
+				void CardAction_MissedConnection()
+				{
+					AddCardToHand(CardID.JOKER);
+				}
 				break;
     		case CardID.INSIGHT:
 				DrawCard();
@@ -459,6 +472,30 @@ public class PlayerController : MonoBehaviour
 			default:
 				break;
 		}
+	}
+
+	public void OnRecieveHit(int hp)
+	{
+		
+	}
+
+	public void OnHealthChange(int hp)
+	{
+		hudController.SetHealth(hp);
+	}
+
+	public void OnDeath()
+	{
+		ToggleInputLock(true);
+		animator.SetTrigger("dead");
+
+		hudController.ShowDeathScreen();
+	}
+
+	public void OnDodge()
+	{
+		VFXManager.Instance.CreateToast("miss", transform.position + new Vector3(Random.Range(-0.75f, 0.75f), 1.5f + Random.Range(0, 0.75f)), Color.lightGray);
+		onDodge?.Invoke();
 	}
 
 	public void CreateReload()
@@ -568,12 +605,12 @@ public class PlayerController : MonoBehaviour
 	public void ResetToBaseline()
 	{
 		onDrawHand.RemoveAllListeners();
+		onDodge.RemoveAllListeners();
 		hand.Clear();
 		discard.Clear();
 		deck.Clear();
 
 		hudController.DiscardAll();
-
 		
 		foreach (var index in startingDeck.Split(','))
 			deck.Add(cardLibrary.GetCard(int.Parse(index)));

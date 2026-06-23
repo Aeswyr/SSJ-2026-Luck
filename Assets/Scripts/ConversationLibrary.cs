@@ -1,14 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ConversationLibrary", menuName = "ScriptableObjects/ConversationLibrary", order = 1)]
 public class ConversationLibrary : ScriptableObject
 {
-    [SerializeField] private string path;
     [SerializeField] List<Portrait> portraits = new ();
     static Dictionary<string, Sprite> portraitTable = new();
     static Dictionary<string, Conversation> conversations;
@@ -19,13 +15,14 @@ public class ConversationLibrary : ScriptableObject
             portraitTable.Add(portrait.name, portrait.sprite);
 
         conversations = new();
-
-        StreamReader dialogReader = new StreamReader(path);
-        dialogReader.ReadLine();// skip title line
+        TextAsset text = Resources.Load<TextAsset>("SSJ_Luck_26 - Dialog");
+        List<string> textLines = new(text.text.Split('\n'));
+        textLines.RemoveAt(0);// skip title line
         string line;
         Conversation currentConvo = default;
-        while ((line = dialogReader.ReadLine()) != null)
+        while (textLines.Count > 0)
         {
+            line = textLines[0];
             string[] param = line.Split('\t');
             if (!string.IsNullOrEmpty(param[0]))
             {
@@ -43,12 +40,13 @@ public class ConversationLibrary : ScriptableObject
                 
                 currentConvo.lines.Add(new DialogLine().Parse(param, this));
             }
+
+            textLines.RemoveAt(0);
         }
 
         Debug.Log($"Added conversation with key [{currentConvo.key}]");
         conversations.Add(currentConvo.key, currentConvo);
 
-        dialogReader.Close();
     }
 
     public Conversation GetConversation(string key)

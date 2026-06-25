@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1db55bd937c61840ad0c6a0cbc88aca, type: 3}
   m_Name: CardLibrary
   m_EditorClassIdentifier: Assembly-CSharp::CardLibrary
-  path: ./Assets/Resources/SSJ_Luck_26 - CardDescriptions.tsv
   cards:
   - name: High Card
     id: 0
@@ -131,7 +130,7 @@ MonoBehaviour:
     charges: 1
     baseDamage: 0
     shouldStick: 0
-  - name: Double Down
+  - name: Bleed Out
     id: 13
     rarity: 2
     icon: {fileID: 4262228339964961926, guid: 4b3b0425f0af11b4194ed43092c58c8c, type: 3}
@@ -190,6 +189,42 @@ MonoBehaviour:
     rarity: 0
     icon: {fileID: 8629111516335876503, guid: 4e2af600bd160444f80c770809d7deaf, type: 3}
     exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Double Down
+    id: 20
+    rarity: 2
+    icon: {fileID: 1325188486430336153, guid: a8dbeedbc717ae042b0c51deea96eea5, type: 3}
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Second Chance
+    id: 21
+    rarity: 2
+    icon: {fileID: 241408431545442005, guid: 48cce8ba51ed5e247afbe0c88178d28b, type: 3}
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Jackpot
+    id: 22
+    rarity: 2
+    icon: {fileID: 1681641098665356064, guid: 05c0258abf38f7a409c57ace4710f73d, type: 3}
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Lucky Sevens
+    id: 23
+    rarity: 2
+    icon: {fileID: 1025332599072713877, guid: 3bef585c7bed24c4c8811427bddffd3a, type: 3}
+    exhaust: 1
     noDiscard: 0
     charges: 1
     baseDamage: 0

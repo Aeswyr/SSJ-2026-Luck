@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
 	private UnityEvent onDrawHand = new();
 	private UnityEvent onDodge = new();
 
+	private UnityEvent<CardData> onUseCard = new();
+
 	private bool inputsLocked;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -341,7 +343,7 @@ public class PlayerController : MonoBehaviour
 				}
 
 				for (int i = 0; i < totalStuck / 2; i++)
-					AddCardToHand(CardID.JOKER);}
+					AddCardToHand(CardID.JOKER, true);}
 				break;
 			case CardID.ALL_IN:
 				for (int handSize = hand.Count; handSize > 0; handSize--){
@@ -409,7 +411,7 @@ public class PlayerController : MonoBehaviour
 					}
 				}
 				break;
-			case CardID.DOUBLE_DOWN:
+			case CardID.BLEED_OUT:
 				{
 					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
 					if (ray && ray.collider.transform.parent != null)
@@ -448,16 +450,16 @@ public class PlayerController : MonoBehaviour
 				void CardAction_ClownCar()
 				{
 
-					AddCardToHand(CardID.JOKER);
-					AddCardToHand(CardID.JOKER);
-					AddCardToHand(CardID.JOKER);
+					AddCardToHand(CardID.JOKER, true);
+					AddCardToHand(CardID.JOKER, true);
+					AddCardToHand(CardID.JOKER, true);
 				}
 				break;
 			case CardID.MISSED_CONNECTION:
 				onDodge.AddListener(CardAction_MissedConnection);
 				void CardAction_MissedConnection()
 				{
-					AddCardToHand(CardID.JOKER);
+					AddCardToHand(CardID.JOKER, true);
 				}
 				break;
     		case CardID.INSIGHT:
@@ -465,11 +467,44 @@ public class PlayerController : MonoBehaviour
 				DrawCard();
 				break;
 			case CardID.FOOLIN_AROUND:
-				AddCardToHand(CardID.JOKER);
-				AddCardToHand(CardID.JOKER);
-				AddCardToHand(CardID.JOKER);
+				AddCardToHand(CardID.JOKER, true);
+				AddCardToHand(CardID.JOKER, true);
+				AddCardToHand(CardID.JOKER, true);
+				break;
+			case CardID.DOUBLE_DOWN:
+				onUseCard.AddListener(CardAction_DoubleDown);
+				void CardAction_DoubleDown(CardData card)
+				{
+					AddCardToHand(card, true);
+					AddCardToHand(card, true);
+
+					onUseCard.RemoveListener(CardAction_DoubleDown);
+				}
+				break;
+			case CardID.SECOND_CHANCE:
+				GetComponent<EntityController>().ApplyHealing(1);
+				break;
+			case CardID.JACKPOT:
+				RemoveCardFromDeck(CardID.JACKPOT);
+				List<CardData> rarePool = cardLibrary.GetAllCardsOfRarity(CardRarity.RARE);
+				AddCardToDeck(rarePool[Random.Range(0, rarePool.Count)].id);
+				AddCardToDeck(rarePool[Random.Range(0, rarePool.Count)].id);
+				AddCardToDeck(rarePool[Random.Range(0, rarePool.Count)].id);
+				break;
+			case CardID.LUCKY_SEVENS:
+				RemoveCardFromDeck(CardID.LUCKY_SEVENS);
+				List<CardData> uncommonPool = cardLibrary.GetAllCardsOfRarity(CardRarity.UNCOMMON);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
+				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
 				break;
 			default:
+
+			
 				break;
 		}
 	}
@@ -534,10 +569,20 @@ public class PlayerController : MonoBehaviour
 		AddCardToHand(card);
 	}
 
-	public void AddCardToHand(CardData card)
+	public void AddCardToHand(CardData card, bool manifested = false)
 	{
+
+		if (manifested)
+		{
+			card.noDiscard = true;
+			card.exhaust = true;
+		}
+
 		hudController.DrawCard(card);
 		hand.Add(card);
+
+
+
 
 		if (selectedCardIndex == -1)
 		{
@@ -546,17 +591,11 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	public void AddCardToHand(CardID id)
+	public void AddCardToHand(CardID id, bool manifested = false)
 	{
 		var card = cardLibrary.GetCard(id);
-		hudController.DrawCard(card);
-		hand.Add(card);
 
-		if (selectedCardIndex == -1)
-		{
-			selectedCardIndex = 0;
-			hudController.SetIndexSelected(selectedCardIndex);
-		}
+		AddCardToHand(card, manifested);
 	}
 
 	public void DiscardCard(int index, bool shouldDiscard = true)
@@ -590,6 +629,8 @@ public class PlayerController : MonoBehaviour
 
 		readiedCard = card;
 
+		onUseCard?.Invoke(card);
+
 		card.charges--;
 		hudController.UseCharge();
 
@@ -606,6 +647,7 @@ public class PlayerController : MonoBehaviour
 	{
 		onDrawHand.RemoveAllListeners();
 		onDodge.RemoveAllListeners();
+		onUseCard.RemoveAllListeners();
 		hand.Clear();
 		discard.Clear();
 		deck.Clear();

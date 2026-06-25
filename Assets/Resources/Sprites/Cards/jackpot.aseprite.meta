@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a8dbeedbc717ae042b0c51deea96eea5
+guid: 05c0258abf38f7a409c57ace4710f73d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: doubledown
+  - name: jackpot
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 24
-    spriteID: cde0e5910ab20e842b705a9efe99ba27
+    spriteID: 297b17a0423b7ab42a82aee647d22407
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -163,7 +163,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: doubledown
+    - name: jackpot
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 24
-      spriteId: cde0e5910ab20e842b705a9efe99ba27
+      spriteId: 297b17a0423b7ab42a82aee647d22407
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

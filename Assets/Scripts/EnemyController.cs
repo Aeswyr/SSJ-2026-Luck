@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
 
     [Space]
     [Header("attack prefabs")]
-    [SerializeField] private GameObject attackPrefab_WingDemon;
+    [SerializeField] private GameObject attackPrefab;
     private float nextAttack, nextSpecial;
     private PlayerController target;
     private bool acting;
@@ -74,9 +74,10 @@ public class EnemyController : MonoBehaviour
 
     public void FireAttack_WingDemon()
     {
-        var attack = Instantiate(attackPrefab_WingDemon, transform.position + facing * 2 * Vector3.right, Quaternion.identity);
+        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 2, 2), Quaternion.identity);
         attack.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 16)
+                    .SetFlip(facing == -1)
                     .SetLifetime(3f)
 					.Init(transform, new HitData()
                     {
@@ -92,19 +93,25 @@ public class EnemyController : MonoBehaviour
 
     public void FireAttack_AnglerDemon()
     {
-        var attack = Instantiate(attackPrefab_WingDemon, transform.position + facing * 2 * Vector3.right, Quaternion.identity);
+        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 8, 0f), Quaternion.identity);
         attack.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 0.5f)
-                    .SetLifetime(1f)
+                    .SetFlip(facing == -1)
+                    .SetEntityPierce()
+                    .SetLifetime(0.55f)
 					.Init(transform, new HitData()
                     {
                         baseDamage = 1
                     });
-    
     }
 
     public void FireSpecial_AnglerDemon()
     {
         hurtbox.invincible = true;
+    }
+
+    public void OnGuard_AnglerDemon()
+    {
+        VFXManager.Instance.CreateToast("block", transform.position + new Vector3(Random.Range(-0.75f, 0.75f), 1.5f + Random.Range(0, 0.75f)), Color.gray);
     }
 }

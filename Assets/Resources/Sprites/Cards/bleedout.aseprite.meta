@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a8dbeedbc717ae042b0c51deea96eea5
+guid: 4b3b0425f0af11b4194ed43092c58c8c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639176407049666707
+  platformSettingsDirtyTick: 639174897010363422
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 24
-    spriteID: cde0e5910ab20e842b705a9efe99ba27
+    spriteID: 9a8c99960f25909418b0221ace855dd9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,17 +153,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2414750388
+      value0: 1780420487
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: levelDoor
+    name: doubledown
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: doubledown
+    - name: bleedout
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 24
-      spriteId: cde0e5910ab20e842b705a9efe99ba27
+      spriteId: 9a8c99960f25909418b0221ace855dd9
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

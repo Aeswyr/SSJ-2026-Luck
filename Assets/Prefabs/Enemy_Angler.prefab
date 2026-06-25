@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5230067030317142455}
-  - component: {fileID: 5435874876678814446}
+  - component: {fileID: 667018901047075027}
   - component: {fileID: 6764908746684948279}
   - component: {fileID: 5788562216824240109}
   - component: {fileID: 5697496803871802723}
   - component: {fileID: 8041034413126367318}
   - component: {fileID: -4010612189880386193}
   m_Layer: 0
-  m_Name: Enemy_Boss_Croc
+  m_Name: Enemy_Angler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 776663985515415995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5435874876678814446
+--- !u!114 &667018901047075027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,10 +49,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2676629492061376651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca95369ea757b9848b7880b6ac620637, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e31f5dff4dcf5740ad66de16d807696, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossController
-  entity: {fileID: 6764908746684948279}
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  rbody: {fileID: 8041034413126367318}
+  animator: {fileID: -4010612189880386193}
+  spriteRenderer: {fileID: 5697496803871802723}
+  hurtbox: {fileID: 730848039966349182}
+  preferredRange: 4
+  speed: 4
+  flee: 0
+  attackCooldown: 6
+  specialCooldown: 10
+  attackRange: 10
+  specialRange: 20
+  attackPrefab: {fileID: 2676629492061376651, guid: 31396be4546a32f42921dbd71d38238c, type: 3}
 --- !u!114 &6764908746684948279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,31 +77,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
   debuffs: {fileID: 6385019922222583934}
-  maxHp: 180
+  maxHp: 25
   onHit:
     m_PersistentCalls:
       m_Calls: []
   onHealthChange:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5435874876678814446}
-        m_TargetAssemblyTypeName: BossController, Assembly-CSharp
-        m_MethodName: OnHit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5435874876678814446}
-        m_TargetAssemblyTypeName: BossController, Assembly-CSharp
-        m_MethodName: OnDeath
+      - m_Target: {fileID: 667018901047075027}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: OnHPEmpty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 637567519
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3487438023490082363, guid: 7dd82e959d373484c9e779b49b0f6dce, type: 3}
+  m_Sprite: {fileID: -3487438023490082363, guid: 769e614c2064c524aa71b471bbfbfcee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,9 +204,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2676629492061376651}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -3781214166024197237, guid: 0bd1007b400d46242b9fc2a76fe51e4a, type: 3}
+  m_Controller: {fileID: 3706401473055043891, guid: 769e614c2064c524aa71b471bbfbfcee, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -359,7 +358,19 @@ MonoBehaviour:
         m_CallState: 2
   onMiss:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 667018901047075027}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: OnGuard_AnglerDemon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   intangible: 0
   invincible: 0
 --- !u!61 &2095166413505059881
@@ -396,7 +407,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5, y: 4}
+  m_Offset: {x: 0, y: 3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -406,7 +417,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 8}
+  m_Size: {x: 3, y: 6}
   m_EdgeRadius: 0
 --- !u!1001 &4779354423358216204
 PrefabInstance:

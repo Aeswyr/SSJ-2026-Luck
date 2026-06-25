@@ -12,10 +12,14 @@ FINISHING_STROKE	When discarding a card, enhance Finishing Stroke adding 3 damag
 CALLED_SHOT	Mark target. Multiply the damage of the next card to hit.
 CALLBACK	Mark target. Manifest a Fool per 2 hits.
 PEERLESS_FOCUS	Mark target. Draws a card per 4 hits on the marked target.
-DOUBLE_DOWN	Mark target. Target takes damage over time equal to the number of stuck cards divided by 3.
+BLEED_OUT	Mark target. Target takes damage over time equal to the number of stuck cards divided by 3.
 THOUSAND_CUTS	Mark target. Target takes 1 extra damage per hit. Lasts until target dies. Remove this card from deck until the end of room after use.
 DECK_FIXING	Draw 2 extra cards when drawing new hand. Remove this card from deck until the end of room after use.
 CLOWN_CAR	Manifest 3 Fools when drawing new hand. Remove this card from deck until the end of room after use.
 MISSED_CONNECTION	Dodging an attack manifests a Fool. 
 INSIGHT	Draw 2 cards.
 FOOLIN_AROUND	Manifest 3 Fools.
+DOUBLE_DOWN	Manifest two copies of the next card played.
+SECOND_CHANCE	Regain one heart. Remove this card from deck until the end of room after use.
+JACKPOT	Add 3 random rare cards to the deck. Remove this card from the deck permanently.
+LUCKY_SEVENS	Add 7 random uncommon cards to the deck. Remove this card from the deck permanently.

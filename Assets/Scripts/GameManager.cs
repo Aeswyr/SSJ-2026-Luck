@@ -72,7 +72,7 @@ public class GameManager : Singleton<GameManager>
         {
             int typeIndex = Random.Range(0, validNextLevels.Count);
             door.SetType(validNextLevels[typeIndex]);
-            if (validNextLevels.Count > 1)
+            if (validNextLevels.Count != 1)
                 validNextLevels.RemoveAt(typeIndex);
         }
     }

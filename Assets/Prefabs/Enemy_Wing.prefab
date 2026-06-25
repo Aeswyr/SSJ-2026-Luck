@@ -63,7 +63,7 @@ MonoBehaviour:
   specialCooldown: 5
   attackRange: 20
   specialRange: 14
-  attackPrefab_WingDemon: {fileID: 2676629492061376651, guid: 49bcb882c97219d48aca383440448ba0, type: 3}
+  attackPrefab: {fileID: 2676629492061376651, guid: 49bcb882c97219d48aca383440448ba0, type: 3}
 --- !u!114 &6764908746684948279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -395,7 +395,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230067030317142455, guid: f64186f7164831949a4df39dd0aa4dc7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.25
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5230067030317142455, guid: f64186f7164831949a4df39dd0aa4dc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

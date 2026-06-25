@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D rbody;
     [SerializeField] private DestroyAfterDelay destroyAfterDelay; 
     private bool doesPierce;
@@ -19,6 +20,12 @@ public class ProjectileController : MonoBehaviour
     public ProjectileController SetVelocity(Vector2 vel)
     {
         rbody.linearVelocity = vel;
+        return this;
+    }
+
+    public ProjectileController SetFlip(bool flip)
+    {
+        spriteRenderer.flipX = flip;
         return this;
     }
     public ProjectileController SetEntityPierce()

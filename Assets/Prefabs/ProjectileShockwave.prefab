@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6558225320265724447}
   - component: {fileID: -8249171081739113328}
   - component: {fileID: 5842651929732429097}
+  - component: {fileID: 1214817516559593545}
   m_Layer: 0
-  m_Name: ProjectileOrb
+  m_Name: ProjectileShockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: -1031852761
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3487438023490082363, guid: 32c618df61dc5f443be100a1b5d1bbdc, type: 3}
+  m_Sprite: {fileID: -3487438023490082363, guid: 3e76261e7eaa7bd499bc703d70bb6489, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,6 +151,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterDelay
   lifetime: 10
+--- !u!95 &1214817516559593545
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676629492061376651}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: -12252689437457596, guid: 3e76261e7eaa7bd499bc703d70bb6489, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2844364638677266644
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +184,7 @@ GameObject:
   - component: {fileID: 5328988037238858324}
   - component: {fileID: 4122881265835112649}
   - component: {fileID: 4021041664026366571}
+  - component: {fileID: 764647110702880681}
   m_Layer: 8
   m_Name: Hitbox
   m_TagString: Untagged
@@ -217,7 +241,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -227,7 +251,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 7, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &4021041664026366571
 MonoBehaviour:
@@ -256,6 +280,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &764647110702880681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844364638677266644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e736c04dfc5e4f4d8e8bdd881ceb954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterDelay
+  lifetime: 0.3
 --- !u!1 &6385989992144846182
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +333,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6385989992144846182}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

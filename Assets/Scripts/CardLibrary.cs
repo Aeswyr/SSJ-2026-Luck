@@ -47,6 +47,8 @@ public class CardLibrary : ScriptableObject
 
     public string GetCardDescription(CardID card)
     {
-        return cardDescriptions[card];
+        if (cardDescriptions.ContainsKey(card))
+            return cardDescriptions[card];
+        return "TEXT NOT FOUND";
     }
 }

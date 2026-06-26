@@ -30,11 +30,12 @@ public class EnemyController : MonoBehaviour
     {
         if (target != null)
         {
-            facing = (int)Mathf.Sign(target.transform.position.x - transform.position.x);
-            spriteRenderer.flipX = facing >= 0;
+            
             float dist = Vector2.Distance(transform.position, target.transform.position);
 
             if (!acting) {
+                facing = (int)Mathf.Sign(target.transform.position.x - transform.position.x);
+                spriteRenderer.flipX = facing >= 0;
 
                 if (Time.time > nextSpecial && dist < specialRange)
                 {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1931912627717130354}
   - component: {fileID: 7735430201070014043}
   m_Layer: 0
-  m_Name: DebuffDisplay
+  m_Name: BuffDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb192763e47bca49abcef3b5fcc87e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DebuffController
-  debuffHolder: {fileID: 1646308271327187855}
-  debuffObject: {fileID: 5107057142256010732}
-  debuffLibrary: {fileID: 11400000, guid: 1d41f12fca80a354b8b8b03d02209d90, type: 2}
+  buffHolder: {fileID: 1646308271327187855}
+  buffObject: {fileID: 5107057142256010732}
+  buffLibrary: {fileID: 11400000, guid: 1d41f12fca80a354b8b8b03d02209d90, type: 2}
 --- !u!223 &7735430201070014043
 Canvas:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8213216858023781669}
   - component: {fileID: 8057934284972105921}
   m_Layer: 0
-  m_Name: DebuffIcon
+  m_Name: BuffIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1646308271327187855}
   - component: {fileID: 3480583797882527151}
   m_Layer: 0
-  m_Name: DebuffLayout
+  m_Name: BuffLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

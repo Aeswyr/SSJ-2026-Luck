@@ -17,6 +17,7 @@ MonoBehaviour:
     id: 0
     rarity: 0
     icon: {fileID: 2956302206307816854, guid: 7ec871680b1472e4196eebf474e0fb7c, type: 3}
+    type: 0
     exhaust: 0
     noDiscard: 0
     charges: 4
@@ -26,6 +27,7 @@ MonoBehaviour:
     id: 1
     rarity: 0
     icon: {fileID: 6872315840094638057, guid: dda5770bfac8b9149927acf083b35c73, type: 3}
+    type: 0
     exhaust: 0
     noDiscard: 0
     charges: 3
@@ -35,6 +37,7 @@ MonoBehaviour:
     id: 2
     rarity: 0
     icon: {fileID: -2380761262113295394, guid: 9396c1c7058b05241823db278f192fd5, type: 3}
+    type: 0
     exhaust: 0
     noDiscard: 0
     charges: 2
@@ -44,6 +47,7 @@ MonoBehaviour:
     id: 3
     rarity: 3
     icon: {fileID: 6405907386155496259, guid: e73e231458a79864abbb4b2624cfaedf, type: 3}
+    type: 0
     exhaust: 1
     noDiscard: 1
     charges: 1
@@ -53,6 +57,7 @@ MonoBehaviour:
     id: 4
     rarity: 0
     icon: {fileID: -8536194126029614151, guid: 06f82d60b25f4404c98ec2831c6b4a7c, type: 3}
+    type: 0
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -62,6 +67,7 @@ MonoBehaviour:
     id: 5
     rarity: 2
     icon: {fileID: 6508335231141829869, guid: 89b0021d7e82c014cabf44f4a4a23798, type: 3}
+    type: 1
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -71,6 +77,7 @@ MonoBehaviour:
     id: 6
     rarity: 2
     icon: {fileID: -8693575081402588207, guid: 12d8d30d069cbc84dbc14756115d74cd, type: 3}
+    type: 1
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -80,6 +87,7 @@ MonoBehaviour:
     id: 7
     rarity: 2
     icon: {fileID: 5482841418619500598, guid: 4a9cf2957f9c1d9479893d954aee69df, type: 3}
+    type: 1
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -89,6 +97,7 @@ MonoBehaviour:
     id: 8
     rarity: 2
     icon: {fileID: -2618124259885305570, guid: d047be872841e2d449703115c77fe3ac, type: 3}
+    type: 0
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -98,6 +107,7 @@ MonoBehaviour:
     id: 9
     rarity: 2
     icon: {fileID: -4922103070775171457, guid: cb0126b04c2678b458c0e34c0a5d94fa, type: 3}
+    type: 0
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -107,6 +117,7 @@ MonoBehaviour:
     id: 10
     rarity: 1
     icon: {fileID: 2504371010434422237, guid: 286cdc3a0938dcd4bb85b836c9cf346c, type: 3}
+    type: 3
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -116,6 +127,7 @@ MonoBehaviour:
     id: 11
     rarity: 1
     icon: {fileID: 3483211487471968235, guid: a573a43e646aa6444b55dba046ea43e2, type: 3}
+    type: 3
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -125,6 +137,7 @@ MonoBehaviour:
     id: 12
     rarity: 1
     icon: {fileID: -3107164437440882409, guid: 22b51e4ebc8dfdb4ca4640a2fad36147, type: 3}
+    type: 3
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -134,6 +147,7 @@ MonoBehaviour:
     id: 13
     rarity: 2
     icon: {fileID: 4262228339964961926, guid: 4b3b0425f0af11b4194ed43092c58c8c, type: 3}
+    type: 3
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -143,7 +157,8 @@ MonoBehaviour:
     id: 14
     rarity: 1
     icon: {fileID: 6008495327814675189, guid: cbdbd65bf973ce44ebb2fdfd58850c6f, type: 3}
-    exhaust: 1
+    type: 3
+    exhaust: 0
     noDiscard: 0
     charges: 1
     baseDamage: 1
@@ -152,6 +167,7 @@ MonoBehaviour:
     id: 15
     rarity: 1
     icon: {fileID: -7050355161044659629, guid: 3e183702621a6ad48921520244dc2e45, type: 3}
+    type: 2
     exhaust: 1
     noDiscard: 0
     charges: 1
@@ -161,6 +177,7 @@ MonoBehaviour:
     id: 16
     rarity: 1
     icon: {fileID: -6410837670463618364, guid: 682f94dc3dfad9742ba502dd40d5b497, type: 3}
+    type: 2
     exhaust: 1
     noDiscard: 0
     charges: 1
@@ -170,6 +187,7 @@ MonoBehaviour:
     id: 17
     rarity: 1
     icon: {fileID: -8399806738595358388, guid: c81b145f1a09cf54d883f81aabbbd3c2, type: 3}
+    type: 2
     exhaust: 1
     noDiscard: 0
     charges: 1
@@ -179,6 +197,7 @@ MonoBehaviour:
     id: 18
     rarity: 0
     icon: {fileID: 2301598301571804544, guid: dcfaed190f0e6ad4599f02bb40e6c0e4, type: 3}
+    type: 4
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -188,6 +207,7 @@ MonoBehaviour:
     id: 19
     rarity: 0
     icon: {fileID: 8629111516335876503, guid: 4e2af600bd160444f80c770809d7deaf, type: 3}
+    type: 4
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -197,6 +217,7 @@ MonoBehaviour:
     id: 20
     rarity: 2
     icon: {fileID: 1325188486430336153, guid: a8dbeedbc717ae042b0c51deea96eea5, type: 3}
+    type: 4
     exhaust: 0
     noDiscard: 0
     charges: 1
@@ -206,6 +227,7 @@ MonoBehaviour:
     id: 21
     rarity: 2
     icon: {fileID: 241408431545442005, guid: 48cce8ba51ed5e247afbe0c88178d28b, type: 3}
+    type: 4
     exhaust: 1
     noDiscard: 0
     charges: 1
@@ -215,6 +237,7 @@ MonoBehaviour:
     id: 22
     rarity: 2
     icon: {fileID: 1681641098665356064, guid: 05c0258abf38f7a409c57ace4710f73d, type: 3}
+    type: 4
     exhaust: 1
     noDiscard: 0
     charges: 1
@@ -224,7 +247,68 @@ MonoBehaviour:
     id: 23
     rarity: 2
     icon: {fileID: 1025332599072713877, guid: 3bef585c7bed24c4c8811427bddffd3a, type: 3}
+    type: 4
     exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Flush
+    id: 24
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: c81857ad152024242b9757c1b15ba08f, type: 3}
+    type: 0
+    exhaust: 0
+    noDiscard: 0
+    charges: 3
+    baseDamage: 1
+    shouldStick: 1
+  - name: Inner Strength
+    id: 25
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: d8011569f94347c40b02fca08532a4c8, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 1
+  - name: Raise the Stakes
+    id: 26
+    rarity: 1
+    icon: {fileID: 1025332599072713877, guid: 3bef585c7bed24c4c8811427bddffd3a, type: 3}
+    type: 2
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Dealer's Advantage
+    id: 27
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: c0a5cb0c2cd91064798e11bb2983f06c, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Triple Deal
+    id: 28
+    rarity: 0
+    icon: {fileID: -3487438023490082363, guid: 57f817ffefc93964fae2094b825779f1, type: 3}
+    type: 4
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Lucky Deal
+    id: 29
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    type: 4
+    exhaust: 0
     noDiscard: 0
     charges: 1
     baseDamage: 0

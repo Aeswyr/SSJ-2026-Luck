@@ -10,21 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e148cd68516c2bb47865fcc8bd86065a, type: 3}
-  m_Name: DebuffLibrary
+  m_Name: BuffLibrary
   m_EditorClassIdentifier: Assembly-CSharp::DebuffLibrary
-  debuffs:
+  buffs:
   - id: 0
     icon: {fileID: 4137296079507206199, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 10000
+    baseDuration: 999999
+    isDebuff: 0
   - id: 1
-    icon: {fileID: 7735085303667188755, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    icon: {fileID: -2381227881382376566, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
     baseDuration: 8
+    isDebuff: 0
   - id: 2
     icon: {fileID: -4011744088097352285, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
     baseDuration: 8
+    isDebuff: 0
   - id: 3
     icon: {fileID: -3714916792392405455, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 10000
+    baseDuration: 999999
+    isDebuff: 0
   - id: 4
-    icon: {fileID: -2381227881382376566, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    icon: {fileID: 7735085303667188755, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
     baseDuration: 8
+    isDebuff: 0
+  - id: 5
+    icon: {fileID: 1710483956198244179, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    baseDuration: 999999
+    isDebuff: 0

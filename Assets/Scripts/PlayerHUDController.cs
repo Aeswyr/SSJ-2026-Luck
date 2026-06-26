@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class PlayerHUDController : MonoBehaviour
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private Image bossHealth;
+
+    [SerializeField] private TextMeshProUGUI deckCount, deckTotal;
 
     List<CardController> cards = new();
     int activeIndex;
@@ -103,5 +106,16 @@ public class PlayerHUDController : MonoBehaviour
     public void OnReturnPressed()
     {
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void OnDeckPressed()
+    {
+        DeckViewController.Instance.ShowDeckView(false);
+    }
+
+    public void SetDeckCount(int count, int total)
+    {
+        deckCount.text = count.ToString();
+        deckTotal.text = total.ToString();
     }
 }

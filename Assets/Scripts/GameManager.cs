@@ -51,10 +51,10 @@ public class GameManager : Singleton<GameManager>
                                 LevelType.TREASURE_RARE, LevelType.TREASURE_UNCOMMON,
                                 LevelType.REMOVE_CARD, LevelType.COMBAT, LevelType.COMBAT,
                                 LevelType.COMBAT, LevelType.COMBAT};
-        if (levelIndex == 5)
+        if (levelIndex == 8)
         {
             validNextLevels = new (){LevelType.HEAL, LevelType.REMOVE_CARD};
-        } else if (levelIndex == 6)
+        } else if (levelIndex == 9)
         {
             validNextLevels = new (){LevelType.BOSS};
         }

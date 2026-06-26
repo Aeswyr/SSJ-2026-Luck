@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecaf5e81f6db19479813f9815da8e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
-  debuffs: {fileID: 6385019922222583934}
-  maxHp: 25
+  buffs: {fileID: 6385019922222583934}
+  maxHp: 35
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -194,7 +194,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &-4010612189880386193
 Animator:
@@ -429,7 +429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2676629492061376651, guid: f64186f7164831949a4df39dd0aa4dc7, type: 3}
       propertyPath: m_Name
-      value: DebuffDisplay
+      value: BuffDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 3480583797882527151, guid: f64186f7164831949a4df39dd0aa4dc7, type: 3}
       propertyPath: m_ChildForceExpandWidth

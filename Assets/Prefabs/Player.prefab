@@ -65,7 +65,9 @@ MonoBehaviour:
   vfxController: {fileID: 8902308949167513689}
   interactBox: {fileID: 8743669385456238468}
   hurtbox: {fileID: 7613534759272803758}
+  buffController: {fileID: 3114606444792729774}
   cardPrefab: {fileID: 2676629492061376651, guid: a7014e36f260d954ab63130c2878b16a, type: 3}
+  dealPrefab: {fileID: 2676629492061376651, guid: 0719b4ae202dc2649a7e1f1eeb3d6ca8, type: 3}
   attackCurve:
     serializedVersion: 2
     m_Curve:
@@ -151,7 +153,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dodgeSpeed: 18
   cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
-  startingDeck: 0,0,0,1
+  startingDeck: 0,0,4,1
 --- !u!114 &2057800042783320036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecaf5e81f6db19479813f9815da8e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
-  debuffs: {fileID: 3114606444792729774}
+  buffs: {fileID: 3114606444792729774}
   maxHp: 3
   onHit:
     m_PersistentCalls:
@@ -744,6 +746,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   intangible: 0
+  invincible: 0
 --- !u!70 &6122310003172957134
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -936,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676629492061376651, guid: f64186f7164831949a4df39dd0aa4dc7, type: 3}
       propertyPath: m_Name
-      value: DebuffDisplay
+      value: BuffDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5230067030317142455, guid: f64186f7164831949a4df39dd0aa4dc7, type: 3}
       propertyPath: m_Pivot.x

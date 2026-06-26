@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class EntityController : MonoBehaviour
 {
-    [SerializeField] private DebuffController debuffs;
+    [SerializeField] private BuffController buffs;
     [SerializeField] private int maxHp;
     [SerializeField] private UnityEvent<int> onHit, onHealthChange;
     [SerializeField] private UnityEvent onDeath;
@@ -21,10 +21,10 @@ public class EntityController : MonoBehaviour
             stick.StickCard();
         }
 
-        debuffs.OnHitDebuff();
+        buffs.OnHitBuff();
 
-        hitData.bonusDamage += 1 * debuffs.GetDebuffCount(DebuffType.PAIN);
-        int markCount = debuffs.RemoveAllDebuff(DebuffType.MARK);
+        hitData.bonusDamage += 1 * buffs.GetBuffCount(BuffType.PAIN);
+        int markCount = buffs.RemoveAllBuff(BuffType.MARK);
         hitData.bonusDamage += 3 * markCount + (int)(hitData.baseDamage * 0.5f * markCount);
 
         ApplyDamage(hitData.totalDamage);

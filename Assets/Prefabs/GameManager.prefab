@@ -67,4 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb0a464f1fabf1459070c9bb29148a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXManager
+  template: {fileID: 2676629492061376651, guid: 0af3d852193b0154292ad2d6ecb9ae36, type: 3}
+  anims:
+  - {fileID: -1300594986908038686, guid: 9c7efd09b06aa0e45a9410e69185eb3f, type: 3}
+  - {fileID: 2016076567115708239, guid: 4e24c813fc63b4f48b061405db1d7880, type: 3}
+  - {fileID: 6270058105673180054, guid: 0084e9c3062f783478d51b9465451774, type: 3}
+  - {fileID: -218488023650193649, guid: 0a22fc18e5a03b543a793d6f0060adf0, type: 3}
+  - {fileID: 2129699680590990332, guid: 0b7f7c5138c9c5e40814178279e234f3, type: 3}
   toastPrefab: {fileID: 2676629492061376651, guid: a332b187b570d5b4f861c72e4d7c9ae7, type: 3}

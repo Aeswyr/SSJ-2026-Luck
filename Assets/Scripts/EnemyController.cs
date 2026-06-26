@@ -42,11 +42,15 @@ public class EnemyController : MonoBehaviour
                     animator.Play("special");
                     acting = true;
                     nextSpecial = Time.time + specialCooldown * Random.Range(0.8f, 1.2f);
+
+                    rbody.linearVelocityX = 0;
                 } else if (Time.time > nextAttack && dist < attackRange)
                 {
                     animator.Play("attack");
                     acting = true;
                     nextAttack = Time.time + attackCooldown * Random.Range(0.8f, 1.2f);
+
+                    rbody.linearVelocityX = 0;
                 } else {
                     rbody.linearVelocityX = dist > preferredRange 
                         ? facing * speed : (flee ? (dist < preferredRange - 1 ? facing * -speed : 0) : 0);
@@ -114,5 +118,31 @@ public class EnemyController : MonoBehaviour
     public void OnGuard_AnglerDemon()
     {
         VFXManager.Instance.CreateToast("block", transform.position + new Vector3(Random.Range(-0.75f, 0.75f), 1.5f + Random.Range(0, 0.75f)), Color.gray);
+    }
+
+    public void FireAttack_SalamanderDemon()
+    {
+        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 4, 1f), Quaternion.identity);
+        attack.GetComponent<ProjectileController>()
+                    .SetEntityPierce()
+                    .SetLifetime(0.2f)
+					.Init(transform, new HitData()
+                    {
+                        baseDamage = 1
+                    });
+    }
+
+    public void FireSpecial_SalamanderDemon()
+    {
+        rbody.linearVelocityX = facing * 32;
+                var attack = Instantiate(attackPrefab, transform);
+        attack.transform.localPosition = new Vector3(facing, 2);
+        attack.GetComponent<ProjectileController>()
+                    .SetEntityPierce()
+                    .SetLifetime(0.7f)
+					.Init(transform, new HitData()
+                    {
+                        baseDamage = 1
+                    });
     }
 }

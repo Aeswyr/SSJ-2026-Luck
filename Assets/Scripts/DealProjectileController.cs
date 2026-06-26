@@ -5,9 +5,12 @@ public class DealProjectileController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rbody;
+    [SerializeField] private DestroyAfterDelay destroyAfterDelay;
     private float velocity;
     public void Init(float fireDelay, float velocity, int facing, float yPos)
     {
+        destroyAfterDelay.Init(fireDelay + 1.5f);
+        
         this.velocity = velocity;
         var look = new Vector3(transform.position.x + facing * 32, yPos) - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.right, look);

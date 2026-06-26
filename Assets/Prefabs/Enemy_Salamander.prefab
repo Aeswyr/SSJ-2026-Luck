@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8041034413126367318}
   - component: {fileID: -4010612189880386193}
   m_Layer: 0
-  m_Name: Enemy_Angler
+  m_Name: Enemy_Salamander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,14 +56,14 @@ MonoBehaviour:
   animator: {fileID: -4010612189880386193}
   spriteRenderer: {fileID: 5697496803871802723}
   hurtbox: {fileID: 730848039966349182}
-  preferredRange: 8
-  speed: 4
+  preferredRange: 6
+  speed: 12
   flee: 0
-  attackCooldown: 6
-  specialCooldown: 10
-  attackRange: 10
+  attackCooldown: 7
+  specialCooldown: 8
+  attackRange: 6
   specialRange: 20
-  attackPrefab: {fileID: 2676629492061376651, guid: 31396be4546a32f42921dbd71d38238c, type: 3}
+  attackPrefab: {fileID: 2676629492061376651, guid: 589d6e8bdac7d654fb3be868855ad30c, type: 3}
 --- !u!114 &6764908746684948279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
   buffs: {fileID: 6385019922222583934}
-  maxHp: 40
+  maxHp: 30
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 637567519
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3487438023490082363, guid: 769e614c2064c524aa71b471bbfbfcee, type: 3}
+  m_Sprite: {fileID: -3487438023490082363, guid: fa254c6b767129f478b72f0557b18e21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -206,7 +206,7 @@ Animator:
   m_GameObject: {fileID: 2676629492061376651}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 3706401473055043891, guid: 769e614c2064c524aa71b471bbfbfcee, type: 3}
+  m_Controller: {fileID: -2986816998665689572, guid: fa254c6b767129f478b72f0557b18e21, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -358,19 +358,7 @@ MonoBehaviour:
         m_CallState: 2
   onMiss:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 667018901047075027}
-        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
-        m_MethodName: OnGuard_AnglerDemon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   intangible: 0
   invincible: 0
 --- !u!61 &2095166413505059881
@@ -407,7 +395,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 3}
+  m_Offset: {x: 0, y: 1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -417,7 +405,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 6}
+  m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
 --- !u!1001 &4779354423358216204
 PrefabInstance:

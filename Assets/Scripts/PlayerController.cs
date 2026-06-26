@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     private int facing = 1, attackRepeat;
 	private int selectedCardIndex;
 	private int maxHand = 4;
-	private CardData readiedCard;
+	private CardData? readiedCard;
 	private List<CardData> hand = new();
 	private List<CardData> discard = new();
 	private List<CardData> deck = new();
@@ -114,16 +114,15 @@ public class PlayerController : MonoBehaviour
 
             if (grounded)
 			{	
-				//VFXManager.Instance.SyncVFX(ParticleType.JUMP, transform.position, facing == -1);
-			} else
-			{
-				//VFXManager.Instance.SyncVFX(ParticleType.AIR_JUMP, transform.position + 2 * Vector3.down, facing == -1);
+				VFXManager.Instance.CreateVFX(VFXType.DUST_JUMP, transform.position, facing == -1);
 			}
 		}
 
 		if ((!acting || cancellable) && handSize > 0 && input.attack.pressed)
 		{
 			UpdateFacing();
+
+			VFXManager.Instance.CreateVFX(VFXType.DUST_SMALL, transform.position, facing == -1);
 
 			UseSelectedCard();
 
@@ -146,6 +145,7 @@ public class PlayerController : MonoBehaviour
 		if ((!acting || cancellable) && input.dodge.pressed) {
 			UpdateFacing();
 
+			VFXManager.Instance.CreateVFX(VFXType.DUST_LARGE, transform.position + facing * Vector3.left, facing == -1);
 			vfxController.StartAfterImageChain(0.6f, 0.1f);
 
 			animator.SetTrigger("dodge");
@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
 		if ((!acting || cancellable) && (input.reload.pressed || (handSize == 0 && input.attack.pressed))) {
 			UpdateFacing();
-
+			
 			animator.SetTrigger("reload");
 
 			move.StartDeceleration();
@@ -228,6 +228,9 @@ public class PlayerController : MonoBehaviour
 
 	public void CreateAttack()
 	{
+		if (readiedCard == null)
+			return;
+
 		Dictionary<CardID, int> cardCounts = new();
 		foreach (var cd in hand)
 		{
@@ -238,12 +241,12 @@ public class PlayerController : MonoBehaviour
 
 		HitData hitData = new()
 		{
-			baseDamage = readiedCard.baseDamage,
+			baseDamage = readiedCard.Value.baseDamage,
 			bonusDamage = buffController.GetBuffCount(BuffType.EMPOWER),
-			shouldStick = readiedCard.shouldStick
+			shouldStick = readiedCard.Value.shouldStick
 		};
 
-		switch (readiedCard.id)
+		switch (readiedCard.Value.id)
 		{
 			case CardID.HIGH_CARD:
 				ThrowCard(hitData);
@@ -452,7 +455,7 @@ public class PlayerController : MonoBehaviour
 				AddCardToDeck(uncommonPool[Random.Range(0, uncommonPool.Count)].id);
 				break;
 			case CardID.FLUSH:
-				hitData.baseDamage *= hand.Count;
+				hitData.baseDamage += hand.Count;
 
 				int highest = 0;
 				foreach (var count in cardCounts)
@@ -507,6 +510,8 @@ public class PlayerController : MonoBehaviour
 			default:
 				break;
 		}
+
+		readiedCard = null;
 	}
 
 	private void ThrowCard(HitData hitData, float yPos = -1, float speed = 28, float rotX = 0, float rotY = 0, float lifetime = 0, bool pierce = false)

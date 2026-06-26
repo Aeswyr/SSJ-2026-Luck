@@ -276,7 +276,7 @@ MonoBehaviour:
   - name: Raise the Stakes
     id: 26
     rarity: 1
-    icon: {fileID: 1025332599072713877, guid: 3bef585c7bed24c4c8811427bddffd3a, type: 3}
+    icon: {fileID: -3487438023490082363, guid: 959548fc076631c4bbab725ef4ffe776, type: 3}
     type: 2
     exhaust: 0
     noDiscard: 0

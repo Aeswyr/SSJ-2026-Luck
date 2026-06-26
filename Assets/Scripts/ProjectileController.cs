@@ -47,6 +47,7 @@ public class ProjectileController : MonoBehaviour
 
     public void OnWorldImpact(Collider2D collider)
     {
+        VFXManager.Instance.CreateVFX(VFXType.HITSPARK_SMALL, transform.position, rbody.linearVelocityX < 0);
         Destroy(gameObject);
     }
 
@@ -62,6 +63,11 @@ public class ProjectileController : MonoBehaviour
         hurtbox.OnHit(payload);
         if (hurtbox.intangible)
             return;
+
+        if (isEnemy)
+            VFXManager.Instance.CreateVFX(VFXType.HITSPARK_LARGE, transform.position, spriteRenderer.flipX);
+        else
+            VFXManager.Instance.CreateVFX(VFXType.HITSPARK_SMALL, transform.position, spriteRenderer.flipX);
 
         if (doesPierce)
             return;

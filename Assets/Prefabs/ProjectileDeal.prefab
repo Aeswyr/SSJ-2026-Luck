@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DealProjectileController
   animator: {fileID: 7526347131546681386}
   rbody: {fileID: -8249171081739113328}
+  destroyAfterDelay: {fileID: -7451711994230598927}
 --- !u!114 &-231239686803920418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e736c04dfc5e4f4d8e8bdd881ceb954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterDelay
-  lifetime: 20
+  lifetime: 3
 --- !u!1 &2844364638677266644
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5230067030317142455}
   - component: {fileID: 697828014786456403}
   - component: {fileID: 5805419451833955563}
+  - component: {fileID: 5342987195069094914}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -75,3 +76,15 @@ MonoBehaviour:
   - {fileID: -218488023650193649, guid: 0a22fc18e5a03b543a793d6f0060adf0, type: 3}
   - {fileID: 2129699680590990332, guid: 0b7f7c5138c9c5e40814178279e234f3, type: 3}
   toastPrefab: {fileID: 2676629492061376651, guid: a332b187b570d5b4f861c72e4d7c9ae7, type: 3}
+--- !u!114 &5342987195069094914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676629492061376651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6982430a3bbdb4ebfe8ab82a2515c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager

@@ -148,6 +148,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.48148146, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 54
+      height: 63
+    spriteID: 536d51f4564cb54498bd5efc693bb25c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -163,7 +184,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: enemy_boss_croc
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -172,6 +193,15 @@ ScriptedImporter:
         width: 61
         height: 64
       spriteId: c448a59dfa284d64ca596fc0fd25f8a5
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 0
+        width: 54
+        height: 63
+      spriteId: 536d51f4564cb54498bd5efc693bb25c
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -218,4 +248,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 80, y: 80}
-  previousTextureSize: {x: 128, y: 128}
+  previousTextureSize: {x: 128, y: 256}

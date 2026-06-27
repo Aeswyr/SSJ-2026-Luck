@@ -17,13 +17,11 @@ public class DialogManager : Singleton<DialogManager>
 
     private Conversation? activeDialog;
     private int conversationIndex;
-    List<string> conversationsHeard;
 
     Action callback;
 
     void Start()
     {
-        conversationsHeard = new();
         dialogParent.SetActive(false);
     }
 
@@ -39,14 +37,15 @@ public class DialogManager : Singleton<DialogManager>
                     split[0] = null;
                     foreach (var k in split)
                     {
-                        if (!string.IsNullOrEmpty(k) && !conversationsHeard.Contains(k))
+                        if (!string.IsNullOrEmpty(k) && !SaveManager.Instance.ConversationHeard(k))
                         {
                             Debug.Log($"playing conversation {k}");
                             PlayConversation(k, callback);
-                            break;
+                            return;
                         }
                         
                     }
+                    callback?.Invoke();
                     return;
                 case "!r":
                     PlayConversation(split[Random.Range(1, split.Length)], callback);
@@ -65,7 +64,7 @@ public class DialogManager : Singleton<DialogManager>
         this.callback = callback;
 
 
-        conversationsHeard.Add(key);
+        SaveManager.Instance.SaveConversationHeard(key);
 
         InputHandler.Instance.FlushBuffer();
     }

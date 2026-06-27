@@ -22,7 +22,7 @@ public class VFXManager : Singleton<VFXManager>
 		}
 		else
 		{
-			gameObject = Instantiate(template, pos, Quaternion.identity);
+			gameObject = Instantiate(template, pos, Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
 		}
 		Animator component = gameObject.GetComponent<Animator>();
 		AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(component.runtimeAnimatorController);
@@ -41,12 +41,13 @@ public class VFXManager : Singleton<VFXManager>
         CreateToast(text, pos, Color.white);
     }
 
-    public void CreateToast(string text, Vector3 pos, Color color)
+    public void CreateToast(string text, Vector3 pos, Color color, float size = 24)
     {
         var toast = Instantiate(toastPrefab, pos, Quaternion.identity);
         var tmp = toast.GetComponent<TextMeshPro>();
         tmp.text = text;
         tmp.color = color;
+		tmp.fontSize = size;
     }
 }
 

@@ -173,8 +173,8 @@ ce3	Ace	I wanted more outta my life.	ace_neutral	Left	NONE
 ce3	Ace	Even when I knew it was gonna end, I had hope that somehow I’d make it through. Maybe fall in love, maybe dance and drink and gamble some more.	ace_neutral	Left	NONE
 ce3	Ace	Man, I miss cards. Playin them I mean, not… fightin with em.	ace_neutral	Left	NONE
 ce3	Coyote	(The coyote sits and listens intently.)	coyote_neutral	Right	NONE
-ce3	Ace	But I ain’t gettin it back. This is what I got now. I got you, I got Roane, and I got this fight ahead of me.	ace_neutral	Right	NONE
-ce3	Ace	(You feel a weight lift off of your shoulders. You’re ready to continue.)	ace_neutral	Right	NONE
+ce3	Ace	But I ain’t gettin it back. This is what I got now. I got you, I got Roane, and I got this fight ahead of me.	ace_neutral	Left	NONE
+ce3	Ace	(You feel a weight lift off of your shoulders. You’re ready to continue.)	ace_neutral	Left	NONE
 					
 ae1	Anne	(There’s a spirit in this room. A young girl in tattered dress attire.)	anne_neutral	Right	NONE
 ae1	Anne	Oh! I didn’t see you there. Wow, you look strangely… concrete for someone down. You must have all your memories from when you were alive.	anne_neutral	Right	NONE
@@ -261,3 +261,13 @@ ae3	Ace	…	ace_neutral	Left	NONE
 ae3	Anne	Thank you, Ace. I’ll find my way from here.	anne_neutral	Right	NONE
 ae3	Ace	Take care, Anne.	ace_neutral	Left	NONE
 ae3	Anne	(As she vanishes, two cards fall to the ground.)	anne_neutral	Right	NONE
+					
+boss1start	Gator	Well, well, well, what do we have here?			NONE
+boss1start	Gator	A soul lost in the wilds.			NONE
+boss1start	Gator	You ain't supposed to be all the way out here.			NONE
+boss1start	Ace	Not like I asked for it.	ace_neutral	Left	NONE
+boss1start	Gator	Don't worry, lost soul. Even out here, we can manage some torture for you.			NONE
+boss1start	Gator	And if you got to thinkin' you could get outta this place through the border, don't bother.			NONE
+boss1start	Gator	You ain't ever gettin' out of here.			NONE
+					
+boss1end	Ace	THIS IS TEMPORARY DIALOG UNTIL MAJA GETS TO IT		Left	NONE

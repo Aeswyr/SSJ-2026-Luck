@@ -39,8 +39,11 @@ public class GameManager : Singleton<GameManager>
 
         foreach (var level in levelList)
         {
-            if (level.GetComponent<LevelController>().GetLevelType() == type)
+            var levelCon = level.GetComponent<LevelController>();
+            if (levelCon.GetLevelType() == type)
             {
+                player.transform.position = levelCon.GetSpawn();
+
                 currentLevel = Instantiate(level).GetComponent<LevelController>();
                 break;
             }

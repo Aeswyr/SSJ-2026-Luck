@@ -102,7 +102,11 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
+<<<<<<< Updated upstream
   platformSettingsDirtyTick: 639181709319921461
+=======
+  platformSettingsDirtyTick: 639179807240930927
+>>>>>>> Stashed changes
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -138,7 +142,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 320
-      height: 180
+      height: 124
     spriteID: c448a59dfa284d64ca596fc0fd25f8a5
     spriteBone: []
     spriteOutline: []
@@ -170,7 +174,7 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 320
-        height: 180
+        height: 124
       spriteId: c448a59dfa284d64ca596fc0fd25f8a5
     linkedCells: []
     tileCells: []
@@ -217,5 +221,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 320, y: 180}
+  canvasSize: {x: 320, y: 124}
   previousTextureSize: {x: 512, y: 256}

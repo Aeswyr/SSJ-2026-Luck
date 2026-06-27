@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour
@@ -6,6 +7,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private Vector2 spawn;
     [SerializeField] private GameObject levelObjects;
     [SerializeField] private Vector2 levelBounds;
+    [SerializeField] private List<ParallaxInfo> parallaxes;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +15,8 @@ public class LevelController : MonoBehaviour
         {
             cam.SetBounds(levelBounds);
         }
+
+        ParallaxManager.Instance.SetParallax(parallaxes);
     }
 
     public Vector2 GetSpawn()

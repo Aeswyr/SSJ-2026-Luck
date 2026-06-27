@@ -31,6 +31,10 @@ public class CameraFollow : MonoBehaviour
         this.followTarget = follow;
     }
 
+    public Transform GetFollow()
+    {
+        return followTarget;
+    }
     public void SetBounds(Vector2 bounds)
     {
         this.bounds = bounds;

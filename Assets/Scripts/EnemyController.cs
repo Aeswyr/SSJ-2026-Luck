@@ -79,7 +79,7 @@ public class EnemyController : MonoBehaviour
 
     public void FireAttack_WingDemon()
     {
-        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 2, 2), Quaternion.identity);
+        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 2, 2), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
         attack.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 16)
                     .SetFlip(facing == -1)
@@ -98,7 +98,7 @@ public class EnemyController : MonoBehaviour
 
     public void FireAttack_AnglerDemon()
     {
-        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 8, 0f), Quaternion.identity);
+        var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 8, 0f), Quaternion.identity, GameManager.Instance.GetCurrentLevel().GetObjectParent());
         attack.GetComponent<ProjectileController>()
 					.SetVelocity(facing * 0.5f)
                     .SetFlip(facing == -1)
@@ -117,7 +117,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnGuard_AnglerDemon()
     {
-        VFXManager.Instance.CreateToast("block", transform.position + new Vector3(Random.Range(-0.75f, 0.75f), 1.5f + Random.Range(0, 0.75f)), Color.gray);
+        VFXManager.Instance.CreateToast("block", transform.position + new Vector3(Random.Range(-0.75f, 0.75f), 5f + Random.Range(0, 0.75f)), Color.gray);
     }
 
     public void FireAttack_SalamanderDemon()

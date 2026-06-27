@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca95369ea757b9848b7880b6ac620637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossController
+  closingDialog: boss1end
   entity: {fileID: 6764908746684948279}
 --- !u!114 &6764908746684948279
 MonoBehaviour:

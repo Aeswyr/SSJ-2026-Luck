@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6558225320265724447}
   - component: {fileID: -8249171081739113328}
   - component: {fileID: 5842651929732429097}
+  - component: {fileID: -5204875127712877563}
   m_Layer: 0
   m_Name: ProjectileOrb
   m_TagString: Untagged
@@ -150,6 +151,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterDelay
   lifetime: 10
+--- !u!95 &-5204875127712877563
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676629492061376651}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 2365833549808806047, guid: 32c618df61dc5f443be100a1b5d1bbdc, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2844364638677266644
 GameObject:
   m_ObjectHideFlags: 0

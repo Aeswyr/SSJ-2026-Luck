@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] private string closingDialog;
     [SerializeField] EntityController entity;
     PlayerHUDController hud;
     void Start()
@@ -18,9 +19,21 @@ public class BossController : MonoBehaviour
     }
     public void OnDeath()
     {
-        FindAnyObjectByType<PlayerController>().ToggleInputLock(true);
-        hud.ShowWinScreen();
+        if (string.IsNullOrEmpty(closingDialog))
+        {
+            ShowVictory();
+        } else
+        {
+            DialogManager.Instance.PlayConversation(closingDialog, () => ShowVictory());
+        }
 
-        Destroy(gameObject);
+        void ShowVictory()
+        {
+            FindAnyObjectByType<PlayerController>().ToggleInputLock(true);
+            hud.ShowWinScreen();
+            Destroy(gameObject);
+        }
+
+        
     }
 }

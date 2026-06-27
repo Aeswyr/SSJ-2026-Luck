@@ -32,7 +32,10 @@ public class EntityController : MonoBehaviour
 
     public void ApplyDamage(int amount)
     {
-        VFXManager.Instance.CreateToast(amount.ToString(), transform.position + new Vector3(Random.Range(-0.75f, 0.75f), 1.5f + Random.Range(0, 0.75f)), Color.darkRed);
+        VFXManager.Instance.CreateToast(amount.ToString(), transform.position
+                                + new Vector3(Random.Range(-0.75f, 0.75f), 3f
+                                + Random.Range(0, 0.75f)), Color.darkRed,
+                                amount < 5 ? 24 : (amount < 15 ? 32 : 16 * Mathf.Clamp((amount - 15) / 35, 0, 1) + 32 ));
         hp -= amount;
         hp = Mathf.Max(hp, 0);
         onHit?.Invoke(hp);

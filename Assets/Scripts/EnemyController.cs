@@ -1,4 +1,7 @@
 using UnityEngine;
+using System;
+
+using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
@@ -66,15 +69,16 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void OnHPEmpty()
+    {
+        Destroy(gameObject);
+    }
+
     public void EndAction()
     {
         acting = false;
         hurtbox.invincible = false;
-    }
-
-    public void OnHPEmpty()
-    {
-        Destroy(gameObject);
+        animator.Play("idle");
     }
 
     public void FireAttack_WingDemon()
@@ -124,12 +128,12 @@ public class EnemyController : MonoBehaviour
     {
         var attack = Instantiate(attackPrefab, transform.position + new Vector3(facing * 4, 1f), Quaternion.identity);
         attack.GetComponent<ProjectileController>()
-                    .SetEntityPierce()
-                    .SetLifetime(0.2f)
-					.Init(transform, new HitData()
-                    {
-                        baseDamage = 1
-                    });
+            .SetEntityPierce()
+            .SetLifetime(0.2f)
+            .Init(transform, new HitData()
+            {
+                baseDamage = 1
+            });
     }
 
     public void FireSpecial_SalamanderDemon()
@@ -138,11 +142,19 @@ public class EnemyController : MonoBehaviour
                 var attack = Instantiate(attackPrefab, transform);
         attack.transform.localPosition = new Vector3(facing, 2);
         attack.GetComponent<ProjectileController>()
-                    .SetEntityPierce()
-                    .SetLifetime(0.7f)
-					.Init(transform, new HitData()
-                    {
-                        baseDamage = 1
-                    });
+            .SetEntityPierce()
+            .SetLifetime(0.7f)
+            .Init(transform, new HitData()
+            {
+                baseDamage = 1
+            });
     }
 }
+
+[Serializable] public struct EnemyAttackData
+{
+    public string tag;
+    public float cooldown;
+    public float range;
+    public GameObject[] attackPrefab;
+} 

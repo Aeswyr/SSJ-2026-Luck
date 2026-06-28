@@ -52,8 +52,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca95369ea757b9848b7880b6ac620637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossController
+  rbody: {fileID: 8041034413126367318}
+  animator: {fileID: -4010612189880386193}
+  spriteRenderer: {fileID: 5697496803871802723}
+  hurtbox: {fileID: 730848039966349182}
   closingDialog: boss1end
   entity: {fileID: 6764908746684948279}
+  attacks:
+  - tag: leap
+    cooldown: 0
+    range: 0
+    attackPrefab:
+    - {fileID: 2676629492061376651, guid: df4d87aa78f538a429bf3548dbafb643, type: 3}
+  - tag: dash
+    cooldown: 0
+    range: 0
+    attackPrefab:
+    - {fileID: 2676629492061376651, guid: df4d87aa78f538a429bf3548dbafb643, type: 3}
+  - tag: shot
+    cooldown: 0
+    range: 0
+    attackPrefab:
+    - {fileID: 2676629492061376651, guid: fce491ce8aa4f8f4fb89f6d934f86531, type: 3}
+  - tag: stomp
+    cooldown: 0
+    range: 0
+    attackPrefab:
+    - {fileID: 2676629492061376651, guid: 31396be4546a32f42921dbd71d38238c, type: 3}
+  attackDelay: 1.5
+  sequenceDelay: 6
 --- !u!114 &6764908746684948279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
   buffs: {fileID: 6385019922222583934}
-  maxHp: 250
+  maxHp: 200
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -206,9 +233,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2676629492061376651}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -3781214166024197237, guid: 0bd1007b400d46242b9fc2a76fe51e4a, type: 3}
+  m_Controller: {fileID: -7873726194293506419, guid: 7dd82e959d373484c9e779b49b0f6dce, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

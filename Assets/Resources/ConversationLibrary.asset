@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4338cb0ae979e694fbb2483b3182b2b1, type: 3}
   m_Name: ConversationLibrary
   m_EditorClassIdentifier: Assembly-CSharp::ConversationLibrary
-  path: ./Assets/Resources/SSJ_Luck_26 - Dialog.tsv
   portraits:
   - name: ace_neutral
     sprite: {fileID: -3487438023490082363, guid: 30327a54dccd8dd4597953e2b13f50b4, type: 3}
@@ -22,3 +21,5 @@ MonoBehaviour:
     sprite: {fileID: -3487438023490082363, guid: 27b149b8563efc44cafe3417d71553c5, type: 3}
   - name: anne_neutral
     sprite: {fileID: -3487438023490082363, guid: 8cd23175acda2e446be8dfccc74db415, type: 3}
+  - name: gator_neutral
+    sprite: {fileID: -3487438023490082363, guid: 8e4b482638845b942af87579b6710314, type: 3}

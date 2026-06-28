@@ -85,15 +85,15 @@ MonoBehaviour:
   levelObjects: {fileID: 139404827486839465}
   levelBounds: {x: -4, y: 52}
   parallaxes:
-  - layerSprite: {fileID: 7788443904728093867, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: 6793616966895583600, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0
-  - layerSprite: {fileID: 5291236108473921537, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: 7390769249263930076, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0.1
-  - layerSprite: {fileID: 6140436265862838223, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: -6350769604679335045, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0.2
-  - layerSprite: {fileID: 2815276386548791002, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: 6712437332079162836, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0.2
-  - layerSprite: {fileID: 3450974885074097569, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: -671604818535968929, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0.3
   - layerSprite: {fileID: -4127540655197143238, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0.8
@@ -376,7 +376,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 414407965
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15679,7 +15679,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 414407965
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15869,6 +15869,34 @@ PrefabInstance:
       propertyPath: conversationKey
       value: boss1start
       objectReference: {fileID: 0}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7086047401056540401}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BossController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928288644410390988, guid: aa248920e0987e940b50148cf125ac56, type: 3}
+      propertyPath: callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15941,3 +15969,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5230067030317142455, guid: 0eb232b0bda2a89459d4aa5fbd5fcb51, type: 3}
   m_PrefabInstance: {fileID: 2965244283032382495}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7086047401056540401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5435874876678814446, guid: 0eb232b0bda2a89459d4aa5fbd5fcb51, type: 3}
+  m_PrefabInstance: {fileID: 2965244283032382495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca95369ea757b9848b7880b6ac620637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossController

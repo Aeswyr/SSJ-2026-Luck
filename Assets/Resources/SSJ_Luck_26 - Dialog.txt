@@ -262,14 +262,14 @@ ae3	Anne	Thank you, Ace. I’ll find my way from here.	anne_neutral	Right	NONE
 ae3	Ace	Take care, Anne.	ace_neutral	Left	NONE
 ae3	Anne	(As she vanishes, two cards fall to the ground.)	anne_neutral	Right	NONE
 					
-boss1start	Gator	Well, well, well, what do we have here?		Right	NONE
-boss1start	Gator	A soul lost in the wilds.		Right	NONE
-boss1start	Gator	You ain't supposed to be all the way out here.		Right	NONE
+boss1start	Gator	Well, well, well, what do we have here?	gator_neutral	Right	NONE
+boss1start	Gator	A soul lost in the wilds.	gator_neutral	Right	NONE
+boss1start	Gator	You ain't supposed to be all the way out here.	gator_neutral	Right	NONE
 boss1start	Ace	Not like I asked for it.	ace_neutral	Left	NONE
-boss1start	Gator	Don't worry, lost soul. Even out here, we can manage some torture for you.		Right	NONE
-boss1start	Gator	And if you got to thinkin' you could get outta this place through the border, don't bother.		Right	NONE
-boss1start	Gator	You ain't ever gettin' out of here.		Right	NONE
+boss1start	Gator	Don't worry, lost soul. Even out here, we can manage some torture for you.	gator_neutral	Right	NONE
+boss1start	Gator	And if you got to thinkin' you could get outta this place through the border, don't bother.	gator_neutral	Right	NONE
+boss1start	Gator	You ain't ever gettin' out of here.	gator_neutral	Right	NONE
 					
-boss1end	Gator	(Gator collapses, gasping)		Right	NONE
-boss1end	Gator	Damn lost soul... Where'd you get that weapon?		Right	
-boss1end	Gator	Fine... I may not be able to defeat you, but out there? You won't make it far.		Right	
+boss1end	Gator	(Gator collapses, gasping)	gator_neutral	Right	NONE
+boss1end	Gator	Damn lost soul... Where'd you get that weapon?	gator_neutral	Right	NONE
+boss1end	Gator	Fine... I may not be able to defeat you, but out there? You won't make it far.	gator_neutral	Right	NONE

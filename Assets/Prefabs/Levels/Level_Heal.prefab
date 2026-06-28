@@ -86,19 +86,25 @@ MonoBehaviour:
   levelObjects: {fileID: 139404827486839465}
   levelBounds: {x: -4, y: 0}
   parallaxes:
-  - layerSprite: {fileID: 7788443904728093867, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: 6232682014246318390, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0
-  - layerSprite: {fileID: 5291236108473921537, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: -4398600728589309383, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0.1
-  - layerSprite: {fileID: 6140436265862838223, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: -7437950569468539991, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0.2
-  - layerSprite: {fileID: 2815276386548791002, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
-    speedModifier: 0.2
-  - layerSprite: {fileID: 3450974885074097569, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: -4771446767876967046, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0.3
-  - layerSprite: {fileID: -4127540655197143238, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: -4543365983177634608, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
+    speedModifier: 0.4
+  - layerSprite: {fileID: -8620253132841849041, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
+    speedModifier: 0.5
+  - layerSprite: {fileID: -7100196908849863687, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
+    speedModifier: 0.6
+  - layerSprite: {fileID: 4423428950496557088, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
+    speedModifier: 0.7
+  - layerSprite: {fileID: 7482703304477047087, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0.8
-  - layerSprite: {fileID: 7161543363826181426, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
+  - layerSprite: {fileID: 3698724250031678112, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 1
 --- !u!1 &3014734585823702684
 GameObject:
@@ -377,7 +383,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 414407965
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15680,7 +15686,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 414407965
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

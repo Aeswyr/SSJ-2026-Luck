@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Conversable
   conversationKey: test
+  callback:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9102615911462986929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +111,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 7477ebd44de43834fb4369fba8dec63d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +131,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 3942833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3487438023490082363, guid: f052218b69bced740a8fd4679c10afe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

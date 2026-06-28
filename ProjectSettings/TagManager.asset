@@ -44,14 +44,14 @@ TagManager:
   - name: Parallax
     uniqueID: 4192556667
     locked: 0
-  - name: World
-    uniqueID: 414407965
-    locked: 0
   - name: Object
     uniqueID: 3942833
     locked: 0
   - name: Entity
     uniqueID: 637567519
+    locked: 0
+  - name: World
+    uniqueID: 414407965
     locked: 0
   - name: Projectile
     uniqueID: 3263114535

@@ -10,7 +10,7 @@ public class GameManager : Singleton<GameManager>
     private LevelController currentLevel;
     private PlayerController player;
     private int levelIndex = 0;
-
+    private int enemyCount;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -103,9 +103,13 @@ public class GameManager : Singleton<GameManager>
                 difficulty = CombatDifficulty.NONE;
                 break;
         }
-        var spawns = currentLevel.GetSpawns();
 
-        if (spawns.Count == 0)
+        foreach (var door in FindObjectsByType<LevelTransition>(FindObjectsSortMode.None))
+            door.SetClosed();
+        currentLevel.ToggleRewardsEnabled(false);
+
+        var spawns = currentLevel.GetSpawns();
+        if (spawns.Count == 0) 
             return;
             
         var scenarios = encounters.GetScenariosForDifficulty(difficulty);
@@ -113,10 +117,28 @@ public class GameManager : Singleton<GameManager>
 
         foreach (var enemy in enemies.spawns)
             Instantiate(encounters.GetEnemyPrefab(enemy.type), spawns[enemy.index], Quaternion.identity, currentLevel.GetObjectParent());
+    
+        enemyCount = enemies.spawns.Count;
+
+
     }
 
     public LevelController GetCurrentLevel()
     {
         return currentLevel;
+    }
+
+    public void OnEnemyKilled()
+    {
+        enemyCount--;
+
+        if (enemyCount <= 0)
+            currentLevel.ToggleRewardsEnabled(true);
+    }
+
+    public void OpenAllDoors()
+    {
+        foreach (var door in FindObjectsByType<LevelTransition>(FindObjectsSortMode.None))
+            door.SetOpen();
     }
 }

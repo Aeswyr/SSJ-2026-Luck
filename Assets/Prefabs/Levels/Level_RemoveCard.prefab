@@ -118,6 +118,7 @@ MonoBehaviour:
   levelObjects: {fileID: 139404827486839465}
   levelBounds: {x: -4, y: 0}
   spawnParent: {fileID: 6456977689062319272}
+  rewards: []
   parallaxes:
   - layerSprite: {fileID: 6232682014246318390, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0
@@ -15904,6 +15905,10 @@ PrefabInstance:
     - target: {fileID: 5230067030317142455, guid: 0d8892a6d97e283419a6275dc53150e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102615911462986929, guid: 0d8892a6d97e283419a6275dc53150e1, type: 3}
+      propertyPath: levelEndInteractable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

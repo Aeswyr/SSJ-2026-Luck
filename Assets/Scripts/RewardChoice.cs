@@ -77,26 +77,23 @@ public class RewardChoice : MonoBehaviour
     public void ChooseRewardA()
     {
         FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[0].id);
-        node.SetActive(false);
-        foreach (var card in cardOptions)
-            card.gameObject.SetActive(false);
-
-        tooltip.gameObject.SetActive(false);
+        FinalizeRewardChoice();
     }
 
     public void ChooseRewardB()
     {
         FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[1].id);
-        node.SetActive(false);
-        foreach (var card in cardOptions)
-            card.gameObject.SetActive(false);
-
-        tooltip.gameObject.SetActive(false);
+        FinalizeRewardChoice();
     }
 
     public void ChooseRewardC()
     {
         FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[2].id);
+        FinalizeRewardChoice();
+    }
+
+    private void FinalizeRewardChoice()
+    {
         node.SetActive(false);
         foreach (var card in cardOptions)
             card.gameObject.SetActive(false);

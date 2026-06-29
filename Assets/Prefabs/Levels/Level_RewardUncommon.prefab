@@ -87,6 +87,7 @@ MonoBehaviour:
   levelObjects: {fileID: 139404827486839465}
   levelBounds: {x: -4, y: 0}
   spawnParent: {fileID: 2575124084932040907}
+  rewards: []
   parallaxes:
   - layerSprite: {fileID: 6793616966895583600, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0
@@ -15855,6 +15856,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6153030357486293946}
     m_Modifications:
+    - target: {fileID: 2135520620768550730, guid: 8e59552623b6a0f41876c54b7c500c5c, type: 3}
+      propertyPath: levelEndInteractable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2346129485141677706, guid: 8e59552623b6a0f41876c54b7c500c5c, type: 3}
       propertyPath: rarity
       value: 1

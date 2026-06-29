@@ -8,6 +8,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private GameObject levelObjects;
     [SerializeField] private Vector2 levelBounds;
     [SerializeField] private Transform spawnParent;
+    [SerializeField] private List<GameObject> rewards;
     [SerializeField] private List<ParallaxInfo> parallaxes;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,6 +48,13 @@ public class LevelController : MonoBehaviour
         }
 
         return positions;
+    }
+
+
+    public void ToggleRewardsEnabled(bool enabled)
+    {
+        foreach (var obj in rewards)
+            obj?.SetActive(enabled);
     }
 }
 

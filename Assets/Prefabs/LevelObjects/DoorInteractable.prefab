@@ -49,7 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
   levelIcon: {fileID: 7234318798306001329}
+  door: {fileID: 13335056715529449}
   type: 1
+  interact: {fileID: 9102615911462986929}
   levelTypeIcons:
   - {fileID: 0}
   - {fileID: -3487438023490082363, guid: 02c3335bdf32eee4e8b47910a7066d13, type: 3}
@@ -59,6 +61,8 @@ MonoBehaviour:
   - {fileID: -2418673169904245930, guid: 02c3335bdf32eee4e8b47910a7066d13, type: 3}
   - {fileID: 5667383524766617343, guid: 02c3335bdf32eee4e8b47910a7066d13, type: 3}
   - {fileID: 6009921536792666968, guid: 02c3335bdf32eee4e8b47910a7066d13, type: 3}
+  openSprite: {fileID: -3487438023490082363, guid: 71091963e3147994f93db7ccbdf1229e, type: 3}
+  closedSprite: {fileID: -3487438023490082363, guid: 4b57c48eaeb50c44898cecfa15314b9c, type: 3}
 --- !u!114 &9102615911462986929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +279,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -290833345
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -3487438023490082363, guid: 02c3335bdf32eee4e8b47910a7066d13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

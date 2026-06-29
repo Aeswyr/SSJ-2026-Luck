@@ -8,6 +8,7 @@ public class InteractableController : MonoBehaviour
 
     [SerializeField] private Collider2D col;
     [SerializeField] private bool singleUse;
+    [SerializeField] private bool levelEndInteractable;
     void OnTriggerEnter2D(Collider2D collision)
     {
         onEnter?.Invoke();
@@ -24,6 +25,13 @@ public class InteractableController : MonoBehaviour
 
         if (singleUse)
             col.enabled = false;
+
+        if (levelEndInteractable)
+            GameManager.Instance.OpenAllDoors();
     }
 
+    public void ToggleEnabled(bool enabled)
+    {
+        col.enabled = enabled;
+    }
 }

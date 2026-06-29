@@ -370,7 +370,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -380,7 +380,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1652198549
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &139926029
@@ -804,9 +804,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0.99987507
-    height: 1
+    y: 0.3638181
+    width: 0.3880765
+    height: 0.38793105
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000007b56e5f9b1293c004f3a475f1f8200261d5db318272d7fc2f5bcbc493f3caaee
+  m_ApplyToSortingLayers: 000000007b56e5f9b1293c004f3a475f1f8200261d5db318272d7fc2f5bcbc493f3caaee958c7a62
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1481,6 +1481,14 @@ PrefabInstance:
     - target: {fileID: 2771043838771664140, guid: 07c7000e07c0d8f4cb6f339f4d6a2e1f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178148123149868290, guid: 07c7000e07c0d8f4cb6f339f4d6a2e1f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178148123149868290, guid: 07c7000e07c0d8f4cb6f339f4d6a2e1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 3756748446741793728, guid: 07c7000e07c0d8f4cb6f339f4d6a2e1f, type: 3}
       propertyPath: m_AnchorMax.y

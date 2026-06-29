@@ -1095,8 +1095,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.47368422, y: 0.6666667}
-    oldSize: {x: 2.375, y: 2.25}
+    pivot: {x: 0.47619048, y: 0.65000004}
+    oldSize: {x: 2.625, y: 2.5}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1216,7 +1216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230067030317142455, guid: ce49a179a51698548afafabf2f7ec54a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.4
+      value: 6.25
       objectReference: {fileID: 0}
     - target: {fileID: 5230067030317142455, guid: ce49a179a51698548afafabf2f7ec54a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1269,6 +1269,14 @@ PrefabInstance:
     - target: {fileID: 7852907239265824446, guid: ce49a179a51698548afafabf2f7ec54a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798986841170704793, guid: ce49a179a51698548afafabf2f7ec54a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798986841170704793, guid: ce49a179a51698548afafabf2f7ec54a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1652198549
       objectReference: {fileID: 0}
     - target: {fileID: 9006552908498797032, guid: ce49a179a51698548afafabf2f7ec54a, type: 3}
       propertyPath: m_AnchorMax.y

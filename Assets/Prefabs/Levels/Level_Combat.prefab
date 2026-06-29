@@ -128,6 +128,8 @@ MonoBehaviour:
   levelObjects: {fileID: 139404827486839465}
   levelBounds: {x: -4, y: 84}
   spawnParent: {fileID: 7648153519780743808}
+  rewards:
+  - {fileID: 77434997394818118}
   parallaxes:
   - layerSprite: {fileID: 6793616966895583600, guid: b3f16fdad8731f14e8d3f8a0e52cfee5, type: 3}
     speedModifier: 0
@@ -20789,6 +20791,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6153030357486293946}
     m_Modifications:
+    - target: {fileID: 2135520620768550730, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}
+      propertyPath: levelEndInteractable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2676629492061376651, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}
       propertyPath: m_Name
       value: RewardNode
@@ -20918,6 +20924,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}
+--- !u!1 &77434997394818118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2676629492061376651, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}
+  m_PrefabInstance: {fileID: 2609368619632678093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7828022160739845498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5230067030317142455, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}

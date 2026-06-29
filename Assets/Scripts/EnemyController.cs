@@ -74,7 +74,7 @@ public class EnemyController : MonoBehaviour
     {
         VFXManager.Instance.CreateVFX(deathFX, transform.position, spriteRenderer.flipX, duration: 60, renderBehind: true);
         Destroy(gameObject);
-        
+        GameManager.Instance.OnEnemyKilled();
     }
 
     public void EndAction()

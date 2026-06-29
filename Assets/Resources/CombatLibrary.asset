@@ -74,15 +74,27 @@ MonoBehaviour:
       index: 9
     - type: 3
       index: 7
-  - difficulty: 3
+  - difficulty: 0
     spawns:
     - type: 0
       index: 4
-  - difficulty: 3
+  - difficulty: 0
     spawns:
     - type: 2
       index: 4
-  - difficulty: 3
+  - difficulty: 0
     spawns:
     - type: 3
+      index: 4
+  - difficulty: 2
+    spawns:
+    - type: 3
+      index: 6
+    - type: 3
+      index: 8
+    - type: 0
+      index: 0
+    - type: 1
+      index: 2
+    - type: 1
       index: 4

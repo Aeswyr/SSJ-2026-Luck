@@ -124,6 +124,8 @@ public class PlayerController : MonoBehaviour
 
 		if ((!acting || cancellable) && handSize > 0 && input.attack.pressed)
 		{
+			animator.SetBool("moving", false);
+			acting = true;
 			UpdateFacing();
 
 			VFXManager.Instance.CreateVFX(VFXType.DUST_SMALL, transform.position, facing == -1);
@@ -137,12 +139,13 @@ public class PlayerController : MonoBehaviour
 					animator.SetInteger("attackId", 3);
 					break;
 				case CardType.DEBUFF:
-					animator.SetInteger("attackId", 4); // unused animation animation
+					animator.SetInteger("attackId", 4);
 					break;
 				default:
 					animator.SetInteger("attackId", cancellable ? 1 + attackRepeat : 0);
 					break;
 			}
+
 			animator.SetTrigger("attack");
 
 			if (cancellable)
@@ -159,6 +162,8 @@ public class PlayerController : MonoBehaviour
 		}
 
 		if ((!acting || cancellable) && input.dodge.pressed) {
+			animator.SetBool("moving", false);
+
 			UpdateFacing();
 
 			VFXManager.Instance.CreateVFX(VFXType.DUST_LARGE, transform.position + facing * Vector3.left, facing == -1);
@@ -174,6 +179,8 @@ public class PlayerController : MonoBehaviour
 		}
 
 		if ((!acting || cancellable) && (input.reload.pressed || (handSize == 0 && input.attack.pressed))) {
+			animator.SetBool("moving", false);
+
 			UpdateFacing();
 			
 			animator.SetTrigger("reload");

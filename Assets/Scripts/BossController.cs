@@ -86,7 +86,9 @@ public class BossController : MonoBehaviour
     }
     public void OnDeath()
     {
-        animator.Play("idle");
+        rbody.linearVelocityX = 0;
+        animator.Play("felled");
+        acting = true;
         nextAttack = Time.time + 100000;
 
         if (string.IsNullOrEmpty(closingDialog))
@@ -99,9 +101,9 @@ public class BossController : MonoBehaviour
 
         void ShowVictory()
         {
+            animator.Play("dead");
             FindAnyObjectByType<PlayerController>().ToggleInputLock(true);
             hud.ShowWinScreen();
-            Destroy(gameObject);
         }
     }
 

@@ -47,6 +47,9 @@ TagManager:
   - name: Object
     uniqueID: 3942833
     locked: 0
+  - name: VFX_Back
+    uniqueID: 1598503503
+    locked: 0
   - name: Entity
     uniqueID: 637567519
     locked: 0

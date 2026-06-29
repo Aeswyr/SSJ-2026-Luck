@@ -56,6 +56,7 @@ MonoBehaviour:
   animator: {fileID: -4010612189880386193}
   spriteRenderer: {fileID: 5697496803871802723}
   hurtbox: {fileID: 730848039966349182}
+  deathFX: 8
   preferredRange: 20
   speed: 5
   flee: 1

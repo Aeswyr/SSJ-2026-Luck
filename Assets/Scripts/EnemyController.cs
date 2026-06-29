@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private HurtboxController hurtbox;
+    [SerializeField] private VFXType deathFX;
     [SerializeField] private float preferredRange, speed;
     [SerializeField] private bool flee;
     [SerializeField] private float attackCooldown, specialCooldown;
@@ -71,7 +72,9 @@ public class EnemyController : MonoBehaviour
 
     public void OnHPEmpty()
     {
+        VFXManager.Instance.CreateVFX(deathFX, transform.position, spriteRenderer.flipX, duration: 60, renderBehind: true);
         Destroy(gameObject);
+        
     }
 
     public void EndAction()

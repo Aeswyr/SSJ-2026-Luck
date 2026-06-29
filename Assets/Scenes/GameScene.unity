@@ -675,7 +675,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1237105909
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1286041116, guid: 4064452f33282574abd8b11caba892ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -804,14 +804,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.3638181
-    width: 0.3880765
-    height: 0.38793105
+    y: 0
+    width: 0.99987507
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15.96875
+  orthographic size: 11.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000007b56e5f91d5db318b1293c001f820026272d7fc2f5bcbc493f3caaee
+  m_ApplyToSortingLayers: 000000007b56e5f9b1293c004f3a475f1f8200261d5db318272d7fc2f5bcbc493f3caaee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

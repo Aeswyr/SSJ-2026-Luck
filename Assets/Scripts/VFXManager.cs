@@ -9,7 +9,7 @@ public class VFXManager : Singleton<VFXManager>
     [Header("Floating Text")]
     [SerializeField] private GameObject toastPrefab;
 
-	public void CreateVFX(VFXType type, Vector3 pos, bool flip, Transform parent = null, bool renderBehind = false)
+	public void CreateVFX(VFXType type, Vector3 pos, bool flip, Transform parent = null, bool renderBehind = false, float duration = -1)
 	{
 		if (type == VFXType.NONE)
 			return;
@@ -28,7 +28,7 @@ public class VFXManager : Singleton<VFXManager>
 		AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(component.runtimeAnimatorController);
 		animatorOverrideController["particle"] = anims[(int)type];
 		component.runtimeAnimatorController = animatorOverrideController;
-		gameObject.GetComponent<DestroyAfterDelay>().Init(anims[(int)type].length - 0.1f);
+		gameObject.GetComponent<DestroyAfterDelay>().Init(duration == -1 ? anims[(int)type].length - 0.1f : duration);
 		SpriteRenderer component2 = gameObject.GetComponent<SpriteRenderer>();
 		component2.flipX = flip;
 		if (renderBehind)
@@ -53,5 +53,6 @@ public class VFXManager : Singleton<VFXManager>
 
 public enum VFXType
 {
-    DUST_SMALL, DUST_LARGE, DUST_JUMP, HITSPARK_LARGE, HITSPARK_SMALL, NONE
+    DUST_SMALL, DUST_LARGE, DUST_JUMP, HITSPARK_LARGE, HITSPARK_SMALL,
+	CORPSE_ANGLER, CORPSES_HOLLOW, CORPSE_SALAMANDER, CORPSE_WING, NONE
 }

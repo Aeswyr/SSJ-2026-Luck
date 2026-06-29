@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: levelDoor
     originalName: 
-    pivot: {x: 0.53846157, y: 0}
+    pivot: {x: 0.5294118, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,7 +137,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 13
+      width: 17
       height: 29
     spriteID: c448a59dfa284d64ca596fc0fd25f8a5
     spriteBone: []
@@ -167,9 +167,9 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 9
+        x: 7
         y: 0
-        width: 13
+        width: 17
         height: 29
       spriteId: c448a59dfa284d64ca596fc0fd25f8a5
     linkedCells: []

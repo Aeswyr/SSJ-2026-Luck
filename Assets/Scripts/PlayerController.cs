@@ -356,6 +356,7 @@ public class PlayerController : MonoBehaviour
 						if (buff != null)
 						{
 							buff.AddBuff(BuffType.MARK);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_GENERIC, ray.point + Vector2.down, facing == -1);
 						}
 					}
 				}

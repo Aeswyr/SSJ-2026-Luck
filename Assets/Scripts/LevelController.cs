@@ -7,6 +7,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private Vector2 spawn;
     [SerializeField] private GameObject levelObjects;
     [SerializeField] private Vector2 levelBounds;
+    [SerializeField] private Transform spawnParent;
     [SerializeField] private List<ParallaxInfo> parallaxes;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

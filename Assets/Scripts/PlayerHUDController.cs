@@ -105,7 +105,11 @@ public class PlayerHUDController : MonoBehaviour
 
     public void OnReturnPressed()
     {
-        SceneManager.LoadScene("MenuScene");
+        ScreenWipeManager.Instance.PlayWipeOn(() =>
+        {
+            SceneManager.LoadScene("MenuScene");
+            ScreenWipeManager.Instance.PlayWipeOff();
+        });
     }
 
     public void OnDeckPressed()

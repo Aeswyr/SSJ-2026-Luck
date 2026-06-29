@@ -37,7 +37,13 @@ public class PauseController : MonoBehaviour
     public void OnEndPressed()
     {
         ToggleMenu();
+
+        ScreenWipeManager.Instance.PlayWipeOn(() =>
+        {
+            SceneManager.LoadScene("MenuScene");
+            ScreenWipeManager.Instance.PlayWipeOff();
+        });
         
-        SceneManager.LoadScene("MenuScene");
+        
     }
 }

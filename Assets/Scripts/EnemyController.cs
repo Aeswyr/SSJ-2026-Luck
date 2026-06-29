@@ -149,6 +149,20 @@ public class EnemyController : MonoBehaviour
                 baseDamage = 1
             });
     }
+
+
+    public void FireAttack_Hollow()
+    {
+        var attack = Instantiate(attackPrefab, transform);
+        attack.transform.localPosition = new Vector3(facing * 1.5f , 2);
+        attack.GetComponent<ProjectileController>()
+            .SetEntityPierce()
+            .SetLifetime(0.3f)
+            .Init(transform, new HitData()
+            {
+                baseDamage = 1
+            });
+    }
 }
 
 [Serializable] public struct EnemyAttackData

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6558225320265724447}
   - component: {fileID: 5842651929732429097}
   m_Layer: 0
-  m_Name: HitboxTongue
+  m_Name: HitboxSalamander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

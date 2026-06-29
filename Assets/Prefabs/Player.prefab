@@ -152,6 +152,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dodgeSpeed: 18
+  hurtCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -6.252192
+      outSlope: -6.252192
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.033480175
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.035997797
+      outSlope: -0.035997797
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07929522
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hurtSpeed: 24
   cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
   startingDeck: 0,0,4,1
 --- !u!114 &2057800042783320036
@@ -415,7 +449,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 637567519
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -7721865470395083141, guid: 51ea2ac2bac09754887badd41e9b5a4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

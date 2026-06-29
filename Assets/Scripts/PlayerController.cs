@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float attack2Speed;
 	[SerializeField] private AnimationCurve dodgeCurve;
 	[SerializeField] private float dodgeSpeed;
+	[SerializeField] private AnimationCurve hurtCurve;
+	[SerializeField] private float hurtSpeed;
 	
 	[Space]
 	[Header("Data Assets")]
@@ -109,7 +111,9 @@ public class PlayerController : MonoBehaviour
         if (!acting && grounded && input.jump.pressed)
 		{
 			jump.StartJump();
-			//animator.SetTrigger("jump");
+			grounded = false;
+			animator.SetBool("grounded", grounded);
+			animator.SetTrigger("jump");
 			//SFXManager.Instance.PlaySound("jump");
 
             if (grounded)
@@ -126,7 +130,19 @@ public class PlayerController : MonoBehaviour
 
 			UseSelectedCard();
 
-			animator.SetInteger("attackId", cancellable ? 1 + attackRepeat : 0);
+			switch (readiedCard.Value.type) {
+				case CardType.BUFF:
+				case CardType.INSTANT:
+				case CardType.SPECIAL:
+					animator.SetInteger("attackId", 3);
+					break;
+				case CardType.DEBUFF:
+					animator.SetInteger("attackId", 4); // unused animation animation
+					break;
+				default:
+					animator.SetInteger("attackId", cancellable ? 1 + attackRepeat : 0);
+					break;
+			}
 			animator.SetTrigger("attack");
 
 			if (cancellable)
@@ -559,7 +575,13 @@ public class PlayerController : MonoBehaviour
 
 	public void OnRecieveHit(int hp)
 	{
-		
+		if (hp > 0) {
+			animator.SetBool("moving", false);
+			animator.SetTrigger("hurt");
+			move.OverrideCurve(hurtSpeed, hurtCurve, -facing);
+			acting = true;
+			hurtbox.intangible = true;
+		}
 	}
 
 	public void OnHealthChange(int hp)
@@ -570,6 +592,7 @@ public class PlayerController : MonoBehaviour
 	public void OnDeath()
 	{
 		ToggleInputLock(true);
+		animator.SetBool("moving", false);
 		animator.SetTrigger("dead");
 
 		hudController.ShowDeathScreen();

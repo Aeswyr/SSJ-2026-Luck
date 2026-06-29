@@ -61,7 +61,8 @@ public class ProjectileController : MonoBehaviour
 
         var hurtbox = collider.transform.GetComponent<HurtboxController>();
         hurtbox.OnHit(payload);
-        if (hurtbox.intangible)
+        
+        if (hurtbox.TouchDisabled())
             return;
 
         if (isEnemy)

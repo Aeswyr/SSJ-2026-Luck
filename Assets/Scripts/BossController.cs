@@ -25,7 +25,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         hud = FindAnyObjectByType<PlayerHUDController>();
-        hurtbox.intangible = true;
+        hurtbox.disabled = true;
 
     }
 
@@ -34,7 +34,7 @@ public class BossController : MonoBehaviour
         hud.ToggleBossHealth(true);
         hud.updateBossHealth(entity.GetMaxHealth(), entity.GetMaxHealth());
 
-        hurtbox.intangible = false;
+        hurtbox.disabled = false;
         
         NewSequence();
         nextAttack = attackDelay;

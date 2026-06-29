@@ -349,11 +349,12 @@ public class PlayerController : MonoBehaviour
 				break;
 			case CardID.CALLED_SHOT:
 				{
-					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Hurtbox"}));
 					if (ray && ray.collider.transform.parent != null)
 					{
 						BuffController buff = ray.collider.transform.parent.GetComponentInChildren<BuffController>();
-						if (buff != null)
+						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
+						if (buff != null && !hurtbox.TouchDisabled())
 						{
 							buff.AddBuff(BuffType.MARK);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_MARK, ray.point + Vector2.down, facing == -1);
@@ -363,11 +364,12 @@ public class PlayerController : MonoBehaviour
 				break;
 			case CardID.CALLBACK:
 				{
-					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Hurtbox"}));
 					if (ray && ray.collider.transform.parent != null)
 					{
 						BuffController buff = ray.collider.transform.parent.GetComponentInChildren<BuffController>();
-						if (buff != null)
+						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
+						if (buff != null && !hurtbox.TouchDisabled())
 						{
 							buff.AddBuff(BuffType.COMEDY);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_COMEDY, ray.point + Vector2.down, facing == -1);
@@ -377,11 +379,12 @@ public class PlayerController : MonoBehaviour
 				break;
 			case CardID.PEERLESS_FOCUS:
 				{
-					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Hurtbox"}));
 					if (ray && ray.collider.transform.parent != null)
 					{
 						BuffController buff = ray.collider.transform.parent.GetComponentInChildren<BuffController>();
-						if (buff != null)
+						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
+						if (buff != null && !hurtbox.TouchDisabled())
 						{
 							buff.AddBuff(BuffType.LOOT);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_LOOT, ray.point + Vector2.down, facing == -1);
@@ -391,11 +394,12 @@ public class PlayerController : MonoBehaviour
 				break;
 			case CardID.BLEED_OUT:
 				{
-					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Hurtbox"}));
 					if (ray && ray.collider.transform.parent != null)
 					{
 						BuffController buff = ray.collider.transform.parent.GetComponentInChildren<BuffController>();
-						if (buff != null)
+						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
+						if (buff != null && !hurtbox.TouchDisabled())
 						{
 							buff.AddBuff(BuffType.BLEED);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_BLEED, ray.point + Vector2.down, facing == -1);
@@ -405,11 +409,12 @@ public class PlayerController : MonoBehaviour
 				break;
 			case CardID.THOUSAND_CUTS:
 				{
-					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Entity"}));
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Hurtbox"}));
 					if (ray && ray.collider.transform.parent != null)
 					{
 						BuffController buff = ray.collider.transform.parent.GetComponentInChildren<BuffController>();
-						if (buff != null)
+						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
+						if (buff != null && !hurtbox.TouchDisabled())
 						{
 							buff.AddBuff(BuffType.PAIN);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_PAIN, ray.point + Vector2.down, facing == -1);
@@ -793,6 +798,8 @@ public class PlayerController : MonoBehaviour
 		{
 			move.StartDeceleration();
 		}
+
+		hurtbox.disabled = locked;
 	}
 
 }

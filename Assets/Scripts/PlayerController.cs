@@ -356,7 +356,7 @@ public class PlayerController : MonoBehaviour
 						if (buff != null)
 						{
 							buff.AddBuff(BuffType.MARK);
-							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_GENERIC, ray.point + Vector2.down, facing == -1);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_MARK, ray.point + Vector2.down, facing == -1);
 						}
 					}
 				}
@@ -370,6 +370,7 @@ public class PlayerController : MonoBehaviour
 						if (buff != null)
 						{
 							buff.AddBuff(BuffType.COMEDY);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_COMEDY, ray.point + Vector2.down, facing == -1);
 						}
 					}
 				}
@@ -383,6 +384,7 @@ public class PlayerController : MonoBehaviour
 						if (buff != null)
 						{
 							buff.AddBuff(BuffType.LOOT);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_LOOT, ray.point + Vector2.down, facing == -1);
 						}
 					}
 				}
@@ -396,6 +398,7 @@ public class PlayerController : MonoBehaviour
 						if (buff != null)
 						{
 							buff.AddBuff(BuffType.BLEED);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_BLEED, ray.point + Vector2.down, facing == -1);
 						}
 					}
 				}
@@ -409,6 +412,7 @@ public class PlayerController : MonoBehaviour
 						if (buff != null)
 						{
 							buff.AddBuff(BuffType.PAIN);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_PAIN, ray.point + Vector2.down, facing == -1);
 						}
 					}
 				}

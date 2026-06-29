@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d965f75c49009a648b4c791b8bec1bda, type: 3}
+  m_Name: CombatLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::CombatLibrary
+  enemies:
+  - type: 0
+    prefab: {fileID: 2676629492061376651, guid: 78ce30258467a4348a868d31ce2ad54f, type: 3}
+  - type: 1
+    prefab: {fileID: 2676629492061376651, guid: e08246f6319f7e941a7d776f49285a1b, type: 3}
+  - type: 2
+    prefab: {fileID: 2676629492061376651, guid: 1a687319882e7ac438ec849d02c88f23, type: 3}
+  - type: 3
+    prefab: {fileID: 2676629492061376651, guid: 1df8e657ffee2834e97fe1b587142f0b, type: 3}
+  scenarios:
+  - difficulty: 0
+    spawns:
+    - type: 1
+      index: 0
+    - type: 1
+      index: 3
+    - type: 1
+      index: 6
+  - difficulty: 1
+    spawns:
+    - type: 0
+      index: 0
+    - type: 3
+      index: 6
+  - difficulty: 1
+    spawns:
+    - type: 2
+      index: 0
+    - type: 3
+      index: 6
+  - difficulty: 1
+    spawns:
+    - type: 1
+      index: 0
+    - type: 1
+      index: 3
+    - type: 1
+      index: 5
+    - type: 1
+      index: 9
+    - type: 1
+      index: 7
+  - difficulty: 2
+    spawns:
+    - type: 0
+      index: 0
+    - type: 2
+      index: 0
+    - type: 3
+      index: 0
+  - difficulty: 3
+    spawns:
+    - type: 0
+      index: 0
+    - type: 2
+      index: 3
+    - type: 2
+      index: 5
+    - type: 3
+      index: 9
+    - type: 3
+      index: 7
+  - difficulty: 3
+    spawns:
+    - type: 0
+      index: 4
+  - difficulty: 3
+    spawns:
+    - type: 2
+      index: 4
+  - difficulty: 3
+    spawns:
+    - type: 3
+      index: 4

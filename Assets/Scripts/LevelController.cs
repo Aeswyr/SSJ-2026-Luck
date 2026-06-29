@@ -12,6 +12,8 @@ public class LevelController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        spawnParent.gameObject.SetActive(false);
+
         foreach (var cam in FindObjectsByType<CameraFollow>(FindObjectsSortMode.None))
         {
             cam.SetBounds(levelBounds);
@@ -33,6 +35,18 @@ public class LevelController : MonoBehaviour
     public LevelType GetLevelType()
     {
         return levelType;    
+    }
+
+    public List<Vector3> GetSpawns()
+    {
+        List<Vector3> positions = new();
+
+        foreach (Transform child in spawnParent)
+        {
+            positions.Add(child.position);
+        }
+
+        return positions;
     }
 }
 

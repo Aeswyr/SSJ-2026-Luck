@@ -6,6 +6,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject playerPrefab;
     [Space]
     [SerializeField] private GameObject[] levels;
+    [SerializeField] private CombatLibrary encounters;
     private LevelController currentLevel;
     private PlayerController player;
     private int levelIndex = 0;
@@ -78,6 +79,40 @@ public class GameManager : Singleton<GameManager>
             if (validNextLevels.Count != 1)
                 validNextLevels.RemoveAt(typeIndex);
         }
+
+        CombatDifficulty difficulty;
+        switch (levelIndex)
+        {
+            case 1:
+            case 2:
+                difficulty = CombatDifficulty.EASY;
+                break;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                difficulty = CombatDifficulty.MEDIUM;
+                break;
+            case 7:
+            case 8:
+                difficulty = CombatDifficulty.HARD;
+                break;
+            case 9:
+            case 10:
+            default:
+                difficulty = CombatDifficulty.NONE;
+                break;
+        }
+        var spawns = currentLevel.GetSpawns();
+
+        if (spawns.Count == 0)
+            return;
+            
+        var scenarios = encounters.GetScenariosForDifficulty(difficulty);
+        var enemies = scenarios[Random.Range(0, scenarios.Count)];
+
+        foreach (var enemy in enemies.spawns)
+            Instantiate(encounters.GetEnemyPrefab(enemy.type), spawns[enemy.index], Quaternion.identity, currentLevel.GetObjectParent());
     }
 
     public LevelController GetCurrentLevel()

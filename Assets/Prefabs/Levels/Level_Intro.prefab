@@ -67,6 +67,7 @@ Transform:
   m_Children:
   - {fileID: 1410649713420623873}
   - {fileID: 6153030357486293946}
+  - {fileID: 4144674738907681412}
   - {fileID: 2807564319495506758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,6 +87,7 @@ MonoBehaviour:
   spawn: {x: -20, y: 4}
   levelObjects: {fileID: 139404827486839465}
   levelBounds: {x: -4, y: 84}
+  spawnParent: {fileID: 4144674738907681412}
   parallaxes:
   - layerSprite: {fileID: 6232682014246318390, guid: 0dac105f17c39954793f5d84c2c0b42d, type: 3}
     speedModifier: 0
@@ -472,6 +474,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4, y: 64}
   m_EdgeRadius: 0
+--- !u!1 &7096725034334291067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4144674738907681412}
+  m_Layer: 0
+  m_Name: Spawns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4144674738907681412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7096725034334291067}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5230067030317142455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7821623340397106123
 GameObject:
   m_ObjectHideFlags: 0

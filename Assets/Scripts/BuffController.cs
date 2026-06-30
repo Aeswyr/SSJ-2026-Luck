@@ -16,7 +16,7 @@ public class BuffController : MonoBehaviour
     void Start()
     {
         entityController = transform.GetComponentInParent<EntityController>();
-        stick = transform.GetComponentInParent<CardStickable>();
+        stick = transform.parent.GetComponentInChildren<CardStickable>();
     }
     public void AddBuff(BuffType type)
     {

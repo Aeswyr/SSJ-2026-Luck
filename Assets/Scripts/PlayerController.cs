@@ -304,13 +304,15 @@ public class PlayerController : MonoBehaviour
 			case CardID.REND:
 				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
 				{
-					var hurtbox = stick.GetComponentInChildren<HurtboxController>();
+					var hurtbox = stick.transform.parent.GetComponentInChildren<HurtboxController>();
 					if (hurtbox != null) {
 						HitData hit = hitData;
 						hit.baseDamage = hit.baseDamage * stick.cards;
 						hit.bonusDamage = hit.bonusDamage * stick.cards;
 						hurtbox.OnHit(hit);
 					}
+
+					StartCoroutine(UnstickSequence(stick.transform.position, stick.cards));
 					stick.ClearCards();
 				}
 				break;
@@ -318,7 +320,8 @@ public class PlayerController : MonoBehaviour
 				{int totalStuck = 0;
 				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
 				{
-					totalStuck = stick.cards;
+					StartCoroutine(UnstickSequence(stick.transform.position, stick.cards));
+					totalStuck += stick.cards;
 					stick.ClearCards();
 				}
 
@@ -329,7 +332,8 @@ public class PlayerController : MonoBehaviour
 				{int totalStuck = 0;
 				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
 				{
-					totalStuck = stick.cards;
+					StartCoroutine(UnstickSequence(stick.transform.position, stick.cards));
+					totalStuck += stick.cards;
 					stick.ClearCards();
 				}
 
@@ -545,6 +549,14 @@ public class PlayerController : MonoBehaviour
 		}
 
 		readiedCard = null;
+
+		IEnumerator UnstickSequence(Vector3 pos, int amount)
+		{
+			for (int i = 0; i < Mathf.Min(6, amount / 3); i++) {
+				VFXManager.Instance.CreateVFX(VFXType.HITSPARK_UNSTICK, pos + 2 * Vector3.up + new Vector3(Random.Range(-2f, 2f), Random.Range(-1f, 1f)), Random.Range(0,2) == 0);
+				yield return new WaitForSeconds(Random.Range(0.025f, 0.075f));
+			}
+		}
 	}
 
 	private void ThrowCard(HitData hitData, float yPos = -1, float speed = 28, float rotX = 0, float rotY = 0, float lifetime = 0, bool pierce = false)

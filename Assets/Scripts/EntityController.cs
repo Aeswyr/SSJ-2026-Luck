@@ -7,19 +7,19 @@ public class EntityController : MonoBehaviour
     [SerializeField] private int maxHp;
     [SerializeField] private UnityEvent<int> onHit, onHealthChange;
     [SerializeField] private UnityEvent onDeath;
+    private CardStickable stick;
     private int hp;
 
     public void Start()
     {
         hp = maxHp;
+        stick = transform.GetComponentInChildren<CardStickable>();
     }
     public void OnHit(HitData hitData)
     {
         
-        if (hitData.shouldStick && transform.TryGetComponent(out CardStickable stick))
-        {
+        if (hitData.shouldStick && stick != null)
             stick.StickCard();
-        }
 
         buffs.OnHitBuff();
 

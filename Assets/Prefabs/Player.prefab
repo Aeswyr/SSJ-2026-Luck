@@ -187,7 +187,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   hurtSpeed: 24
   cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
-  startingDeck: 0,0,1,4
+  startingDeck: 2,2,2,5
 --- !u!114 &2057800042783320036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 637567519
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -7721865470395083141, guid: 51ea2ac2bac09754887badd41e9b5a4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -781,6 +781,7 @@ MonoBehaviour:
         m_CallState: 2
   intangible: 0
   invincible: 0
+  disabled: 0
 --- !u!70 &6122310003172957134
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -896,7 +897,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -290833345
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -7371910913353187107, guid: 012141a0ecfd2564cbbe82cc95f6375e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

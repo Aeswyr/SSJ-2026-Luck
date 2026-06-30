@@ -187,7 +187,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   hurtSpeed: 24
   cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
-  startingDeck: 2,2,2,5
+  startingDeck: 0,0,1,4
 --- !u!114 &2057800042783320036
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,13 +13,23 @@ public class InteractboxController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        interactables.Add(collision.transform.GetComponent<InteractableController>());
+        var interactable = collision.transform.GetComponent<InteractableController>();
+
+        if (!interactable.CanInteract)
+            return;
+
+        interactables.Add(interactable);
         prompt.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        interactables.Remove(collision.transform.GetComponent<InteractableController>());
+        var interactable = collision.transform.GetComponent<InteractableController>();
+
+        if (!interactable.CanInteract)
+            return;
+
+        interactables.Remove(interactable);
         if (interactables.Count <= 0)
             prompt.SetActive(false);
     }

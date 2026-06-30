@@ -9,6 +9,8 @@ public class InteractableController : MonoBehaviour
     [SerializeField] private Collider2D col;
     [SerializeField] private bool singleUse;
     [SerializeField] private bool levelEndInteractable;
+    [SerializeField] private bool canInteract = true;
+    public bool CanInteract => canInteract;
     void OnTriggerEnter2D(Collider2D collision)
     {
         onEnter?.Invoke();

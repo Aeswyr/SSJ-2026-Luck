@@ -87,7 +87,7 @@ SpriteRenderer:
   m_Size: {x: 40, y: 15.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2526913234440084931
@@ -136,6 +136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxManager
   layerTemplate: {fileID: 7906535463514993542}
+  shoreline:
+    layerSprite: {fileID: -3487438023490082363, guid: 7befdea5b90d8f44cbc01643c384d112, type: 3}
+    speedModifier: 0.2
 --- !u!1 &4469530848971753424
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +226,7 @@ SpriteRenderer:
   m_Size: {x: 40, y: 15.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7906535463514993542
@@ -347,6 +350,6 @@ SpriteRenderer:
   m_Size: {x: 40, y: 15.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

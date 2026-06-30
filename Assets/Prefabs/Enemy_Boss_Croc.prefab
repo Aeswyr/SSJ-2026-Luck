@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
   buffs: {fileID: 6385019922222583934}
-  maxHp: 200
+  maxHp: 220
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 637567519
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -3487438023490082363, guid: 7dd82e959d373484c9e779b49b0f6dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -390,6 +390,7 @@ MonoBehaviour:
       m_Calls: []
   intangible: 0
   invincible: 0
+  disabled: 0
 --- !u!61 &2095166413505059881
 BoxCollider2D:
   m_ObjectHideFlags: 0

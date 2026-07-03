@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
@@ -9,6 +10,7 @@ public class ProjectileController : MonoBehaviour
     private Transform owner;
     private HitData payload;
     bool isEnemy;
+    public List<HurtboxController> collisions = new();
     
     public ProjectileController SetVelocity(float x, float y = 0)
     {
@@ -60,6 +62,10 @@ public class ProjectileController : MonoBehaviour
             return;
 
         var hurtbox = collider.transform.GetComponent<HurtboxController>();
+        if (collisions.Contains(hurtbox))
+            return;
+
+        collisions.Add(hurtbox);
         hurtbox.OnHit(payload);
         
         if (hurtbox.TouchDisabled())

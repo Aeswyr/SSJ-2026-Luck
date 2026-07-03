@@ -58,7 +58,7 @@ MonoBehaviour:
   hurtbox: {fileID: 730848039966349182}
   deathFX: 7
   preferredRange: 6
-  speed: 12
+  speed: 9
   flee: 0
   attackCooldown: 7
   specialCooldown: 8
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityController
   buffs: {fileID: 6385019922222583934}
-  maxHp: 30
+  maxHp: 15
   onHit:
     m_PersistentCalls:
       m_Calls: []

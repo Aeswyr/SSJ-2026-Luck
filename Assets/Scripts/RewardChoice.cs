@@ -4,7 +4,7 @@ using UnityEngine;
 public class RewardChoice : MonoBehaviour
 {
     [SerializeField] private CardLibrary cardLibrary;
-    [SerializeField] private CardRarity rarity;
+    [SerializeField] private LootTable lootTable;
 
     [SerializeField] private Sprite[] frameSprites;
     [SerializeField] private SpriteRenderer[] cardOptions;
@@ -19,40 +19,31 @@ public class RewardChoice : MonoBehaviour
     {
         tooltip.gameObject.SetActive(false);
 
-        if (rarity == CardRarity.NONE) {
-            int roll = Random.Range(0, 100);
+        var lootRoll = lootTable.RollReward(rewards.Length);
 
-            if (roll < 5) 
-                rarity = CardRarity.RARE;
-        }     
-
-        if (rarity != CardRarity.NONE){
-            var cardSelection = cardLibrary.GetAllCardsOfRarity(rarity);
-            for (int i = 0; i < rewards.Length; i++)
-            {
-                int index = Random.Range(0, cardSelection.Count);
-                rewards[i] = cardSelection[index];
-                cardSelection.RemoveAt(index);
-
-                cardOptions[i].sprite = rewards[i].icon;
-                cardFrames[i].sprite = frameSprites[(int)rewards[i].rarity];
-            }
-        } else
+        var cardsCommon = cardLibrary.GetAllCardsOfRarity(CardRarity.COMMON);
+        var cardsUncommon = cardLibrary.GetAllCardsOfRarity(CardRarity.UNCOMMON);
+        var cardsRare = cardLibrary.GetAllCardsOfRarity(CardRarity.RARE);
+        for (int i = 0; i < rewards.Length; i++)
         {
-            var commonSelection = cardLibrary.GetAllCardsOfRarity(CardRarity.COMMON);
-            var uncommonSelection = cardLibrary.GetAllCardsOfRarity(CardRarity.UNCOMMON);
-
-            for (int i = 0; i < rewards.Length; i++)
+            ref List<CardData> selection = ref cardsCommon;
+            switch (lootRoll.rewards[i])
             {
-                var cardSelection = (Random.Range(0, 100) < 80) ? ref commonSelection : ref uncommonSelection;
-                int index = Random.Range(0, cardSelection.Count);
-                rewards[i] = cardSelection[index];
-                cardSelection.RemoveAt(index);
-
-                cardOptions[i].sprite = rewards[i].icon;
-                cardFrames[i].sprite = frameSprites[(int)rewards[i].rarity];
+                case CardRarity.UNCOMMON:
+                    selection = ref cardsUncommon;
+                    break;
+                case CardRarity.RARE:
+                    selection = ref cardsRare;
+                    break;
             }
+            int index = Random.Range(0, selection.Count);
+            rewards[i] = selection[index];
+            selection.RemoveAt(index);
+
+            cardOptions[i].sprite = rewards[i].icon;
+            cardFrames[i].sprite = frameSprites[(int)rewards[i].rarity];
         }
+
         
         node.SetActive(true);
         foreach (var card in cardOptions)

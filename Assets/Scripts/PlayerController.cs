@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour
 		{
 			animator.SetBool("moving", false);
 			acting = true;
-			UpdateFacing();
+			UpdateFacing(true);
 
 			VFXManager.Instance.CreateVFX(VFXType.DUST_SMALL, transform.position, facing == -1);
 
@@ -148,12 +149,17 @@ public class PlayerController : MonoBehaviour
 
 			animator.SetTrigger("attack");
 
-			if (cancellable)
+			if (Mathf.Sign(input.dir) == Mathf.Sign(facing) && input.dir != 0) {
+				if (cancellable)
+				{
+					move.OverrideCurve(attack2Speed, attack2Curve, facing);
+				} else {
+					move.OverrideCurve(attackSpeed, attackCurve, facing);
+					attackRepeat = 1;
+				}
+			} else
 			{
-				move.OverrideCurve(attack2Speed, attack2Curve, facing);
-			} else {
-				move.OverrideCurve(attackSpeed, attackCurve, facing);
-				attackRepeat = 1;
+				move.StartDeceleration();
 			}
 
 
@@ -192,9 +198,9 @@ public class PlayerController : MonoBehaviour
 		if (handSize > 0 && input.scroll.pressed)
 		{
 			if (input.scrollDir >= 0)
-				selectedCardIndex = (handSize + selectedCardIndex - 1) % handSize;
+				selectedCardIndex = (Mathf.Min(handSize, 13) + selectedCardIndex - 1) % Mathf.Min(handSize, 13);
 			else
-				selectedCardIndex = (selectedCardIndex + 1) % handSize;
+				selectedCardIndex = (selectedCardIndex + 1) % Mathf.Min(handSize, 13);
 			hudController.SetIndexSelected(selectedCardIndex);
 		}
 
@@ -204,7 +210,7 @@ public class PlayerController : MonoBehaviour
 		}
     }
 
-    private void UpdateFacing()
+    private void UpdateFacing(bool aimassist = false)
     {
 		float dir = input.dir;
         int num = facing;
@@ -215,6 +221,18 @@ public class PlayerController : MonoBehaviour
 		else if (dir < 0f)
 		{
 			facing = -1;
+		}
+
+		if (aimassist)
+		{
+			var ray = Physics2D.RaycastAll(transform.position, facing * Vector2.right, 32,  LayerMask.GetMask(new [] {"Hurtbox"}));
+			Debug.Log($"fired ray in direction [{facing}], result [{ray}]");
+			if (ray.Length <= 1)
+			{
+				ray = Physics2D.RaycastAll(transform.position, -facing * Vector2.right, 32,  LayerMask.GetMask(new [] {"Hurtbox"}));
+				if (ray.Length > 1)
+					facing = -facing;
+			}
 		}
 
         if (num != facing)

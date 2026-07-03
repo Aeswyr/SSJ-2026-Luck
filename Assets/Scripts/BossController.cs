@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.Rendering;
 
 public class BossController : MonoBehaviour
@@ -86,10 +87,12 @@ public class BossController : MonoBehaviour
     }
     public void OnDeath()
     {
+        transform.GetComponentInChildren<CardStickable>().ClearCards();
         rbody.linearVelocityX = 0;
         animator.Play("felled");
         acting = true;
         nextAttack = Time.time + 100000;
+
 
         if (string.IsNullOrEmpty(closingDialog))
         {

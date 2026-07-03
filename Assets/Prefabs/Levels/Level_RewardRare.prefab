@@ -16203,6 +16203,10 @@ PrefabInstance:
       propertyPath: rarity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2346129485141677706, guid: 8e59552623b6a0f41876c54b7c500c5c, type: 3}
+      propertyPath: lootTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ace2fa34b1dd5f43abcf3746271dc30, type: 2}
     - target: {fileID: 2676629492061376651, guid: 8e59552623b6a0f41876c54b7c500c5c, type: 3}
       propertyPath: m_Name
       value: RewardNodeNPC

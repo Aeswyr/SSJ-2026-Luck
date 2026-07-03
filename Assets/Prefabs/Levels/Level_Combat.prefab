@@ -20702,6 +20702,10 @@ PrefabInstance:
       propertyPath: levelEndInteractable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2346129485141677706, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}
+      propertyPath: lootTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 62b2912ad751dc34b9e7e324edcdcc8d, type: 2}
     - target: {fileID: 2676629492061376651, guid: 58d2d5998fe076e46aaf8851e69debcd, type: 3}
       propertyPath: m_Name
       value: RewardNode

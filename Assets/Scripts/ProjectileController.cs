@@ -71,9 +71,7 @@ public class ProjectileController : MonoBehaviour
         if (hurtbox.TouchDisabled())
             return;
 
-        if (isEnemy)
-            VFXManager.Instance.CreateVFX(VFXType.HITSPARK_LARGE, transform.position, spriteRenderer.flipX);
-        else
+        if (!isEnemy)
             VFXManager.Instance.CreateVFX(VFXType.HITSPARK_SMALL, transform.position, spriteRenderer.flipX);
 
         if (doesPierce)

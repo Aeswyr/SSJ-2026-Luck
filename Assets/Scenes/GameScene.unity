@@ -461,7 +461,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8061553281597786240, guid: 0a6f3aec3f752bb4a92c03e9b514ca84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4036048285167566221, guid: 0a6f3aec3f752bb4a92c03e9b514ca84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2163594817304663846, guid: 0a6f3aec3f752bb4a92c03e9b514ca84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8385479779504621962, guid: 0a6f3aec3f752bb4a92c03e9b514ca84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0a6f3aec3f752bb4a92c03e9b514ca84, type: 3}
 --- !u!1001 &270254410
 PrefabInstance:
@@ -804,9 +816,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.3638181
-    width: 0.3880765
-    height: 0.38793105
+    y: 0.3678161
+    width: 0.3802025
+    height: 0.38006
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -841,6 +853,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1838011340}
+  - {fileID: 1231343542}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -883,6 +896,7 @@ MonoBehaviour:
   lockY: 1
   useBounds: 1
   bounds: {x: -4, y: 52}
+  shakeTarget: {fileID: 1231343542}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1152,7 @@ MonoBehaviour:
   lockY: 1
   useBounds: 1
   bounds: {x: -4, y: 52}
+  shakeTarget: {fileID: 1231343542}
 --- !u!1001 &1204989371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1228,6 +1243,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5230067030317142455, guid: 202f39155986fda409b29b8e128f28d3, type: 3}
   m_PrefabInstance: {fileID: 1204989371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1231343541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231343542}
+  m_Layer: 0
+  m_Name: ShakeTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1231343542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231343541}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1375390236
 PrefabInstance:
   m_ObjectHideFlags: 0

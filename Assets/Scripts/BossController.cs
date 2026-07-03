@@ -87,6 +87,7 @@ public class BossController : MonoBehaviour
     }
     public void OnDeath()
     {
+        VFXManager.Instance.CreateVFX(VFXType.HITSPARK_LARGE, transform.position + 2 * Vector3.up, spriteRenderer.flipX);
         transform.GetComponentInChildren<CardStickable>().ClearCards();
         rbody.linearVelocityX = 0;
         animator.Play("felled");

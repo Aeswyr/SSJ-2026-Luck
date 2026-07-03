@@ -49,13 +49,17 @@ public class VFXManager : Singleton<VFXManager>
         tmp.color = color;
 		tmp.fontSize = size;
     }
-}
 
+	public void Screenshake(float intensity, float duration)
+	{
+		Camera.main.GetComponent<CameraFollow>().Screenshake(intensity, duration);
+	}
+}
 public enum VFXType
 {
     DUST_SMALL, DUST_LARGE, DUST_JUMP, HITSPARK_LARGE, HITSPARK_SMALL,
 	CORPSE_ANGLER, CORPSES_HOLLOW, CORPSE_SALAMANDER, CORPSE_WING, 
 	BUFFSPARK_GENERIC, BUFFSPARK_MARK, BUFFSPARK_LOOT, 
 	BUFFSPARK_COMEDY, BUFFSPARK_BLEED, BUFFSPARK_PAIN, 
-	HITSPARK_UNSTICK, NONE
+	HITSPARK_UNSTICK, HITSPARK_PLAYERHURT, NONE
 }

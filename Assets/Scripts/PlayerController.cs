@@ -622,6 +622,8 @@ public class PlayerController : MonoBehaviour
 
 	public void OnRecieveHit(int hp)
 	{
+		VFXManager.Instance.Screenshake(0.1f, 0.5f);
+		VFXManager.Instance.CreateVFX(VFXType.HITSPARK_PLAYERHURT, transform.position, sprite.flipX);
 		if (hp > 0) {
 			animator.SetBool("moving", false);
 			animator.SetTrigger("hurt");

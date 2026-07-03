@@ -17,10 +17,7 @@ public class LevelController : MonoBehaviour
 
         spawnParent.gameObject.SetActive(false);
 
-        foreach (var cam in FindObjectsByType<CameraFollow>(FindObjectsSortMode.None))
-        {
-            cam.SetBounds(levelBounds);
-        }
+        CameraManager.Instance.SetBounds(levelBounds);
 
         ParallaxManager.Instance.SetParallax(parallaxes);
     }

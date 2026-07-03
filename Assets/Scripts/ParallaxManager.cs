@@ -62,7 +62,7 @@ public class ParallaxManager : Singleton<ParallaxManager>
     {
         foreach (var active in activeParallaxes)
         {
-            active.gameObject.transform.localPosition = new (follow.position.x * -active.speedModifier, active.gameObject.transform.localPosition.y);
+            active.gameObject.transform.localPosition = new (CameraManager.Instance.GetFollowX() * -active.speedModifier, active.gameObject.transform.localPosition.y);
         }
     }
 

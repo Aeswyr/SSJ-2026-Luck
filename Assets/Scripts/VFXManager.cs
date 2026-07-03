@@ -49,11 +49,6 @@ public class VFXManager : Singleton<VFXManager>
         tmp.color = color;
 		tmp.fontSize = size;
     }
-
-	public void Screenshake(float intensity, float duration)
-	{
-		Camera.main.GetComponent<CameraFollow>().Screenshake(intensity, duration);
-	}
 }
 public enum VFXType
 {

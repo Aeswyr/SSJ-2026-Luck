@@ -5,16 +5,16 @@ intro	Roane	But you’re here now. Welcome to the afterlife. You’re in hell.	r
 intro	Roane	And I know that’s really confusing-	roane_neutral	Right	NONE
 intro	Ace	Not really.	ace_neutral	Left	NONE
 intro	Roane	Oh. Huh.	roane_neutral	Right	NONE
-intro	Roane	Weird, because your life was pretty ordinary.	roane_neutral	Right	NONE
-intro	Roane	I mean, says here there was a lot of gambling.	roane_neutral	Right	NONE
-intro	Roane	Like… a lot, but I don’t think gambling really determines your placement.	roane_neutral	Right	NONE
-intro	Roane	I mean, literally not a speck of cheating? That would probably determine it a little.	roane_neutral	Right	NONE
-intro	Roane	Spent time with friends, drank a lot… I mean all and all very morally neutral and you aren’t even a bit surprised?	roane_neutral	Right	NONE
-intro	Roane	But whatever, you can thank me once you’re out of you because I’m getting you to the border.	roane_neutral	Right	NONE
+intro	Roane	Weird, because your life was pretty morally average life.	roane_neutral	Right	NONE
 intro	Roane	Here, I pulled these from your soul before you woke up. It’s your essence manifested into a tool to get you through the wilds.	roane_neutral	Right	NONE
 intro	Roane	I thought it would be something cool like a big gun or maybe a sword, but uh… cards, huh? Is that cool to you?	roane_neutral	Right	NONE
 intro	Ace	It doesn’t matter. Pass it here.	ace_neutral	Left	NONE
 intro	Roane	Now I tested them out, so let me show you how to do the do.	roane_neutral	Right	NONE
+					
+					
+					
+					
+					
 cardselecthi1	Roane	Congrats, killer.	roane_neutral	Right	NONE
 cardselecthi2	Roane	Welcome back.	roane_neutral	Right	NONE
 cardselecthi3	Roane	Good ta’ see ya.	roane_neutral	Right	NONE

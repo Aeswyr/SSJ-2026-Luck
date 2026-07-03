@@ -64,8 +64,7 @@ public class PlayerController : MonoBehaviour
     {
 		InputHandler.Instance.FlushBuffer();
 		
-		foreach (var cam in FindObjectsByType<CameraFollow>(FindObjectsSortMode.None))
-			cam.SetFollow(transform);
+		CameraManager.Instance.SetFollow(transform);
 
 		hudController = FindAnyObjectByType<PlayerHUDController>();
         input = InputHandler.Instance;
@@ -226,7 +225,6 @@ public class PlayerController : MonoBehaviour
 		if (aimassist)
 		{
 			var ray = Physics2D.RaycastAll(transform.position, facing * Vector2.right, 32,  LayerMask.GetMask(new [] {"Hurtbox"}));
-			Debug.Log($"fired ray in direction [{facing}], result [{ray}]");
 			if (ray.Length <= 1)
 			{
 				ray = Physics2D.RaycastAll(transform.position, -facing * Vector2.right, 32,  LayerMask.GetMask(new [] {"Hurtbox"}));
@@ -622,7 +620,7 @@ public class PlayerController : MonoBehaviour
 
 	public void OnRecieveHit(int hp)
 	{
-		VFXManager.Instance.Screenshake(0.1f, 0.5f);
+		CameraManager.Instance.Screenshake(0.1f, 0.5f);
 		VFXManager.Instance.CreateVFX(VFXType.HITSPARK_PLAYERHURT, transform.position, sprite.flipX);
 		if (hp > 0) {
 			animator.SetBool("moving", false);

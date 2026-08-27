@@ -15,6 +15,7 @@ public class PlayerHUDController : MonoBehaviour
     [SerializeField] private Image bossHealth;
 
     [SerializeField] private TextMeshProUGUI deckCount, deckTotal;
+    [SerializeField] private CardDisplay cardPreview;
 
     List<CardController> cards = new();
     int activeIndex;
@@ -24,6 +25,18 @@ public class PlayerHUDController : MonoBehaviour
         deathScreen.SetActive(false);
         winScreen.SetActive(false);
         ToggleBossHealth(false);
+        cardPreview.gameObject.SetActive(false);
+    }
+
+    public void ShowCardPreview(CardID card)
+    {
+        cardPreview.SetCard(card);
+        cardPreview.gameObject.SetActive(true);
+    }
+
+    public void HideCardPreview()
+    {
+        cardPreview.gameObject.SetActive(false);
     }
     public void DrawCard(CardData cardData)
     {

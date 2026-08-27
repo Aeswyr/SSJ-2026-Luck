@@ -12,13 +12,10 @@ public class RewardChoice : MonoBehaviour
     [SerializeField] private GameObject node;
 
     [SerializeField] private string dialog;
-    [SerializeField] private CardTooltip tooltip;
     private CardData[] rewards = new CardData[3];
 
     public void Start()
     {
-        tooltip.gameObject.SetActive(false);
-
         var lootRoll = lootTable.RollReward(rewards.Length);
 
         var cardsCommon = cardLibrary.GetAllCardsOfRarity(CardRarity.COMMON);
@@ -89,35 +86,27 @@ public class RewardChoice : MonoBehaviour
         foreach (var card in cardOptions)
             card.gameObject.SetActive(false);
 
-        tooltip.gameObject.SetActive(false);
+        FindAnyObjectByType<PlayerHUDController>().HideCardPreview();
     }
 
     public void HoverRewardA()
     {
-        tooltip.LoadCard(rewards[0].id);
-
-        tooltip.transform.localPosition = new Vector2(-4, tooltip.transform.localPosition.y);
-        tooltip.gameObject.SetActive(true);
+        FindAnyObjectByType<PlayerHUDController>().ShowCardPreview(rewards[0].id);
     }
 
     public void HoverRewardB()
     {
-        tooltip.LoadCard(rewards[1].id);
+        FindAnyObjectByType<PlayerHUDController>().ShowCardPreview(rewards[1].id);
 
-        tooltip.transform.localPosition = new Vector2(0, tooltip.transform.localPosition.y);
-        tooltip.gameObject.SetActive(true);
     }
 
     public void HoverRewardC()
     {
-        tooltip.LoadCard(rewards[2].id);
-
-        tooltip.transform.localPosition = new Vector2(4, tooltip.transform.localPosition.y);
-        tooltip.gameObject.SetActive(true);
+        FindAnyObjectByType<PlayerHUDController>().ShowCardPreview(rewards[2].id);
     }
 
     public void EndHover()
     {
-        tooltip.gameObject.SetActive(false);
+        FindAnyObjectByType<PlayerHUDController>().HideCardPreview();
     }
 }

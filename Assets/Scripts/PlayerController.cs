@@ -560,10 +560,67 @@ public class PlayerController : MonoBehaviour
 					onUseCard.RemoveListener(CardAction_LUCKYDEAL);
 				}
 				break;
+			case CardID.CHEATER_JACK:
+				hitData.preDamageCallback = CardAction_CheaterJack;
+				void CardAction_CheaterJack(ref HitData hitData, EntityController entity) {
+					if (entity.GetBuffController().GetBuffCount(true) > 0)
+						hitData.baseDamage += 5;
+				}
+				ThrowCard(hitData);
+				break;
+			case CardID.KINGS_ORDEAL:
+				hitData.preDamageCallback = CardAction_KingsOrdeal;
+				void CardAction_KingsOrdeal(ref HitData hitData, EntityController entity) {
+					int deals = 4 * entity.GetBuffController().GetBuffCount(true);
+					for (int i = 0; i < deals; i++)
+						DealCard(2f * i / deals + 0.3f);
+				}
+				hitData.postDamageCallback = Cleanse;
+				ThrowCard(hitData);
+				break;
+			case CardID.QUEENS_MERCY:
+				hitData.preDamageCallback = CardAction_QueensMercy;
+				void CardAction_QueensMercy(ref HitData hitData, EntityController entity) {
+					hitData.baseDamage = hitData.baseDamage * (2 ^ entity.GetBuffController().GetBuffCount(true));
+				}
+				hitData.postDamageCallback = Cleanse;
+				ThrowCard(hitData);
+				break;
+			case CardID.DEADLY_GAMBIT:
+				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
+				{
+					var hurtbox = stick.transform.parent.GetComponentInChildren<HurtboxController>();
+					if (hurtbox != null) {
+						HitData hit = hitData;
+						hit.baseDamage = hit.baseDamage * stick.cards;
+						hurtbox.OnHit(hit);
+					}
+
+					StartCoroutine(UnstickSequence(stick.transform.position, stick.cards));
+					stick.ClearCards();
+				}
+				break;
+			case CardID.KINETIC_DRAW:
+				onDrawHand.AddListener(CardAction_KineticDraw);
+				void CardAction_KineticDraw()
+				{
+					foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
+					{
+						var hurtbox = stick.transform.parent.GetComponentInChildren<HurtboxController>();
+						if (hurtbox != null) {
+							HitData hit = hitData;
+							hit.baseDamage = hit.baseDamage * stick.cards;
+							hurtbox.OnHit(hit);
+						}
+
+						StartCoroutine(UnstickSequence(stick.transform.position, stick.cards));
+						stick.ClearCards();
+					}
+				}
+				break;
 			default:
 				break;
 		}
-
 		readiedCard = null;
 
 		IEnumerator UnstickSequence(Vector3 pos, int amount)
@@ -572,6 +629,11 @@ public class PlayerController : MonoBehaviour
 				VFXManager.Instance.CreateVFX(VFXType.HITSPARK_UNSTICK, pos + 2 * Vector3.up + new Vector3(Random.Range(-2f, 2f), Random.Range(-1f, 1f)), Random.Range(0,2) == 0);
 				yield return new WaitForSeconds(Random.Range(0.025f, 0.075f));
 			}
+		}
+
+		void Cleanse(ref HitData hitdata, EntityController entity)
+		{
+			entity.GetBuffController().RemoveAllBuff();
 		}
 	}
 

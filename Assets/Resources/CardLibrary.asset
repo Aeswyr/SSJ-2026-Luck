@@ -313,3 +313,53 @@ MonoBehaviour:
     charges: 1
     baseDamage: 0
     shouldStick: 0
+  - name: Cheater's Jack
+    id: 30
+    rarity: 0
+    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    type: 0
+    exhaust: 0
+    noDiscard: 0
+    charges: 4
+    baseDamage: 2
+    shouldStick: 0
+  - name: King's Ordeal
+    id: 31
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    type: 0
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 8
+    shouldStick: 0
+  - name: Queen's Mercy
+    id: 32
+    rarity: 2
+    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    type: 0
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 4
+    shouldStick: 0
+  - name: Deadly Gambit
+    id: 33
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    type: 1
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 2
+    shouldStick: 0
+  - name: Kinetic Draw
+    id: 34
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 1
+    shouldStick: 0

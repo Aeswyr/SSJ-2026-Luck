@@ -6,3 +6,4 @@ CURSE	Curse	Apply a lingering effect to the target.	#330099
 DEAL	Deal	Create a ghostly card which hits for 1.	#00BBFF
 EXHAUST	Exhaust	When played, remove this card from the deck until the next room.	#AAAAAA
 IMPRINT	Imprint	When played, this card remains in effect until the next room.	#0000FF
+CLEANSE	Cleanse	Remove all curses on the target.	#DB7CD1

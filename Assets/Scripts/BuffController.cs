@@ -45,6 +45,19 @@ public class BuffController : MonoBehaviour
         return count;
     }
 
+    public int GetBuffCount(bool excludeBuffs = false)
+    {
+        if (excludeBuffs)
+        {
+            int count = 0;
+            foreach (var buff in buffs)
+                if (buff.data.isDebuff)
+                    count++;
+            return count;
+        }
+        return buffs.Count;
+    }
+
     public int RemoveAllBuff(BuffType type)
     {
         int count = 0;

@@ -9,7 +9,7 @@ RECALL	[Fold]. Draw a card for every three folded. Draw 1 additional card.
 HOMECOMING	[Fold]. [Manifest] a Fool for every two folded. 
 ALL_IN	Throw 4 cards for each card in your hand, then discard your hand. Hit for 2. [Stick].
 FINISHING_STROKE	Hit for 4 damage. When you discard, damage increases by 3. [Stick].
-CALLED_SHOT	[Curse]. Multiply the damage of the next card to hit. [Exhaust].
+CALLED_SHOT	[Curse]. Multiply the damage of the next card to hit.
 CALLBACK	[Curse]. [Manifest] a Fool for every 2 hits. [Exhaust].
 PEERLESS_FOCUS	[Curse] . Draw a card for every 4 hits. [Exhaust].
 BLEED_OUT	[Curse]. Target takes damage each second for every 3 stuck cards. [Exhaust].
@@ -29,3 +29,8 @@ RAISE_THE_STAKES	Increase damage dealt and taken by 1. [Imprint].
 DEALERS_ADVANTAGE	Whenever you play a card, [Deal] 1. [Imprint]. [Exhaust].
 TRIPLE_DEAL	When the next card is played, [Deal] 3.
 LUCKY_DEAL	When the next card is played, [Deal] 7.
+KINETIC_DRAW	Whenever you draw a new hand [Fold]. Hit for damage equal to the number folded. [Imprint]. [Exhaust].
+DEADLY_GAMBIT	Fold. Hit for damage equal to twice the number folded.
+CHEATER_JACK	Hit for 2 damage, increased by 5 if the target is cursed. 4 uses.
+KINGS_ORDEAL	Hit for 8 damage. [Deal] 4 for each curse on the target, then [Cleanse] them.
+QUEENS_MERCY	Hit for 4 damage, doubled for each curse on the target, then [Cleanse] them.

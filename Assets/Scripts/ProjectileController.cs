@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -89,6 +90,9 @@ public struct HitData
     public int baseDamage;
     public int bonusDamage;
     public bool shouldStick;
-
+    public OnHitCallback preDamageCallback;
+    public OnHitCallback postDamageCallback;
     public int totalDamage => baseDamage + bonusDamage;
+
+    public delegate void OnHitCallback(ref HitData hitData, EntityController entity);
 }

@@ -23,11 +23,22 @@ public class EntityController : MonoBehaviour
 
         buffs.OnHitBuff();
 
+        if (hitData.preDamageCallback != null)
+            hitData.preDamageCallback(ref hitData, this);
+
         hitData.bonusDamage += 1 * buffs.GetBuffCount(BuffType.PAIN);
         int markCount = buffs.RemoveAllBuff(BuffType.MARK);
         hitData.bonusDamage += 3 * markCount + (int)(hitData.baseDamage * 0.5f * markCount);
 
         ApplyDamage(hitData.totalDamage);
+
+        if (hitData.postDamageCallback != null)
+            hitData.postDamageCallback(ref hitData, this);
+    }
+
+    public BuffController GetBuffController()
+    {
+        return buffs;
     }
 
     public void ApplyDamage(int amount)

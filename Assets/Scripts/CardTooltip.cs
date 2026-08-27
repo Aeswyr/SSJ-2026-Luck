@@ -11,7 +11,7 @@ public class CardTooltip : MonoBehaviour
     public void LoadCard(CardID id)
     {
         cardName.text = cardLibrary.GetCard(id).name;
-        cardBody.text = cardLibrary.GetCardDescription(id);
+        cardBody.text = cardLibrary.GetCardDescription(id).description;
         cardTips.text = "";
     }
 }

@@ -131,26 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeckViewUI
       objectReference: {fileID: 0}
-    - target: {fileID: 3047997316991820408, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3047997316991820408, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3047997316991820408, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3047997316991820408, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3047997316991820408, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3069402360387145437, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -252,23 +232,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738886975558480937, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8738886975558480937, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8738886975558480937, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8738886975558480937, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8738886975558480937, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
-      propertyPath: m_AnchoredPosition.y
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8858276887931537885, guid: f8abf39e12bc5844088d6ac14360d4c3, type: 3}
@@ -644,6 +608,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &404857339
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -689,6 +654,7 @@ SpriteRenderer:
   m_SortingLayerID: 1237105909
   m_SortingLayer: 8
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 1286041116, guid: 4064452f33282574abd8b11caba892ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -698,7 +664,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &404857340
 Transform:
@@ -815,9 +780,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.25277779
+    width: 0.25208336
+    height: 0.25208333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -906,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 3
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5

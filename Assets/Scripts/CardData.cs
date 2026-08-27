@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable] public struct CardData
@@ -17,6 +18,12 @@ using UnityEngine;
     public int charges;
     public int baseDamage;
     public bool shouldStick;
+}
+
+public struct CardDescriptionData
+{
+    public string description;
+    public List<KeywordID> keywords;
 }
 
 
@@ -39,4 +46,9 @@ public enum CardID
 public enum CardType
 {
     ATTACK, SPECIAL, BUFF, DEBUFF, INSTANT
+}
+
+public enum KeywordID
+{
+    STICK, MANIFEST, FOLD, CURSE, DEAL, EXHAUST, IMPRINT, CLEANSE
 }

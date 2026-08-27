@@ -10,10 +10,7 @@ public class DeckViewController : Singleton<DeckViewController>
     [SerializeField] private Transform cardParent;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private TextMeshProUGUI title;
-    [SerializeField] private TextMeshProUGUI cardName;
-    [SerializeField] private TextMeshProUGUI cardBody;
-    [SerializeField] private TextMeshProUGUI cardTips;
-
+    [SerializeField] private CardDisplay card;
 
     private bool isRemoval;
     private CardID selectedCard;
@@ -62,9 +59,7 @@ public class DeckViewController : Singleton<DeckViewController>
             removeButton.SetActive(true);
         }
 
-        cardName.text = cardLibrary.GetCard(id).name;
-        cardBody.text = cardLibrary.GetCardDescription(id);
-        cardTips.text = "";
+        card.SetCard(id);
     }
 
     public void OnRemovePressed()

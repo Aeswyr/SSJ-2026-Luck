@@ -16,23 +16,23 @@ MonoBehaviour:
   - id: 0
     icon: {fileID: 4137296079507206199, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
     baseDuration: 999999
-    isDebuff: 0
+    isDebuff: 1
   - id: 1
     icon: {fileID: -2381227881382376566, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 8
-    isDebuff: 0
+    baseDuration: 999999
+    isDebuff: 1
   - id: 2
     icon: {fileID: -4011744088097352285, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 8
-    isDebuff: 0
+    baseDuration: 999999
+    isDebuff: 1
   - id: 3
     icon: {fileID: -3714916792392405455, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
     baseDuration: 999999
-    isDebuff: 0
+    isDebuff: 1
   - id: 4
     icon: {fileID: 7735085303667188755, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 8
-    isDebuff: 0
+    baseDuration: 999999
+    isDebuff: 1
   - id: 5
     icon: {fileID: 1710483956198244179, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
     baseDuration: 999999

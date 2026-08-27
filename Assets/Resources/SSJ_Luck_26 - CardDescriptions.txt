@@ -1,31 +1,31 @@
 ID	Description
-HIGH_CARD	Deal 3 damage. 4 uses.
-PAIR	Throw 2 cards. Deal 2 damage each. 3 uses. 
-FULL_HOUSE	Throw 5 cards in a cone. Deal 1 damage each. 2 uses.
-JOKER	Throw a fast card. Deal 0 damage.
-HIDDEN_ACE	Throw a card that pierces the enemy. Deal 10 damage, but doesn't stick.
-REND	Remove all stuck cards. Deal 2 damage per removed card.
-RECALL	Remove all stuck cards. Draws the number of cards removed divided by 3. Draw 1 additional card.
-HOMECOMING	Remove all stuck cards. Manifests 2 Fools to hand per 2 cards removed. 
-ALL_IN	Discard your hand. Throw 4 cards per each discarded card.
-FINISHING_STROKE	When discarding a card, enhance Finishing Stroke adding 3 damage. Begins with 4 damage.
-CALLED_SHOT	Mark target. Multiply the damage of the next card to hit.
-CALLBACK	Mark target. Manifest a Fool per 2 hits.
-PEERLESS_FOCUS	Mark target. Draws a card per 4 hits on the marked target.
-BLEED_OUT	Mark target. Target takes damage over time equal to the number of stuck cards divided by 3.
-THOUSAND_CUTS	Mark target. Target takes 1 extra damage per hit. Lasts until target dies.
-DECK_FIXING	Draw 2 extra cards when drawing new hand. Remove this card from deck until the end of room after use.
-CLOWN_CAR	Manifest 3 Fools when drawing new hand. Remove this card from deck until the end of room after use.
-MISSED_CONNECTION	Dodging an attack manifests a Fool. 
+HIGH_CARD	Hit for 3 damage. [Stick]. 4 uses.
+PAIR	Throw 2 cards. Hit for 2 damage each. [Stick]. 3 uses. 
+FULL_HOUSE	Throw 5 cards in a cone. Hit for 1 damage each. [Stick]. 2 uses.
+JOKER	Hit for 0 damage. [Stick].
+HIDDEN_ACE	Hit for 10 damage, pierces through targets.
+REND	[Fold]. Hit for 2 damage for each folded.
+RECALL	[Fold]. Draw a card for every three folded. Draw 1 additional card.
+HOMECOMING	[Fold]. [Manifest] a Fool for every two folded. 
+ALL_IN	Throw 4 cards for each card in your hand, then discard your hand. Hit for 2. [Stick].
+FINISHING_STROKE	Hit for 4 damage. When you discard, damage increases by 3. [Stick].
+CALLED_SHOT	[Curse]. Multiply the damage of the next card to hit. [Exhaust].
+CALLBACK	[Curse]. [Manifest] a Fool for every 2 hits. [Exhaust].
+PEERLESS_FOCUS	[Curse] . Draw a card for every 4 hits. [Exhaust].
+BLEED_OUT	[Curse]. Target takes damage each second for every 3 stuck cards. [Exhaust].
+THOUSAND_CUTS	[Curse]. Target takes 1 extra damage per hit. [Exhaust].
+DECK_FIXING	Draw 2 extra cards whenever you draw a new hand. [Imprint]. [Exhaust].
+CLOWN_CAR	[Manifest] 3 Fools whenever you draw a new hand. [Imprint]. [Exhaust].
+MISSED_CONNECTION	Whenever you dodge an attack [Manifest] a Fool. [Imprint]. [Exhaust].
 INSIGHT	Draw 2 cards.
-FOOLIN_AROUND	Manifest 3 Fools.
-DOUBLE_DOWN	Manifest two copies of the next card played.
-SECOND_CHANCE	Regain one heart. Remove this card from deck until the end of room after use.
+FOOLIN_AROUND	[Manifest] 3 Fools.
+DOUBLE_DOWN	[Manifest] two copies of the next card played.
+SECOND_CHANCE	Regain one heart. [Exhaust].
 JACKPOT	Add 3 random rare cards to the deck. Remove this card from the deck permanently.
 LUCKY_SEVENS	Add 7 random uncommon cards to the deck. Remove this card from the deck permanently.
-FLUSH	Throw a card. Damage is based on cards in your hand.
-INNER_STRENGTH	Increase damage by 1 until the end of the room. Remove this card from deck unil end of the room after use.
-RAISE_THE_STAKES	Increase damage by 1 until the end of the  room, but take 1 additional damage when hit in return.
-DEALERS_ADVANTAGE	Each card played shoots an additional card.
-TRIPLE_DEAL	When the next card is played, shoot 3 additional cards.
-LUCKY_DEAL	When the next card is played, shoot 7 additional cards.
+FLUSH	Hit for 3 damage, increased by 1 for each card in your hand. Increases further if you have 5 or more of the same card. [Stick].
+INNER_STRENGTH	Increase damage by 1. [Imprint]. [Exhaust].
+RAISE_THE_STAKES	Increase damage dealt and taken by 1. [Imprint].
+DEALERS_ADVANTAGE	Whenever you play a card, [Deal] 1. [Imprint]. [Exhaust].
+TRIPLE_DEAL	When the next card is played, [Deal] 3.
+LUCKY_DEAL	When the next card is played, [Deal] 7.

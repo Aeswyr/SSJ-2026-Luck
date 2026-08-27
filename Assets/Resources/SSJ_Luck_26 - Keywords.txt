@@ -1,0 +1,8 @@
+ID	Name	Description	Color
+STICK	Stick	Leave a card stuck in enemies hit.	#FF0000
+MANIFEST	Manifest	Add a copy of a card to your hand. The copy vanishes when it leaves your hand.	#FFFF00
+FOLD	Fold	Remove all stuck cards from all enemies.	#FFBB00
+CURSE	Curse	Apply a lingering effect to the target.	#330099
+DEAL	Deal	Create a ghostly card which hits for 1.	#00BBFF
+EXHAUST	Exhaust	When played, remove this card from the deck until the next room.	#AAAAAA
+IMPRINT	Imprint	When played, this card remains in effect until the next room.	#0000FF

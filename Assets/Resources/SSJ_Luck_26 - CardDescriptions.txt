@@ -8,7 +8,7 @@ REND	[Fold]. Hit for 2 damage for each folded.
 RECALL	[Fold]. Draw a card for every three folded. Draw 1 additional card.
 HOMECOMING	[Fold]. [Manifest] a Fool for every two folded. 
 ALL_IN	Throw 4 cards for each card in your hand, then discard your hand. Hit for 2. [Stick].
-FINISHING_STROKE	Hit for 4 damage. When you discard, damage increases by 3. [Stick].
+FINISHING_STROKE	Hit for 4 damage. When you discard any other card, damage increases by 3 until the end of the room. [Stick].
 CALLED_SHOT	[Curse]. Multiply the damage of the next card to hit.
 CALLBACK	[Curse]. [Manifest] a Fool for every 2 hits. [Exhaust].
 PEERLESS_FOCUS	[Curse] . Draw a card for every 4 hits. [Exhaust].

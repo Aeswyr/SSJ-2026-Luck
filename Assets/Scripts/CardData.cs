@@ -18,6 +18,7 @@ using UnityEngine;
     public int charges;
     public int baseDamage;
     public bool shouldStick;
+    public int PersistentStat {get; set;}
 }
 
 public struct CardDescriptionData

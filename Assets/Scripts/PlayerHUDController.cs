@@ -10,6 +10,9 @@ public class PlayerHUDController : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private Transform heartHolder;
     [SerializeField] private GameObject heartObject;
+    [SerializeField] private Transform lifeBarHolder;
+    [SerializeField] private GameObject lifeBarObject;
+    [SerializeField] private GameObject lifeCapObject;
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private Image bossHealth;
@@ -94,6 +97,17 @@ public class PlayerHUDController : MonoBehaviour
                 Destroy(heartHolder.GetChild(i).gameObject);
             }
         }
+    }
+
+    public void UpdateMaxHealth(int maxHP)
+    {
+        foreach (Transform child in lifeBarHolder)
+            Destroy(child.gameObject);
+
+        for (int i = 0; i < maxHP; i++)
+            Instantiate(lifeBarObject, lifeBarHolder).SetActive(true);
+
+        Instantiate(lifeCapObject, lifeBarHolder).SetActive(true);
     }
 
     public void ToggleBossHealth(bool toggle)

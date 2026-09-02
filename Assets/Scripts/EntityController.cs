@@ -5,7 +5,7 @@ public class EntityController : MonoBehaviour
 {
     [SerializeField] private BuffController buffs;
     [SerializeField] private int maxHp;
-    [SerializeField] private UnityEvent<int> onHit, onHealthChange;
+    [SerializeField] private UnityEvent<int> onHit, onHealthChange, onMaxHealthChange;
     [SerializeField] private UnityEvent onDeath;
     private CardStickable stick;
     private int hp;
@@ -14,6 +14,8 @@ public class EntityController : MonoBehaviour
     {
         hp = maxHp;
         stick = transform.GetComponentInChildren<CardStickable>();
+
+        onMaxHealthChange.Invoke(maxHp);
     }
     public void OnHit(HitData hitData)
     {
@@ -47,6 +49,12 @@ public class EntityController : MonoBehaviour
                                 + new Vector3(Random.Range(-0.75f, 0.75f), 3f
                                 + Random.Range(0, 0.75f)), Color.darkRed,
                                 amount < 5 ? 24 : (amount < 15 ? 32 : 16 * Mathf.Clamp((amount - 15) / 35, 0, 1) + 32 ));
+        
+        if (hp <= 0)
+        {
+            return;
+        }
+        
         hp -= amount;
         hp = Mathf.Max(hp, 0);
         onHit?.Invoke(hp);
@@ -61,7 +69,26 @@ public class EntityController : MonoBehaviour
     public void ApplyHealing (int amount)
     {
         hp += amount;
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
         onHealthChange?.Invoke(hp);
+    }
+
+    public void AdjustMaxHealth(int amount)
+    {
+        maxHp += amount;
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
+        onMaxHealthChange.Invoke(maxHp);
+    }
+
+    public bool IsMaxHealth()
+    {
+        return hp == maxHp;
     }
 
     public int GetMaxHealth()

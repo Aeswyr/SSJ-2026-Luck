@@ -315,6 +315,7 @@ public class PlayerController : MonoBehaviour
 				ThrowCard(hitData, speed: 36, pierce: true);
 				break;
 			case CardID.FINISHING_STROKE:
+				hitData.baseDamage += readiedCard.Value.PersistentStat;
 				ThrowCard(hitData, speed: 42);
 				break;
 			case CardID.REND:
@@ -698,6 +699,11 @@ public class PlayerController : MonoBehaviour
 		hudController.SetHealth(hp);
 	}
 
+	public void OnMaxHealthChange(int hp)
+	{
+		hudController.UpdateMaxHealth(hp);
+	}
+
 	public void OnDeath()
 	{
 		ToggleInputLock(true);
@@ -783,8 +789,11 @@ public class PlayerController : MonoBehaviour
 
 	public void DiscardCard(int index, bool shouldDiscard = true)
 	{
-		if (shouldDiscard && !hand[index].noDiscard)
-			discard.Add(cardLibrary.GetCard(hand[index].id));
+		if (shouldDiscard && !hand[index].noDiscard) {
+			var cardData = cardLibrary.GetCard(hand[index].id);
+			cardData.PersistentStat = hand[index].PersistentStat;
+			discard.Add(cardData);
+		}
 		hand.RemoveAt(index);
 
 		hudController.DiscardIndex(index);
@@ -796,13 +805,9 @@ public class PlayerController : MonoBehaviour
 
 		for (int i = 0; i < hand.Count; i++)
 		{
-			if (hand[i].id == CardID.FINISHING_STROKE)
-			{
 				var cardData = hand[i];
-				cardData.baseDamage += 3;
+				cardData.PersistentStat += 3;
 				hand[i] = cardData;
-			}
-			
 		}
 	}
 

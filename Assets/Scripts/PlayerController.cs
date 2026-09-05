@@ -189,6 +189,7 @@ public class PlayerController : MonoBehaviour
 			UpdateFacing();
 			
 			animator.SetTrigger("reload");
+			DiscardHand();
 
 			move.StartDeceleration();
 			StartAction();
@@ -322,7 +323,7 @@ public class PlayerController : MonoBehaviour
 				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
 				{
 					var hurtbox = stick.transform.parent.GetComponentInChildren<HurtboxController>();
-					if (hurtbox != null) {
+					if (hurtbox != null && stick.cards > 0) {
 						HitData hit = hitData;
 						hit.baseDamage = hit.baseDamage * stick.cards;
 						hit.bonusDamage = hit.bonusDamage * stick.cards;
@@ -591,7 +592,7 @@ public class PlayerController : MonoBehaviour
 				foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
 				{
 					var hurtbox = stick.transform.parent.GetComponentInChildren<HurtboxController>();
-					if (hurtbox != null) {
+					if (hurtbox != null && stick.cards > 0) {
 						HitData hit = hitData;
 						hit.baseDamage = hit.baseDamage * stick.cards;
 						hurtbox.OnHit(hit);
@@ -608,7 +609,7 @@ public class PlayerController : MonoBehaviour
 					foreach (var stick in FindObjectsByType<CardStickable>(FindObjectsSortMode.None))
 					{
 						var hurtbox = stick.transform.parent.GetComponentInChildren<HurtboxController>();
-						if (hurtbox != null) {
+						if (hurtbox != null && stick.cards > 0) {
 							HitData hit = hitData;
 							hit.baseDamage = hit.baseDamage * stick.cards;
 							hurtbox.OnHit(hit);
@@ -724,18 +725,19 @@ public class PlayerController : MonoBehaviour
 		DrawHand();
 	}
 
-	public void DrawHand()
+	public void DiscardHand()
 	{
 		while (hand.Count > 0)
 			DiscardCard(0);
-
+	}
+	public void DrawHand()
+	{
 		for (int i = 0; i < maxHand; i++)
 		{
 			DrawCard();
 		}
 
 		onDrawHand?.Invoke();
-
 	}
 
 	public void DrawCard()
@@ -846,7 +848,7 @@ public class PlayerController : MonoBehaviour
 		
 		foreach (var index in startingDeck.Split(','))
 			deck.Add(cardLibrary.GetCard(int.Parse(index)));
-			
+		
 		DrawHand();
 	}
 

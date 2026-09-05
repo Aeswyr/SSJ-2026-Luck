@@ -50,19 +50,26 @@ public class PlayerHUDController : MonoBehaviour
         card.Init(cardData);
         card.SetSelected(false);
         cards.Add(card);
+
+        card.transform.localScale = new (0, 1, 1);
+        card.transform.DOScaleX(1, 0.1f);
     }
 
     public void DiscardIndex(int index)
     {
-        Destroy(cards[index].gameObject);
+        var card = cards[index];
+        card.SetSelected(false);
+        card.transform.DOScaleX(0, 0.25f).OnComplete(() =>
+        {
+            Destroy(card.gameObject);
+        });
         cards.RemoveAt(index);
     }
 
     public void DiscardAll()
     {
-        foreach (var card in cards)
+        foreach (var card in cards)     
             Destroy(card.gameObject);
-        
         cards.Clear();
     }
 

@@ -343,10 +343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RewardChoice
   cardLibrary: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}
   lootTable: {fileID: 0}
-  frameSprites:
-  - {fileID: 1367722226887557054, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
-  - {fileID: 2370651055203150321, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
-  - {fileID: -7855051080614086209, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
   cardOptions:
   - {fileID: 2988320210876776849}
   - {fileID: 2708663454200446085}
@@ -356,8 +352,8 @@ MonoBehaviour:
   - {fileID: 8106571902650178403}
   - {fileID: 6199902510333877561}
   node: {fileID: 8830243317825478318}
-  dialog: '!s,re1,re2,re3,re4'
-  tooltip: {fileID: 0}
+  dialog: '!s,re1,re2,re3,re4,re5,re6,re7,re8,re9,re10'
+  vfxPrefab: {fileID: 4926220808989052046, guid: f2cab4e6bff0c144cbf23645aab15e92, type: 3}
 --- !u!1 &3454004596323150440
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +9,10 @@ public class PlayerHUDController : MonoBehaviour
 {
     [SerializeField] private Transform cardHolder;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private Transform lifeBarParent;
     [SerializeField] private Transform heartHolder;
     [SerializeField] private GameObject heartObject;
+    [SerializeField] private GameObject hitAnimationObject;
     [SerializeField] private Transform lifeBarHolder;
     [SerializeField] private GameObject lifeBarObject;
     [SerializeField] private GameObject lifeCapObject;
@@ -92,8 +95,18 @@ public class PlayerHUDController : MonoBehaviour
         } else if (health < heartHolder.childCount)
         {
             int dif = heartHolder.childCount - health;
-            for (int i = 0; i < dif; i++)
+            for (int i = heartHolder.childCount - dif; i < heartHolder.childCount; i++)
             {
+                lifeBarParent.DOShakePosition(0.5f);
+                var hit = Instantiate(hitAnimationObject, transform);
+                hit.SetActive(true);
+                hit.transform.position = heartHolder.GetChild(i).transform.position;
+                hit.transform.DOJump(hit.transform.position + 20 * Vector3.up, 20, 1, 0.5f).OnComplete(() =>
+                {
+                    Destroy(hit);
+                });
+                hit.transform.DOBlendableRotateBy(Random.Range(-45, 45) * Vector3.forward, 0.5f);
+                hit.GetComponent<Image>().DOFade(0, 0.5f);
                 Destroy(heartHolder.GetChild(i).gameObject);
             }
         }

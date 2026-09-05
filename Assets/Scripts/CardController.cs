@@ -9,11 +9,11 @@ public class CardController : MonoBehaviour
     [SerializeField] private Image frame;
     [SerializeField] private Image icon;
 
-    [SerializeField] private Sprite[] frames;
+    [SerializeField] private CardLibrary cardLibrary;
 
     public void Init(CardData card)
     {
-        frame.sprite = frames[(int)card.rarity];
+        frame.sprite = cardLibrary.GetFrame(card.rarity);
         icon.sprite = card.icon;
         for (int i = 0; i < card.charges; i++)
         {

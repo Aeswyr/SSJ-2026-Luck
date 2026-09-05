@@ -295,6 +295,7 @@ MonoBehaviour:
   cardName: {fileID: 6665067981020775435}
   cardBody: {fileID: 1935134080720144277}
   cardIcon: {fileID: 2428081811880656281}
+  cardFrame: {fileID: 3810205990072020558}
   tooltipDisplay: {fileID: 3116438049797509766}
   tooltipHolder: {fileID: 4879618957801050182}
   library: {fileID: 11400000, guid: b22993e1b8300a64db226e4a2fe99ed8, type: 2}

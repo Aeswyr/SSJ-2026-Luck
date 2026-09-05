@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 [CreateAssetMenu(fileName = "CardLibrary", menuName = "ScriptableObjects/CardLibrary", order = 1)]
 public class CardLibrary : ScriptableObject
 {
+    [SerializeField] private List<Sprite> cardFrames;
     [SerializeField] private List<CardData> cards;
     private static Dictionary<CardID, CardDescriptionData> cardDescriptions;
     private static Dictionary<KeywordID, KeywordData> keywords;
@@ -78,6 +79,10 @@ public class CardLibrary : ScriptableObject
         return data;
     }
 
+    public Sprite GetFrame(CardRarity rarity)
+    {
+        return cardFrames[(int)rarity];
+    }
     public CardData GetCard(int index)
     {
         return cards[index];

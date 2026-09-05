@@ -11,129 +11,158 @@ intro	Roane	I thought it would be something cool like a big gun or maybe a sword
 intro	Ace	It doesn’t matter. Pass it here.	ace_neutral	Left	NONE
 intro	Roane	Now I tested them out, so let me show you how to do the do.	roane_neutral	Right	NONE
 					
+re1	Roane	So, how are you enjoying your time in Hell?	roane_neutral	Right	NONE
+re1	Ace	It’s perfectly fine.	ace_neutral	Left	NONE
+re1	Roane	As in good fine or neutral fine?	roane_neutral	Right	NONE
+re1	Ace	It ain’t a thing I’m thinkin about. Just tryin’ to keep moving.	ace_neutral	Left	NONE
+re1	Roane	Good luck with that.	roane_neutral	Right	NONE
+			ace_neutral	Left	NONE
+re2	Roane	So, I’m curious.	roane_neutral	Right	NONE
+re2	Ace	‘Bout?	ace_neutral	Left	NONE
+re2	Roane	You die, you end up in Hell, but you don’t seem bothered in the slightest… Why?	roane_neutral	Right	NONE
+re2	Ace	Why’re you so bothered by it? Ain’t you supposed to be a demon?	ace_neutral	Left	NONE
+re2	Roane	Hey, I was just born here. It’s not the same for your kind down here as it is for me.	roane_neutral	Right	NONE
+re2	Roane	Besides, can’t I be multifaceted AND a demon?	roane_neutral	Right	NONE
+re2	Ace	I guess you can.	ace_neutral	Left	NONE
+					
+re3	Roane	Can I get an answer now?	roane_neutral	Right	NONE
+re3	Ace	About why I thought I'd end up in Hell. Well, I just figured…	ace_neutral	Left	NONE
+re3	Ace	I’d be endin’ up here on way or another.	ace_neutral	Left	NONE
+re3	Roane	But why?	roane_neutral	Right	NONE
+re3	Roane	I’ve lived for what is probably centuries to you. I’ve seen a lot of souls enter hell and most of them were pretty scared.	roane_neutral	Right	NONE
+re3	Roane	And I’ve seen some real bad people in my time, but you?	roane_neutral	Right	NONE
+re3	Roane	You seemed to live an alright life on Earth.	roane_neutral	Right	NONE
+re3	Roane	I just don’t think you should be here.	roane_neutral	Right	NONE
+re3	Ace	Well, you ain’t know me that well.	ace_neutral	Left	NONE
+re3	Roane	HEY! WAIT! DON’T LEAVE-	roane_neutral	Right	NONE
+					
+re4	Roane	You ran off last time.	roane_neutral	Right	NONE
+re4	Ace	Yeah, you gave me a job to do.	ace_neutral	Left	NONE
+re4	Ace	You seem like a philosophical one. Why do you care so much about all this morality stuff?	ace_neutral	Left	NONE
+re4	Roane	Contrary to what humans believe, we aren’t exactly all about torture because we love evil or “sin” or whatever it is you tell yourselves.	roane_neutral	Right	NONE
+re4	Roane	“The Afterlife”, as you call it, is just a place souls escape to when they pass from your world.	roane_neutral	Right	NONE
+re4	Roane	This place existed long before humans started dying, and now we have to figure out what to do with you all. Letting you all run loose in the past like the animals was bad for us.	roane_neutral	Right	NONE
+re4	Ace	So now you take to torturin’ folks?	ace_neutral	Left	NONE
+re4	Roane	Yeah. Some of them. The bad ones.	roane_neutral	Right	NONE
+re4	Ace	And who decides that?	ace_neutral	Left	NONE
+re4	Roane	The book of bylaws. It’s called the Compendium of Eternity. Eternity is where you are by the way. I’ll show it to you next time, but we’ve been talking too long so get going.	roane_neutral	Right	NONE
+					
+re5	Ace	So, you want to tell me about these so-called bylaws?	ace_neutral	Left	NONE
+re5	Roane	When human soles started coming to Eternity, things became… difficult.	roane_neutral	Right	NONE
+re5	Roane	There were a lot of humans who made a lot of demands, would get aggressive with the people who lived here, that kind of thing.	roane_neutral	Right	NONE
+re5	Ace	Sounds about right.	ace_neutral	Left	NONE
+re5	Roane	So we devised a system between Heaven and Hell. We would take the particularly bratty and mean souls and keep them here and they would take the more regular and well fleshed out souls.	roane_neutral	Right	NONE
+re5	Roane	That way, everyone could do their part to maintain some form of order in Eternity.	roane_neutral	Right	NONE
+re5	Ace	And then y’all just decide what’s right and wrong for all time?	ace_neutral	Left	NONE
+re5	Roane	Pretty much.	roane_neutral	Right	NONE
+re5	Ace	But everyone got their own ideas of right and wrong. You ain’t ever question that?	ace_neutral	Left	NONE
+re5	Roane	Not until you came down here. There hadn’t been a reason to as far as I knew. Why were you so sure you would end up here?	roane_neutral	Right	NONE
+re5	Ace	Because that’s just how I feel. Now if you’ll excuse me I need to be goin’.	ace_neutral	Left	NONE
+re5	Roane	Hey! I wasn’t done with my questions!	roane_neutral	Right	NONE
+					
+re6	Roane	Okay, you’re back. Now explain it to me.	roane_neutral	Right	NONE
+re6	Ace	Explain what?	ace_neutral	Left	NONE
+re6	Roane	Why you assumed, despite everything in your life, that you would end up here.	roane_neutral	Right	NONE
+re6	Ace	How ‘bout I ask you a question?	ace_neutral	Left	NONE
+re6	Roane	This is another diversion, isn’t it?	roane_neutral	Right	NONE
+re6	Ace	You know how people on Earth are. We got bigots. People who tell you you ain’t worth livin’ just because of who you are.	ace_neutral	Left	NONE
+re6	Ace	Skin, love, man or woman or something altogether different.	ace_neutral	Left	NONE
+re6	Roane	Oh yeah, those ones are particularly violent so they end up here-	roane_neutral	Right	NONE
+re6	Ace	What ‘bout the non-violent ones? The ones who just say mean things, or even more quietly, just think bad things to themselves? Where do they go?	ace_neutral	Left	NONE
+re6	Roane	Uh… I don’t follow.	roane_neutral	Right	NONE
+re6	Ace	Humans think bad things all the time. I lived in a world where lots of people thought I wasn’t as deservin’ of things as them just because of who I was.	ace_neutral	Left	NONE
+re6	Ace	A lot of em said it, but not all of em.	ace_neutral	Left	NONE
+re6	Ace	Do the people who let it happen and hope it keeps happenin’ while they let others do their dirty work get to stay here?	ace_neutral	Left	NONE
+re6	Roane	… I… Uh, I don’t know.	roane_neutral	Right	NONE
+re6	Ace	Interestin’. Why don’t you mull that over while I get to work.	ace_neutral	Left	NONE
+					
+re7	Roane	Before you ask, I don’t have the answer for you on what the policy is. I looked.	roane_neutral	Right	NONE
+re7	Roane	The Compendium doesn’t have anything on stuff like that.	roane_neutral	Right	NONE
+re7	Roane	Human life is complicated, isn’t it. I didn’t realize some of you just thought that kind of stuff. I guess I assumed you all just do what you think.	roane_neutral	Right	NONE
+re7	Ace	You got a real simplistic idea of humans.	ace_neutral	Left	NONE
+re7	Roane	I do, apparently. I’m sorry for that.	roane_neutral	Right	NONE
+re7	Roane	And I’m sorry that you experienced that kind of unkindness from people.	roane_neutral	Right	NONE
+re7	Roane	And I’m sorry that you’re here now. It doesn’t seem fair that you would have to go through all of that and feel unsafe only to end up here in Hell.	roane_neutral	Right	NONE
+re7	Ace	I ain’t as good a person as you think, Roane.	ace_neutral	Left	NONE
+re7	Roane	You keep saying that, but I just don’t think it’s true.	roane_neutral	Right	NONE
+re7	Roane	You take time to talk to me, even though it’s obvious that there’s something really painful going on beneath the surface.	roane_neutral	Right	NONE
+re7	Ace	You don’t-	ace_neutral	Left	NONE
+re7	Roane	I’m not going to make you tell me now, but… I hope that one day I can prove to you that I’m trustworthy enough for you to tell me.	roane_neutral	Right	NONE
+re7	Roane	You can go.	roane_neutral	Right	NONE
+					
+re8	Roane	Ace, I’m really sorry I was so intense last time. I hope it wasn’t uncomfortable.	roane_neutral	Right	NONE
+re8	Ace	...	ace_neutral	Left	NONE
+re8	Ace	I planned to kill someone.	ace_neutral	Left	NONE
+re8	Roane	...	roane_neutral	Right	NONE
+re8	Roane	What?	roane_neutral	Right	NONE
+re8	Ace	Back in my town, there was this big business guy who liked makin’ these dirty deals.	ace_neutral	Left	NONE
+re8	Ace	He had an entourage and he loved to loan his money almost as much as he loved to collect on those debts.	ace_neutral	Left	NONE
+re8	Ace	And I got tired of it.	ace_neutral	Left	NONE
+re8	Ace	That man got my friend killed in a gun fight. He got lots of people killed for him.	ace_neutral	Left	NONE
+re8	Ace	And I was going to end it all.	ace_neutral	Left	NONE
+re8	Ace	We were on a trolley in town.	ace_neutral	Left	NONE
+re8	Ace	I was going to end him, but then something happened. I don’t know what.	ace_neutral	Left	NONE
+re8	Ace	I just remember all of us on the trolley went flying…	ace_neutral	Left	NONE
+re8	Ace	And then I woke up here.	ace_neutral	Left	NONE
+re8	Ace	So if you want to know why I’m here, it’s because I was a wannabe murderer.	ace_neutral	Left	NONE
+re8	Ace	And if I could go back in time and finish the job… I would.	ace_neutral	Left	NONE
+re8	Roane	…	roane_neutral	Right	NONE
+re8	Ace	I gotta go.	ace_neutral	Left	NONE
+					
+re9	Roane	Ace.	roane_neutral	Right	NONE
+re9	Ace	Roane.	ace_neutral	Left	NONE
+re9	Roane	…	roane_neutral	Right	NONE
+re9	Ace	…	ace_neutral	Left	NONE
+re9	Ace	Well one of us gotta say somethin’.	ace_neutral	Left	NONE
+re9	Roane	You’re right.	roane_neutral	Right	NONE
+re9	Roane	I just feel like endlessly telling you how sorry I am isn’t enough.	roane_neutral	Right	NONE
+re9	Roane	But I am.	roane_neutral	Right	NONE
+re9	Roane	I’m so sorry that life on Earth was the way it was.	roane_neutral	Right	NONE
+re9	Ace	Hey, it ain’t all bad.	ace_neutral	Left	NONE
+re9	Ace	You saw. I loved playin’ cards with my friends.	ace_neutral	Left	NONE
+re9	Ace	Cards was my way of gettin’ through to other people.	ace_neutral	Left	NONE
+re9	Ace	So that must be why when you pulled my soul out it turned into these.	ace_neutral	Left	NONE
+re9	Ace	Earth ain’t a bad place. It got its perks like any place does, and it got its cons too.	ace_neutral	Left	NONE
+re9	Ace	And sometimes those cons are real cons.	ace_neutral	Left	NONE
+re9	Roane	Haha, I actually got that one.	roane_neutral	Right	NONE
+re9	Ace	What I’m sayin’ is, it wasn’t perfect, but it ain’t a horrible place.	ace_neutral	Left	NONE
+re9	Ace	I know this place is supposed to be, well, hell, but even I can see some beauty here. I’m sure you do since you lived here all your life.	ace_neutral	Left	NONE
+re9	Roane	Well, that won’t stop me from trying to make things better for you.	roane_neutral	Right	NONE
+re9	Ace	Hah. I appreciate it, partner.	ace_neutral	Left	NONE
+					
+re10	Roane	When you get to Heaven, what do you think you’ll do?	roane_neutral	Right	NONE
+re10	Ace	I don’t know. What’s it even like up there?	ace_neutral	Left	NONE
+re10	Roane	I don’t know either.	roane_neutral	Right	NONE
+re10	Ace	You’ve never been?	ace_neutral	Left	NONE
+re10	Roane	No. Only a few demons and angels get to traverse back and forth from Heaven and Hell, and only when they’re doing official business. I’m not that high on the ladder.	roane_neutral	Right	NONE
+re10	Ace	Well how the hell am I supposed to decide what I’m doing with the rest of my undead life if you can’t even tell me what it’s like?	ace_neutral	Left	NONE
+re10	Roane	I don’t know, just make something up!	roane_neutral	Right	NONE
+re10	Ace	Fine. Gimme a while to think on it.	ace_neutral	Left	NONE
 					
 					
 					
 					
-cardselecthi1	Roane	Congrats, killer.	roane_neutral	Right	NONE
-cardselecthi2	Roane	Welcome back.	roane_neutral	Right	NONE
-cardselecthi3	Roane	Good ta’ see ya.	roane_neutral	Right	NONE
-cardselecthi4	Roane	Hey, Ace.	roane_neutral	Right	NONE
-cardselectbye1	Roane	Good choice.	roane_neutral	Right	NONE
-cardselectbye2	Roane	Well... if you're sure.	roane_neutral	Right	NONE
-cardselectbye3	Roane	Good luck out there.	roane_neutral	Right	NONE
-cardselectbye4	Roane	The border awaits.	roane_neutral	Right	NONE
 					
-re1	Roane	Hey, you got a minute?	roane_neutral	Right	NONE
-re1	Ace	Sure. Ain’t in a rush.	ace_neutral	Left	NONE
-re1	Roane	See, that’s what I’m curious about.	roane_neutral	Right	NONE
-re1	Roane	You die, you end up in hell, but you don’t seem bothered in the slightest… Why?	roane_neutral	Right	NONE
-re1	Ace	Why’re you so bothered by it? Ain’t you supposed to be a demon?	ace_neutral	Left	NONE
-re1	Roane	What, I can’t be multifaceted just because I’m a demon?	roane_neutral	Right	NONE
-re1	Roane	I’ve lived for what is probably centuries to you. I’ve seen a lot of souls enter hell and most of them were pretty scared.	roane_neutral	Right	NONE
-re1	Roane	I mean… some were happy. And those ones were REAL freaky.	roane_neutral	Right	NONE
-re1	Roane	But you’re the first person I’ve ever seen that seems to be completely unfazed by it.	roane_neutral	Right	NONE
-re1	Roane	Why?	roane_neutral	Right	NONE
-re1	Ace	I just figured…	ace_neutral	Left	NONE
-re1	Ace	I’d be ending up here anyway.	ace_neutral	Left	NONE
-re1	Roane	But you didn’t do anything particularly bad.	roane_neutral	Right	NONE
-re1	Ace	That so?	ace_neutral	Left	NONE
-re1	Roane	Yeah. I mean, I’ve looked over your soul’s deed and it seemed very average.	roane_neutral	Right	NONE
-re1	Roane	This may come as a shock to you, but people like you don’t end up here. They get to heaven.	roane_neutral	Right	NONE
-re1	Ace	Maybe I’m bad and you just don’t know it. What makes you think your little deed can tell you everything about me?	ace_neutral	Left	NONE
-re1	Roane	Well that’s what I want to figure out.	roane_neutral	Right	NONE
-re1	Ace	Is it morally wrong by y’alls books to think about hurting somebody?	ace_neutral	Left	NONE
-re1	Roane	I mean… I don’t know. I’ve never seen anything like that come up. I guess I never even thought about it.	roane_neutral	Right	NONE
-re1	Ace	Hows about you mull that one over while I get back to doing what I’m here to do.	ace_neutral	Left	NONE
-re1	Roane	Uh, sure. I’ll do that.	roane_neutral	Right	NONE
-re1	Roane	Here, a card for your troubles.	roane_neutral	Right	NONE
-re2	Roane	Now that you have a break, let’s chat.	roane_neutral	Right	NONE
-re2	Ace	More of this morality nonsense?	ace_neutral	Left	NONE
-re2	Roane	Sure. More.. nonsense	roane_neutral	Right	NONE
-re2	Roane	So I looked at the books and while thinking about hurting people is generally pretty frowned upon, it’s not going to make as much of an impact as actually hurting somebody	roane_neutral	Right	NONE
-re2	Ace	But what if someone wanted to hurt someone really bad?	ace_neutral	Left	NONE
-re2	Ace	What if someone wanted to kill somebody?	ace_neutral	Left	NONE
-re2	Ace	Would that little book of yours have a scenario for that?	ace_neutral	Left	NONE
-re2	Roane	I think the action is probably more important than the thought in the long-run, don’t you?	roane_neutral	Right	NONE
-re2	Ace	And what makes you think that? The book?	ace_neutral	Left	NONE
-re2	Roane	… Yes?	roane_neutral	Right	NONE
-re2	Ace	So you live your life determined to follow the moral rulins that someone else set up for you? You just decide everything that way, do ya?	ace_neutral	Left	NONE
-re2	Roane	What? Is there supposed to be some other way?	roane_neutral	Right	NONE
-re2	Ace	Maybe. Maybe there isn’t. I ain’t a teacher.	ace_neutral	Left	NONE
-re2	Ace	You know, up there in the livin’ world, a whole bunch of people live their lives tellin’ other people that they deserve this place because of what they look like, who they love, everythin’ about who they are.	ace_neutral	Left	NONE
-re2	Ace	Everyone got ideas of right and wrong.	ace_neutral	Left	NONE
-re2	Roane	Yeah well a lot of those people are also violent and their bigotry ends them up here.	roane_neutral	Right	NONE
-re2	Ace	Even if they pray?	ace_neutral	Left	NONE
-re2	Roane	Even if they pray. It’s the rules.	roane_neutral	Right	NONE
-re2	Ace	And if they don't hurt anyone physically, where do they go?	ace_neutral	Left	NONE
-re2	Roane	Uh... I-	roane_neutral	Right	NONE
-re2	Ace	What if they only make people feel real bad with their words, or just think it to themself?	ace_neutral	Left	NONE
-re2	Roane	I don't know, I guess. 	roane_neutral	Right	NONE
-re2	Ace	And what if I hurt somebody because they hurt me first? What happens to me.	ace_neutral	Left	NONE
-re2	Roane	Uh… well… I mean you did hurt somebody in that scenario-	roane_neutral	Right	NONE
-re2	Ace	But they hurt me first. What if it was the only thing between me and death?	ace_neutral	Left	NONE
-re2	Roane	… huh. I- I need to look at the books some more I think.	roane_neutral	Right	NONE
-re2	Ace	Sure. You have fun with that, Roane.	ace_neutral	Left	NONE
-re2	Roane	Here. Take this with you.	roane_neutral	Right	NONE
-re3	Roane	Ace-	roane_neutral	Right	NONE
-re3	Ace	Okay, before you get into all your yappin, I got a question.	ace_neutral	Left	NONE
-re3	Roane	Oh. Sure, go ahead.	roane_neutral	Right	NONE
-re3	Ace	Why do you gotta read all these books? Do they not preload you with all the info you need?	ace_neutral	Left	NONE
-re3	Roane	No?	roane_neutral	Right	NONE
-re3	Roane	We’re born just like all you living things are.	roane_neutral	Right	NONE
-re3	Roane	So we learn like you all do. We even have personalities and everything.	roane_neutral	Right	NONE
-re3	Roane	Not everyone down here likes being down here.	roane_neutral	Right	NONE
-re3	Roane	I mean, some do, but not all.	roane_neutral	Right	NONE
-re3	Ace	Interesting.	ace_neutral	Left	NONE
-re3	Ace	Anyway, your dilemma with morality and whatnot.	ace_neutral	Left	NONE
-re3	Roane	I think I hate these books.	roane_neutral	Right	NONE
-re3	Roane	I had no idea being a human was so complicated. I talked to some tortured souls and they all had really complicated lives. It honestly sounds like living is hell.	roane_neutral	Right	NONE
-re3	Roane	It is for some people.	roane_neutral	Right	NONE
-re3	Roane	So does… any of this matter?	roane_neutral	Right	NONE
-re3	Roane	There are some real real bad people in your world, but…	roane_neutral	Right	NONE
-re3	Roane	What does torturing them even do?	roane_neutral	Right	NONE
-re3	Roane	And what if we torture the wrong people?	roane_neutral	Right	NONE
-re3	Roane	Do you want to know how you ended up here?	roane_neutral	Right	NONE
-re3	Ace	Sure.	ace_neutral	Left	NONE
-re3	Roane	When you died, your soul got confused with someone else's. You were on a street car and when it crashed you both died at the same time.	roane_neutral	Right	NONE
-re3	Roane	Your souls got sent to the wrong places and now you’re here and that guy is up there. Some-	roane_neutral	Right	NONE
-re3	Ace	Mob boss. I know.	ace_neutral	Left	NONE
-re3	Roane	What?	roane_neutral	Right	NONE
-re3	Ace	I was coming here no matter what. I figured that I would find him down here, but if he’s up there, then I guess I’ll just have to march my way to heaven to finish the job I wasn’t able to in life.	ace_neutral	Left	NONE
-re3	Ace	… What are you trying to say?	ace_neutral	Left	NONE
-re3	Ace	I was going to kill him. That’s what I’m saying.	ace_neutral	Left	NONE
-re3	Roane	…	roane_neutral	Right	NONE
-re3	Ace	He took everything from my community. He killed the person that used to be my best friend.	ace_neutral	Left	NONE
-re3	Ace	So I had to send him to his grave.	ace_neutral	Left	NONE
-re3	Ace	And I don’t care if you think it was right or wrong.	ace_neutral	Left	NONE
-re3	Ace	If I could go back to that moment, I wouldn’t have hesitated.	ace_neutral	Left	NONE
-re3	Roane	Wow, Ace. I don’t really know what to say.	roane_neutral	Right	NONE
-re3	Roane	Um. Here, take this.	roane_neutral	Right	NONE
-re3	Ace	Thanks.	ace_neutral	Left	NONE
 					
-re4	Ace	More questions today?	ace_neutral	Left	NONE
-re4	Roane	No.	roane_neutral	Right	NONE
-re4	Roane	I think… maybe trying to figure out what is good and bad in all scenarios is hard.	roane_neutral	Right	NONE
-re4	Roane	Maybe it’s not something I can understand just by reading my manuals or grilling you.	roane_neutral	Right	NONE
-re4	Roane	I don’t think I’m even supposed to say this, but I think this whole system is fucked.	roane_neutral	Right	NONE
-re4	Ace	It amazes me that you ain’t even about all the death and killin and torturin.	ace_neutral	Left	NONE
-re4	Ace	I bet the demons who like that stuff have a lot of fun. You should try not bein such a stick in the mud.	ace_neutral	Left	NONE
-re4	Roane	Ouch.	roane_neutral	Right	NONE
-re4	Roane	But then who would ask you overly complicated questions about reality?	roane_neutral	Right	NONE
-re4	Roane	And who would you have to help you complete your little mission?	roane_neutral	Right	NONE
-re4	Ace	Oh? So now killin isn’t so bad?	ace_neutral	Left	NONE
-re4	Roane	I feel like that guy should probably be down here is all.	roane_neutral	Right	NONE
-re4	Roane	I have about a century longer to figure out what I think of torture now, but that guy cannot be in heaven. I know that for sure.	roane_neutral	Right	NONE
-re4	Ace	Well.	ace_neutral	Left	NONE
-re4	Ace	Thank you, Roane.	ace_neutral	Left	NONE
-re4	Roane	Huh? Why are you thanking me?	roane_neutral	Right	NONE
-re4	Ace	For helping me.	ace_neutral	Left	NONE
-re4	Roane	Hey, I’m not just helping you! I’m helping set things right.	roane_neutral	Right	NONE
-re4	Roane	And I think you should be able to get off on the technicality of not actually assassinating him.	roane_neutral	Right	NONE
-re4	Roane	I mean… think of how many people he would still be torturing if he hadn’t been killed. If it wasn’t for the accident, I guess dying by your hands would’ve been pretty decent karma.	roane_neutral	Right	NONE
-re4	Ace	Well, I’m glad you have your own answer on how ya feel.	ace_neutral	Left	NONE
-re4	Roane	I think thinking about the morality of all this is hurting my brain, but I know I want to help you. So that’s what I’m going to do.	roane_neutral	Right	NONE
-re4	Roane	Take this. Let’s get this show on the road.	roane_neutral	Right	NONE
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					
 ce1	Coyote	(A spectral form in the shape of a coyote stands in front of you. It looks so lifelike you forget for a moment that you’ve died.)	coyote_neutral	Right	NONE
 ce1	Coyote	(It stares at you from a few feet away, questioning if it should come closer.)	coyote_neutral	Right	NONE

@@ -7,6 +7,7 @@ public class CardDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cardName;
     [SerializeField] private TextMeshProUGUI cardBody;
     [SerializeField] private Image cardIcon;
+    [SerializeField] private Image cardFrame;
     [SerializeField] private GameObject tooltipDisplay;
     [SerializeField] private Transform tooltipHolder;
     [SerializeField] private CardLibrary library;
@@ -23,6 +24,7 @@ public class CardDisplay : MonoBehaviour
         cardName.text = card.name;
         cardBody.text = cardDesc.description;
         cardIcon.sprite = card.icon;
+        cardFrame.sprite = library.GetFrame(card.rarity);
         
         for (int i = 1; i < tooltipHolder.childCount; i++)
         {

@@ -6,12 +6,13 @@ public class RewardChoice : MonoBehaviour
     [SerializeField] private CardLibrary cardLibrary;
     [SerializeField] private LootTable lootTable;
 
-    [SerializeField] private Sprite[] frameSprites;
     [SerializeField] private SpriteRenderer[] cardOptions;
     [SerializeField] private SpriteRenderer[] cardFrames;
     [SerializeField] private GameObject node;
 
     [SerializeField] private string dialog;
+
+    [SerializeField] private GameObject vfxPrefab;
     private CardData[] rewards = new CardData[3];
 
     public void Start()
@@ -38,7 +39,7 @@ public class RewardChoice : MonoBehaviour
             selection.RemoveAt(index);
 
             cardOptions[i].sprite = rewards[i].icon;
-            cardFrames[i].sprite = frameSprites[(int)rewards[i].rarity];
+            cardFrames[i].sprite = cardLibrary.GetFrame(rewards[i].rarity);
         }
 
         
@@ -64,24 +65,29 @@ public class RewardChoice : MonoBehaviour
 
     public void ChooseRewardA()
     {
-        FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[0].id);
-        FinalizeRewardChoice();
+        FinalizeRewardChoice(0);
     }
 
     public void ChooseRewardB()
     {
-        FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[1].id);
-        FinalizeRewardChoice();
+        FinalizeRewardChoice(1);
     }
 
     public void ChooseRewardC()
     {
-        FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[2].id);
-        FinalizeRewardChoice();
+        FinalizeRewardChoice(2);
     }
 
-    private void FinalizeRewardChoice()
+    private void FinalizeRewardChoice(int index)
     {
+        FindAnyObjectByType<PlayerController>().AddCardToDeck(rewards[index].id);
+
+        for (int i = 0; i < cardFrames.Length; i++)
+        {
+            var vfx = Instantiate(vfxPrefab).GetComponent<CardSelectVFX>(); 
+            vfx.transform.position = cardFrames[i].transform.position;
+            vfx.Init(rewards[i].id, i == index);
+        }
         node.SetActive(false);
         foreach (var card in cardOptions)
             card.gameObject.SetActive(false);

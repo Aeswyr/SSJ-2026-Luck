@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1db55bd937c61840ad0c6a0cbc88aca, type: 3}
   m_Name: CardLibrary
   m_EditorClassIdentifier: Assembly-CSharp::CardLibrary
+  cardFrames:
+  - {fileID: 1367722226887557054, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
+  - {fileID: 2370651055203150321, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
+  - {fileID: -7855051080614086209, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
+  - {fileID: 3425382617127619042, guid: 4dae01ad65908e74c8332efe3997e10f, type: 3}
   cards:
   - name: High Card
     id: 0
@@ -346,7 +351,7 @@ MonoBehaviour:
   - name: Deadly Gambit
     id: 33
     rarity: 1
-    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    icon: {fileID: -3487438023490082363, guid: 72a4455c5b3e79c4c9dd0315d12f4f49, type: 3}
     type: 1
     exhaust: 0
     noDiscard: 0
@@ -356,7 +361,7 @@ MonoBehaviour:
   - name: Kinetic Draw
     id: 34
     rarity: 1
-    icon: {fileID: -3487438023490082363, guid: 0c5dbd42f63a72d4490c2f1c5ea07562, type: 3}
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
     type: 2
     exhaust: 1
     noDiscard: 0

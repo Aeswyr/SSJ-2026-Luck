@@ -31,6 +31,6 @@ TRIPLE_DEAL	When the next card is played, [Deal] 3.
 LUCKY_DEAL	When the next card is played, [Deal] 7.
 KINETIC_DRAW	Whenever you draw a new hand [Fold]. Hit for damage equal to the number folded. [Imprint]. [Exhaust].
 DEADLY_GAMBIT	Fold. Hit for damage equal to twice the number folded.
-CHEATER_JACK	Hit for 2 damage, increased by 5 if the target is cursed. 4 uses.
-KINGS_ORDEAL	Hit for 8 damage. [Deal] 4 for each curse on the target, then [Cleanse] them.
-QUEENS_MERCY	Hit for 4 damage, doubled for each curse on the target, then [Cleanse] them.
+CHEATER_JACK	Hit for 2 damage, increased by 5 if the target is cursed. 4 uses. [Stick].
+KINGS_ORDEAL	Hit for 8 damage. [Deal] 4 for each curse on the target, then [Cleanse] them. [Stick].
+QUEENS_MERCY	Hit for 4 damage, doubled for each curse on the target, then [Cleanse] them. [Stick].

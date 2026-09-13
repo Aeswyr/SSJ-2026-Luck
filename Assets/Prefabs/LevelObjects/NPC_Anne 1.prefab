@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae0f0b5e8410784f9e8f41436d1b318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Conversable
-  conversationKey: '!s,ae1,ae2,ae3'
+  conversationKey: '!s,ae1,ae2,ae3,ae4,ae5,ae6,ae7,ae8,ae9,ae10'
   callback:
     m_PersistentCalls:
       m_Calls: []
@@ -86,8 +86,11 @@ MonoBehaviour:
       m_Calls: []
   col: {fileID: -4524159062630612450}
   singleUse: 1
+  levelEndInteractable: 0
+  canInteract: 1
 --- !u!212 &3323749707987754296
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,8 +134,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 3942833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -3487438023490082363, guid: b041cdc847b008440b172c65ebadb9d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -142,7 +146,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &-4524159062630612450
 BoxCollider2D:

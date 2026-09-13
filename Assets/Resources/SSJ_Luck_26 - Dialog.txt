@@ -139,157 +139,221 @@ re10	Ace	Well how the hell am I supposed to decide what I’m doing with the res
 re10	Roane	I don’t know, just make something up!	roane_neutral	Right	NONE
 re10	Ace	Fine. Gimme a while to think on it.	ace_neutral	Left	NONE
 					
+ce1	Coyote	(In a nearby bush something sturs.)	coyote_neutral	Right	NONE
+ce1	Coyote	(A pair of big ears poke out from the shrubbery, then a face appears. A blue, ghostly coyote stares at you.)	coyote_neutral	Right	NONE
+ce1	Ace	What the-?	ace_neutral	Left	NONE
+ce1	Coyote	(It steps out, staring at you as it walks with suspicion glinting in its eyes. It stops a few feet away and sniffs the air.)	coyote_neutral	Right	NONE
+ce1	Coyote	(The coyote glares for a moment, then runs away into the nearby foliage.)	coyote_neutral	Right	NONE
+ce1	Ace	Hey, if I smell bad, maybe consider that everythin’ down here smells bad! It’s HELL! Ain’t much I can do about it!	ace_neutral	Left	NONE
+ce1	Coyote	(There’s no response. Not a sound left to comfort you.)	coyote_neutral	Right	NONE
+ce1	Ace	(You are alone.)	ace_neutral	Left	NONE
 					
+ce2	Coyote	(You see the coyote again. It stays at a distance as it stares at you.)	coyote_neutral	Right	NONE
+ce2	Ace	The mutt is back, huh? Here to judge me again?	ace_neutral	Left	NONE
+ce2	Coyote	(The coyote snarls.)	coyote_neutral	Right	NONE
+ce2	Ace	Go on, get!	ace_neutral	Left	NONE
+ce2	Coyote	(The coyote runs off.)	coyote_neutral	Right	NONE
+ce2	Ace	(You are alone.)	ace_neutral	Left	NONE
 					
+ce3	Coyote	(The coyote is eating berries off of a bush. The berries resemble little red, beady eyes.)	coyote_neutral	Right	NONE
+ce3	Coyote	(The coyote seems to pay you no mind as it eats, entirely uninterested in engaging with you or acknowledging your presence.)	coyote_neutral	Right	NONE
+ce3	Ace	I ain’t know you eat berries. I just thought you all ate dead animals… like lil thieves.	ace_neutral	Left	NONE
+ce3	Coyote	(The coyote pauses to stare at you. Its eyes don’t look particularly friendly.)	coyote_neutral	Right	NONE
+ce3	Ace	What?	ace_neutral	Left	NONE
+ce3	Coyote	(The coyote rips a branch from the bush and leaps away.)	coyote_neutral	Right	NONE
+ce3	Ace	(You are alone.)	ace_neutral	Left	NONE
 					
+ce4	Coyote	(You are once again face to face with the coyote.)	coyote_neutral	Right	NONE
+ce4	Ace	Great. This again.	ace_neutral	Left	NONE
+ce4	Ace	What do you want, mutt?	ace_neutral	Left	NONE
+ce4	Coyote	(It approaches you slowly. Its long spindly legs don’t make a sound. A slight after image trails it as it moves.)	coyote_neutral	Right	NONE
+ce4	Ace	(You instinctively back up.)	ace_neutral	Left	NONE
+ce4	Coyote	(In its eyes, you see only you. Your face reflected back at you. You feel… angry.)	coyote_neutral	Right	NONE
+ce4	Ace	Get back!	ace_neutral	Left	NONE
+ce4	Ace	(You wave your arm at it to try to scare it off.)	ace_neutral	Left	NONE
+ce4	Coyote	(The coyote growls. It lunges and bites your hand.)	coyote_neutral	Right	NONE
+ce4	Ace	MOTHER-	ace_neutral	Left	NONE
+ce4	Coyote	(Before you can retaliate, it runs away.)	coyote_neutral	Right	NONE
+ce4	Ace	(You are alone. You hurt.)	ace_neutral	Left	NONE
 					
+ce5	Coyote	(The coyote is back.)	coyote_neutral	Right	NONE
+ce5	Ace	You lil shit!	ace_neutral	Left	NONE
+ce5	Coyote	(As you begin to stomp towards it, it backs up, growling low and ready to strike.)	coyote_neutral	Right	NONE
+ce5	Ace	Why you always comin’ after me, huh? Somethin’ you don’t like about me?!	ace_neutral	Left	NONE
+ce5	Ace	What’s so detestable about me?! What did I ever do to you!	ace_neutral	Left	NONE
+ce5	Ace	(Something hot is burning inside your chest. Your heart pounds even though it feels like its being squeezed by your ribs.)	ace_neutral	Left	NONE
+ce5	Ace	(Your eyes feel hot.)	ace_neutral	Left	NONE
+ce5	Ace	If anyone is gonna hate me, it’s gonna be me! NOW GET!	ace_neutral	Left	NONE
+ce5	Coyote	(The coyote shifts. Almost as if mimicking you, it softens its posture, almost sulking. It tucks its tail between its legs and leaves slowly.)	coyote_neutral	Right	NONE
+ce5	Ace	(You are alone.)	ace_neutral	Left	NONE
 					
+ce6	Ace	(Once you find a clearing, you collapse on the floor exhausted.)	ace_neutral	Left	NONE
+ce6	Ace	(You’re sweating. You’re exhausted. You’re tired and your body aches.)	ace_neutral	Left	NONE
+ce6	Ace	(You think that it probably serves you right for all your shortcomings in life.)	ace_neutral	Left	NONE
+ce6	Ace	(You always worried your parents because when you were young you were always getting into trouble, even if you didn’t have the luxury to do that.)	ace_neutral	Left	NONE
+ce6	Ace	(And you never grew out of it. They always said you were just a “trouble attracter”.)	ace_neutral	Left	NONE
+ce6	Ace	(You think about all the people you left behind and let down. Apologies you’ll never make and broken things you’ll never mend.)	ace_neutral	Left	NONE
+ce6	Ace	(You cry. You are alone.)	ace_neutral	Left	NONE
 					
+ce7	Ace	(You stop to rest. You sit down in the spikey, dead grass.)	ace_neutral	Left	NONE
+ce7	Ace	(You close your eyes as you catch your breath.)	ace_neutral	Left	NONE
+ce7	Ace	(When you open your eyes…)	ace_neutral	Left	NONE
+ce7	Coyote	(The coyote is sat in front of you.)	coyote_neutral	Right	NONE
+ce7	Ace	GAH! The hell, man!	ace_neutral	Left	NONE
+ce7	Coyote	(The coyote stares at you.)	coyote_neutral	Right	NONE
+ce7	Ace	(You see your reflection in its eyes.)	ace_neutral	Left	NONE
+ce7	Ace	(Looking at yourself, you feel uneasy. It’s still you. Nothing has changed. You expected to look in much worse repair, but somehow still looking like yourself doesn’t ease your heart.)	ace_neutral	Left	NONE
+ce7	Ace	(When you see yourself, you feel your fists curl. You feel your body ache.)	ace_neutral	Left	NONE
+ce7	Ace	(You’re angry at the world. You’re angry at yourself for not being stronger. You’re angry you died.)	ace_neutral	Left	NONE
+ce7	Ace	(You’re angry for all your failures. They feel innumerable.)	ace_neutral	Left	NONE
+ce7	Ace	(When did you start crying?)	ace_neutral	Left	NONE
+ce7	Coyote	(The coyote rests its head in your lap. When you finally stop crying, it leaves.)	coyote_neutral	Right	NONE
 					
+ce8	Coyote	(When you finally hit the clearing, you see the coyote sitting there.)	coyote_neutral	Right	NONE
+ce8	Ace	Was wonderin’ when I’d see your tail again.	ace_neutral	Left	NONE
+ce8	Ace	What do you want?	ace_neutral	Left	NONE
+ce8	Coyote	(The coyote sits patiently.)	coyote_neutral	Right	NONE
+ce8	Ace	Just because I was cryin’ and I let you hang out don’t mean I like you now.	ace_neutral	Left	NONE
+ce8	Coyote	(The coyote huffs.)	coyote_neutral	Right	NONE
+ce8	Ace	You might think that I’m weak, but I’m not. Look at all the shit I’m goin’ through. Would a weak person go through all this? It was just one moment. I ain’t like that.	ace_neutral	Left	NONE
+ce8	Coyote	(The coyote snarls before it gets up, turns around, and leaves without any fanfare.)	coyote_neutral	Right	NONE
+ce8	Ace	(You are alone.)	ace_neutral	Left	NONE
 					
+ce9	Coyote	(You finally find a spot to rest and, as you suspected might happen, the coyote is there.)	coyote_neutral	Right	NONE
+ce9	Ace	(You want to be angry.)	ace_neutral	Left	NONE
+ce9	Coyote	(Why does this animal keep showing up and staring at you in a way that seems to make you so uncomfortable.)	coyote_neutral	Right	NONE
+ce9	Coyote	(When you see yourself, you suddenly feel all these emotions you don’t want to feel.)	coyote_neutral	Right	NONE
+ce9	Coyote	(But…)	coyote_neutral	Right	NONE
+ce9	Ace	It ain’t your fault I’m so… the way I am.	ace_neutral	Left	NONE
+ce9	Ace	(You sit down next to the coyote.)	ace_neutral	Left	NONE
+ce9	Coyote	(The coyote curls up next to you, relaxing.)	coyote_neutral	Right	NONE
+ce9	Ace	It ain’t your fault…	ace_neutral	Left	NONE
+ce9	Ace	It ain’t your fault, lil guy…	ace_neutral	Left	NONE
+ce9	Coyote	(You reach over petting the coyote. You keep repeating the phrase. It probably falls asleep at some point because when you get up to leave, it’s still laying there.)	coyote_neutral	Right	NONE
 					
+ce10	Coyote	(The coyote bounds toward you.)	coyote_neutral	Right	NONE
+ce10	Ace	Hey, greatin’s pal.	ace_neutral	Left	NONE
+ce10	Ace	(You kneel down.)	ace_neutral	Left	NONE
+ce10	Coyote	YIP!	coyote_neutral	Right	NONE
+ce10	Coyote	(It rubs up against you as it circles you joyously.)	coyote_neutral	Right	NONE
+ce10	Ace	I’m sorry for bein’ so angry before. I think that maybe it’s hard to carry all these feelin’s.	ace_neutral	Left	NONE
+ce10	Ace	I wanted more outta my life.	ace_neutral	Left	NONE
+ce10	Ace	And you got them big scary eyes that make me see myself.	ace_neutral	Left	NONE
+ce10	Ace	It makes a guy uneasy, ya know.	ace_neutral	Left	NONE
+ce10	Ace	But… I’m sorry.	ace_neutral	Left	NONE
+ce10	Coyote	(You sit with the coyote for a bit. The two of you rest under one of the gnarled trees until you finally have enough strength to continue.)	coyote_neutral	Right	NONE
 					
+ae1	Anne	(There’s a spirit in this room. A young woman in tattered dress attire.)	anne_neutral	Right	NONE
+ae1	Anne	Oh! I didn’t see ya there. Wow, you look strangely… concrete for someone down. You must have all those memories of yours from when you were livin’.	anne_neutral	Right	NONE
+ae1	Ace	Maybe. Why’s it matter.	ace_neutral	Left	NONE
+ae1	Anne	Oh. No reason at all.	anne_neutral	Right	NONE
+ae1	Anne	But it’s nice to see a person.	anne_neutral	Right	NONE
+ae1	Anne	Come back and visit… i-if ya want, that is.	anne_neutral	Right	NONE
 					
+ae2	Anne	(You see the spirit from before.)	anne_neutral	Right	NONE
+ae2	Anne	Oh! You’re back!	anne_neutral	Right	NONE
+ae2	Anne	You must be real brave to go out there where the demons are.	anne_neutral	Right	NONE
+ae2	Anne	How do ya not get scared they’re gonna nab ya and torture ya?	anne_neutral	Right	NONE
+ae2	Ace	I don’t have much of a choice now, do I?	ace_neutral	Left	NONE
+ae2	Anne	There’s plenty of places to hide in the woods, I could take ya sometime.	anne_neutral	Right	NONE
+ae2	Ace	I’m good.	ace_neutral	Left	NONE
+ae2	Anne	Oh. Okay. Well, I hope to see ya again!	anne_neutral	Right	NONE
 					
+ae3	Anne	Back again?	anne_neutral	Right	NONE
+ae3	Ace	Seems I am. You seem to just pop up.	ace_neutral	Left	NONE
+ae3	Anne	I hope you don’t mind. It’s just nice to see another person.	anne_neutral	Right	NONE
+ae3	Anne	You’re so lucky to have a corporeal body.	anne_neutral	Right	NONE
+ae3	Anne	I wonder if I could get myself back my own body.	anne_neutral	Right	NONE
+ae3	Anne	Seeing through my own hands is a bit of a fright.	anne_neutral	Right	NONE
+ae3	Ace	Good luck with that, I guess.	ace_neutral	Left	NONE
 					
+ae4	Anne	Hey, you’re back!	anne_neutral	Right	NONE
+ae4	Anne	I realized I never introduced myself. I’m Anne, by the way.	anne_neutral	Right	NONE
+ae4	Anne	It’s one of the only things I remember from my life.	anne_neutral	Right	NONE
+ae4	Ace	Alright.	ace_neutral	Left	NONE
+ae4	Anne	…	anne_neutral	Right	NONE
+ae4	Anne	Now you introduce yourself!	anne_neutral	Right	NONE
+ae4	Ace	It’s Ace.	ace_neutral	Left	NONE
+ae4	Anne	Haha! Oh, ‘cuz of the cards?	anne_neutral	Right	NONE
+ae4	Ace	No. That’s a coincidence, I suppose.	ace_neutral	Left	NONE
+ae4	Anne	Oh, um… sorry. I- I was joking.	anne_neutral	Right	NONE
+ae4	Anne	Bad joke… ahahah.	anne_neutral	Right	NONE
+ae4	Anne	I’m… going. Bye for now, Ace.	anne_neutral	Right	NONE
 					
+ae5	Anne	You’re back! Great!	anne_neutral	Right	NONE
+ae5	Ace	I feel like you ought to be following me at this point.	ace_neutral	Left	NONE
+ae5	Anne	Whaaaat? No. I wouldn’t do that.	anne_neutral	Right	NONE
+ae5	Anne	So, Ace, I need your help.	anne_neutral	Right	NONE
+ae5	Anne	I want my body back, but I found out from a kindly demon the only way to do that is to get my memories back.	anne_neutral	Right	NONE
+ae5	Ace	Demon?	ace_neutral	Left	NONE
+ae5	Anne	The one you talk to.	anne_neutral	Right	NONE
+ae5	Ace	So ya are following me.	ace_neutral	Left	NONE
+ae5	Anne	ANYWAY-	anne_neutral	Right	NONE
+ae5	Anne	I need your help. Moral support.	anne_neutral	Right	NONE
+ae5	Ace	I’ll think about it.			
+ae5	Anne	Thank ya. I appreciate it.	anne_neutral	Right	NONE
+			ace_neutral	Left	NONE
+ae6	Anne	Did ya think it over?	anne_neutral	Right	NONE
+ae6	Ace	Think what over?	ace_neutral	Left	NONE
+ae6	Anne	Gettin’ my dang body back!	anne_neutral	Right	NONE
+ae6	Ace	Oh. No, I was busy not gettin’ my ass handed to me out there.	ace_neutral	Left	NONE
+ae6	Anne	Well? Think now.	anne_neutral	Right	NONE
+ae6	Ace	I suppose I can help, but what’s in it for me?	ace_neutral	Left	NONE
+ae6	Anne	Like… money? We ain’t got that down here.	anne_neutral	Right	NONE
+ae6	Anne	I suppose… there’s nothing I can offer ya.	anne_neutral	Right	NONE
+ae6	Anne	(Anne looks at the ground. Her form becomes hazier than usual.)	anne_neutral	Right	NONE
+ae6	Ace	Uhg. Fine. I’ll find the time.			
+ae6	Anne	Thank you! You’re a good person!	anne_neutral	Right	NONE
+ae6	Ace	Sure, whatever.	ace_neutral	Left	NONE
+			ace_neutral	Left	NONE
+ae7	Anne	You came back!	anne_neutral	Right	NONE
+ae7	Ace	Yup.	ace_neutral	Left	NONE
+ae7	Anne	Okay, I did some research. We just gotta sit here and hold hands.	anne_neutral	Right	NONE
+ae7	Ace	…	ace_neutral	Left	NONE
+ae7	Ace	Well that ain’t happenin’.	ace_neutral	Left	NONE
+ae7	Anne	No! Trust me. Come on, just sit down.	anne_neutral	Right	NONE
+ae7	Anne	(The two of you sit down cross legged gross from each other.)	anne_neutral	Right	NONE
+ae7	Anne	Once this starts, I’ll disappear for a bit. My soul will be tethered to yours so that it can stay safe while I’m not physically here.	anne_neutral	Right	NONE
+ae7	Anne	When I come back, I’ll hopefully remember at least something.	anne_neutral	Right	NONE
+ae7	Anne	(She takes your hands and closes her eyes. She chants something in a language you don’t understand before she begins to fade until no one is holding your hands.)	anne_neutral	Right	NONE
+ae7	Ace	(You get up and head out.)	ace_neutral	Left	NONE
 					
+ae8	Anne	(A burst of light hits you when you enter a clearing.)	anne_neutral	Right	NONE
+ae8	Anne	(Anne collapses in front of you gasping, crying, and quivering.)	anne_neutral	Right	NONE
+ae8	Ace	Seems you’re back.	ace_neutral	Left	NONE
+ae8	Anne	Ace…	anne_neutral	Right	NONE
+ae8	Anne	(She looks up at you, looking terrified.)	anne_neutral	Right	NONE
+ae8	Anne	(Before you can say anything, she bolts away from you.)	anne_neutral	Right	NONE
 					
+ae9	Anne	(You come across Anne again. She’s sitting with her knees in her chest.)	anne_neutral	Right	NONE
+ae9	Ace	You ran off.	ace_neutral	Left	NONE
+ae9	Anne	(She sniffles and wipes her nose in her dress sleeve.)	anne_neutral	Right	NONE
+ae9	Anne	Sorry, I just…	anne_neutral	Right	NONE
+ae9	Anne	You shouldn’t be near me. I’m… I’m not good.	anne_neutral	Right	NONE
+ae9	Ace	Well, it is Hell.	ace_neutral	Left	NONE
+ae9	Anne	Please just go.	anne_neutral	Right	NONE
+ae9	Ace	Seems like you might need to talk-	ace_neutral	Left	NONE
+ae9	Anne	I SAID GO.	anne_neutral	Right	NONE
+ae9	Ace	…	ace_neutral	Left	NONE
+ae9	Ace	Fine.	ace_neutral	Left	NONE
 					
-					
-					
-					
-					
-					
-					
-					
-					
-ce1	Coyote	(A spectral form in the shape of a coyote stands in front of you. It looks so lifelike you forget for a moment that you’ve died.)	coyote_neutral	Right	NONE
-ce1	Coyote	(It stares at you from a few feet away, questioning if it should come closer.)	coyote_neutral	Right	NONE
-ce1	Coyote	(It sniffs the air.)	coyote_neutral	Right	NONE
-ce1	Coyote	(It steps back, glaring for a moment, then runs away into the foliage nearby.)	coyote_neutral	Right	NONE
-ce1	Ace	What did I do? You came up to me.	ace_neutral	Left	NONE
-ce1	Coyote	(Its glare isn’t improved by your anger.)	coyote_neutral	Right	NONE
-ce1	Ace	If I smell bad, maybe consider that everythin’ down here smells bad. It’s hell. Ain’t much I can do about it.	ace_neutral	Left	NONE
-ce1	Coyote	(It leaves, leaving you alone again.)	coyote_neutral	Right	NONE
-ce1	Coyote	(Somehow, letting off some steam by yelling at the coyote makes you feel better, you feel like you can let something go.)	coyote_neutral	Right	NONE
-					
-ce2	Coyote	(The spirit stares at you. It sits several feet away from you.)	coyote_neutral	Right	NONE
-ce2	Ace	This again.	ace_neutral	Left	NONE
-ce2	Ace	What? What do you want?	ace_neutral	Left	NONE
-ce2	Coyote	(It stomps the ground just once, then continues to sit still.)	coyote_neutral	Right	NONE
-ce2	Ace	(You feel compelled to get down to eye level with it. You put one knee to the ground.)	ace_neutral	Left	NONE
-ce2	Coyote	(Its stare is piercing. You can see your reflection deep in its eyes as it approaches.)	coyote_neutral	Right	NONE
-ce2	Coyote	(Looking at yourself, you feel uneasy. It’s still you. Nothing has changed. You expected to look in much worse repair, but somehow still looking like yourself doesn’t ease your heart.)	coyote_neutral	Right	NONE
-ce2	Ace	(You see the creases on your face. The anger in your own eyes reflected back at you.)	ace_neutral	Left	NONE
-ce2	Ace	(It feels like the anger is eating away at you like acid.)	ace_neutral	Left	NONE
-ce2	Ace	(You’re angry at the world. You’re angry at yourself for not being stronger. You’re angry you died.)	ace_neutral	Left	NONE
-ce2	Ace	(And you’re sad.)	ace_neutral	Left	NONE
-ce2	Ace	(And now you’re crying.)	ace_neutral	Left	NONE
-ce2	Coyote	(The coyote finally stops in front of you. It places its chin on your raised knee.)	coyote_neutral	Right	NONE
-ce2	Ace	(You pull the coyote close, holding it as you cry.)	ace_neutral	Left	NONE
-ce2	Ace	(Letting yourself feel your emotions has made you feel lighter. When you finally get up, you pet the coyote on the head and head off ready to face what’s to come.)	ace_neutral	Left	NONE
-					
-ce3	Ace	Hey there, you.	ace_neutral	Left	NONE
-ce3	Coyote	(The coyote sniffs the air around you as it approaches, circling you.)	coyote_neutral	Right	NONE
-ce3	Ace	(You kneel down.)	ace_neutral	Left	NONE
-ce3	Ace	Thank you for before, friend. I guess I really needed a cry.	ace_neutral	Left	NONE
-ce3	Coyote	YIP!	coyote_neutral	Right	NONE
-ce3	Coyote	(It rubs up against you as it circles you joyously.)	coyote_neutral	Right	NONE
-ce3	Ace	Strange to see such a friendly animal down here. But I’m glad I get a little peace and quiet.	ace_neutral	Left	NONE
-ce3	Ace	I think that maybe it’s hard to carry all these feelins.	ace_neutral	Left	NONE
-ce3	Ace	I wanted more outta my life.	ace_neutral	Left	NONE
-ce3	Ace	Even when I knew it was gonna end, I had hope that somehow I’d make it through. Maybe fall in love, maybe dance and drink and gamble some more.	ace_neutral	Left	NONE
-ce3	Ace	Man, I miss cards. Playin them I mean, not… fightin with em.	ace_neutral	Left	NONE
-ce3	Coyote	(The coyote sits and listens intently.)	coyote_neutral	Right	NONE
-ce3	Ace	But I ain’t gettin it back. This is what I got now. I got you, I got Roane, and I got this fight ahead of me.	ace_neutral	Left	NONE
-ce3	Ace	(You feel a weight lift off of your shoulders. You’re ready to continue.)	ace_neutral	Left	NONE
-					
-ae1	Anne	(There’s a spirit in this room. A young girl in tattered dress attire.)	anne_neutral	Right	NONE
-ae1	Anne	Oh! I didn’t see you there. Wow, you look strangely… concrete for someone down. You must have all your memories from when you were alive.	anne_neutral	Right	NONE
-ae1	Ace	Maybe.	ace_neutral	Left	NONE
-ae1	Anne	I’ve seen a few other spirits that have more form than I do. I want to get a more solid body like them.	anne_neutral	Right	NONE
-ae1	Anne	Hey, do you think you could give me a hand?	anne_neutral	Right	NONE
-ae1	Anne	I know it’s hell and all. For all I know you’re some serial killer or bank robber or just a really mean person who probably doesn’t want to help me.	anne_neutral	Right	NONE
-ae1	Anne	And for all YOU know I might actually be the super dangerous one.	anne_neutral	Right	NONE
-ae1	Anne	And I would say, hey, that makes two of us who know nothing about me.	anne_neutral	Right	NONE
-ae1	Anne	So, help a gal out?	anne_neutral	Right	NONE
-ae1	Ace	What’s in it for me? Don’t you think someone in hell might be the kind of person to want compensation?	ace_neutral	Left	NONE
-ae1	Anne	Hm.	anne_neutral	Right	NONE
-ae1	Anne	Well, there isn’t real money down here as far as I know, and I can’t pick stuff up currently, so… Maybe I can give you something after you help me?	anne_neutral	Right	NONE
-ae1	Ace	Sure, I’ll take it.	ace_neutral	Left	NONE
-ae1	Anne	Okay great!	anne_neutral	Right	NONE
-ae1	Anne	Hm, I feel kinda hazy right now, how about you come back later. We’ll talk then.	anne_neutral	Right	NONE
-ae1	Anne	(As she vanishes, two cards fall to the ground.)	anne_neutral	Right	NONE
-					
-ae2	Anne	You came back!	anne_neutral	Right	NONE
-ae2	Ace	Yup.	ace_neutral	Left	NONE
-ae2	Anne	Okay, I did some research. We just need to sit here and hold hands.	anne_neutral	Right	NONE
-ae2	Ace	…	ace_neutral	Left	NONE
-ae2	Ace	Not happening.	ace_neutral	Left	NONE
-ae2	Anne	No! Trust me. Come on, just sit down.	anne_neutral	Right	NONE
-ae2	Anne	(The two of you sit down cross-legged in front of each other and you hold out your hands. Her hands are passing through yours, which is supposedly holding hands in a way.)	anne_neutral	Right	NONE
-ae2	Anne	Now close your eyes. We’re going back into my mind. You’re going to have to guide me through my head.	anne_neutral	Right	NONE
-ae2	Ace	(Suddenly, your eyes are open, yet not open.)	ace_neutral	Left	NONE
-ae2	Anne	(It’s like you’re lucid dreaming. You and Anne, who is now in full human form, are sitting across from you at an old wooden desk. There are stacks of files in front of you.)	anne_neutral	Right	NONE
-ae2	Anne	(Each file is labeled with what the file contains. Embarrassing secrets, the entire history of Anne’s bowel movements, every sneeze, every yawn, it’s all cataloged. Most of it you don’t even bother to look at.)	anne_neutral	Right	NONE
-ae2	Anne	(The two of you spend a lot of time desperately sifting to find something relevant.)	anne_neutral	Right	NONE
-ae2	Ace	(Then you see it.)	ace_neutral	Left	NONE
-ae2	Anne	Hey, did you find something? I found my birth records!	anne_neutral	Right	NONE
-ae2	Ace	(You hesitate, then pass the file over. It’s labeled “Mob affiliation and subsequent death”.)	ace_neutral	Left	NONE
-ae2	Anne	(You watch as Anne pours over the files and pages. When she’s finally read enough, she gets up and sits a bit away from you in the black void.)	anne_neutral	Right	NONE
-ae2	Ace	(You walk over and sit down next to her.)	ace_neutral	Left	NONE
-ae2	Anne	I was a rich girl who ran away from home.	anne_neutral	Right	NONE
-ae2	Anne	And I didn’t have any money… but I had friends… and I gambled… and I drank… and I danced…	anne_neutral	Right	NONE
-ae2	Anne	I guess at some point the money I had ran dry. I was in debt and needed to do something to make quick money.	anne_neutral	Right	NONE
-ae2	Anne	I didn’t want to sell myself, so I dressed up as a man and started working for the mob.	anne_neutral	Right	NONE
-ae2	Anne	I did… horrible things for them… why did I do any of that? Why was money ever that important?	anne_neutral	Right	NONE
-ae2	Anne	Why didn’t I just lean on my friends?	anne_neutral	Right	NONE
-ae2	Anne	(She starts sobbing.)	anne_neutral	Right	NONE
-ae2	Anne	I killed people. I hurt people. For WHAT?	anne_neutral	Right	NONE
-ae2	Anne	And all of it just to die in a shoot out. Why? Why did I have to do that?	anne_neutral	Right	NONE
-ae2	Anne	(She’s shaking and crying.)	anne_neutral	Right	NONE
-ae2	Anne	I get it now. Why I’m down here.	anne_neutral	Right	NONE
-ae2	Anne	I… I deserve this.	anne_neutral	Right	NONE
-ae2	Ace	(You don’t say anything. You don’t know what to say.)	ace_neutral	Left	NONE
-ae2	Ace	(A small part of you wishes you could say she didn't deserve this, but you can't find it in you to say anything.)	ace_neutral	Left	NONE
-ae2	Anne	(When you finally awaken from the trance, Anne is sitting in front of you, holding your hands. She quickly bolts up and away from you without another word.)	anne_neutral	Right	NONE
-ae2	Ace	(Two cards are laying on the ground.)	ace_neutral	Left	NONE
-					
-ae3	Anne	(She’s back, pacing back and forth.)	anne_neutral	Right	NONE
-ae3	Anne	Oh. I didn’t think I would see you again.	anne_neutral	Right	NONE
-ae3	Anne	But then again, maybe you came back because you did something way worse than me and I don’t scare you.	anne_neutral	Right	NONE
-ae3	Ace	Oh no. You’re definitely worse than me.	ace_neutral	Left	NONE
-ae3	Anne	(She looks stunned and uncomfortable.)	anne_neutral	Right	NONE
-ae3	Anne	Huh. I guess that’s fair.	anne_neutral	Right	NONE
-ae3	Ace	I tried to kill someone. I didn’t end up doing it though.	ace_neutral	Left	NONE
-ae3	Anne	Oh. And you got down here for that?	anne_neutral	Right	NONE
-ae3	Ace	Who knows. Could’ve been anything. I’m not dwelling on it.	ace_neutral	Left	NONE
-ae3	Ace	There’s nothin I can do now.	ace_neutral	Left	NONE
-ae3	Anne	But don’t you feel miserable?	anne_neutral	Right	NONE
-ae3	Ace	Sure. I do feel miserable that I’m dead. Not particularly about the attempted murderin though.	ace_neutral	Left	NONE
-ae3	Anne	But why?	anne_neutral	Right	NONE
-ae3	Ace	The guy deserved it.	ace_neutral	Left	NONE
-ae3	Anne	Well I’m sorry I can’t be as relaxed as you! I was a genuinely bad person.	anne_neutral	Right	NONE
-ae3	Ace	Yeah, you were at one point. You were also a desperate person someone preyed on.	ace_neutral	Left	NONE
-ae3	Ace	And before all that you were someone else entirely.	ace_neutral	Left	NONE
-ae3	Anne	That doesn’t excuse anything I did.	anne_neutral	Right	NONE
-ae3	Ace	No. It don’t.	ace_neutral	Left	NONE
-ae3	Ace	And I ain’t tellin you to not feel bad about it, but maybe also try to remember who you were before that.	ace_neutral	Left	NONE
-ae3	Ace	Hell ain’t exactly a great place to start your life for eternity over in, but…	ace_neutral	Left	NONE
-ae3	Ace	In a way, you got a second chance here to do somethin else.	ace_neutral	Left	NONE
-ae3	Anne	I guess you’re right.	anne_neutral	Right	NONE
-ae3	Anne	I just don’t know what to do with myself.	anne_neutral	Right	NONE
-ae3	Anne	I was so desperate to find the answer to why I was down here because I thought maybe I would find out that secretly… I wasn’t supposed to be here.	anne_neutral	Right	NONE
-ae3	Anne	But I guess none of that matters. Belong here, don’t belong here, I’m here now and that’s what matters.	anne_neutral	Right	NONE
-ae3	Anne	So I guess, I’ll have to figure it out from here.	anne_neutral	Right	NONE
-ae3	Anne	I just wish I could say sorry to my friends. I abandoned them when I should’ve just told them what was happening.	anne_neutral	Right	NONE
-ae3	Anne	I was so scared they’d tell me to go back to my family and my arranged marriage… but none of them were the type.	anne_neutral	Right	NONE
-ae3	Anne	I would give anything to remember their faces…	anne_neutral	Right	NONE
-ae3	Ace	…	ace_neutral	Left	NONE
-ae3	Anne	Thank you, Ace. I’ll find my way from here.	anne_neutral	Right	NONE
-ae3	Ace	Take care, Anne.	ace_neutral	Left	NONE
-ae3	Anne	(As she vanishes, two cards fall to the ground.)	anne_neutral	Right	NONE
+ae10	Anne	Ace.	anne_neutral	Right	NONE
+ae10	Anne	(She’s not as horrified as before. She seems calm.)	anne_neutral	Right	NONE
+ae10	Anne	I’m so sorry about before. I feel I owe ya at least an explanation.	anne_neutral	Right	NONE
+ae10	Ace	Ya don’t.	ace_neutral	Left	NONE
+ae10	Anne	No. I do. It wasn’t right to make ya do all that for lil’ ole me and then get so mean.	anne_neutral	Right	NONE
+ae10	Anne	I was a rich girl who ran away from home. I didn’t have any money, but I had friends. I gambled… and I drank… and I danced…	anne_neutral	Right	NONE
+ae10	Anne	At some point the money I had ran dry. I was in debt and needed to do something to make quick money.	anne_neutral	Right	NONE
+ae10	Anne	I didn’t want to sell myself, so I dressed up as a man and started working for the mob.	anne_neutral	Right	NONE
+ae10	Anne	I did… horrible things for them…	anne_neutral	Right	NONE
+ae10	Anne	And all of it just to die in a shoot out…	anne_neutral	Right	NONE
+ae10	Anne	Why? Why did I have to do that?	anne_neutral	Right	NONE
+ae10	Ace	Life is complicated. Sometimes ya end up in a bad spot. I ain’t gonna say you’re a saint, but look at it this way, you got a second chance down here to be somethin else.	ace_neutral	Left	NONE
+ae10	Anne	… Huh, I guess you’re right.	anne_neutral	Right	NONE
+ae10	Anne	I just wish I could say sorry to my friends. I abandoned them when I should’ve just told them what was happening.	anne_neutral	Right	NONE
+ae10	Anne	Hell, I can’t even remember their faces.	anne_neutral	Right	NONE
+ae10	Ace	…	ace_neutral	Left	NONE
+ae10	Anne	But… I’ll try to do better with this second chance. Thank ya kindly, Ace.	anne_neutral	Right	NONE
 					
 boss1start	Gator	Well, well, well, what do we have here?	gator_neutral	Right	NONE
 boss1start	Gator	A soul lost in the wilds.	gator_neutral	Right	NONE

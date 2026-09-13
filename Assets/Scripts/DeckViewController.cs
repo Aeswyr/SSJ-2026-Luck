@@ -61,6 +61,8 @@ public class DeckViewController : Singleton<DeckViewController>
             card.GetComponent<CardController>().Init(cardLibrary.GetCard(id));
             card.GetComponent<Button>().onClick.AddListener(delegate {OnCardPressed(id);});
         }
+
+        card.SetCard(cards[0]);
     }
 
     private void OnCardPressed(CardID id)

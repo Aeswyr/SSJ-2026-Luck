@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e610da6d08c42a64b816b01b90e4cd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardRemove
-  dialog: '!s,ce1,ce2,ce3'
+  dialog: '!s,ce1,ce2,ce3,ce4,ce5,ce6,ce7,ce8,ce9,ce10'
 --- !u!114 &9102615911462986929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +83,8 @@ MonoBehaviour:
       m_Calls: []
   col: {fileID: -4524159062630612450}
   singleUse: 1
+  levelEndInteractable: 0
+  canInteract: 1
 --- !u!61 &-4524159062630612450
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,8 +122,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.45454547, y: 0.7619048}
-    oldSize: {x: 2.75, y: 2.625}
+    pivot: {x: 0.45833334, y: 0.73913044}
+    oldSize: {x: 3, y: 2.875}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,6 +133,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &-1916566346220632558
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -176,6 +179,7 @@ SpriteRenderer:
   m_SortingLayerID: 3942833
   m_SortingLayer: 3
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -3487438023490082363, guid: 6be16b0909f57234aaa6c4ec1dad952e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,5 +189,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0

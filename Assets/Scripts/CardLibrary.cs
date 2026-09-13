@@ -119,6 +119,10 @@ public class CardLibrary : ScriptableObject
         return keywords[id].description;
     }
 
+    public List<CardData> GetAllCards(bool unlockedOnly = false) {
+        return cards;
+    }
+
     public struct KeywordData
     {
         public string name;

@@ -9,8 +9,15 @@ public class LevelTransition : MonoBehaviour
     [SerializeField] private InteractableController interact;
     [SerializeField] private List<Sprite> levelTypeIcons;
     [SerializeField] private Sprite openSprite, closedSprite;
+    [SerializeField] private bool unsequencedLevel;
     public void OnInteract()
     {
+        if (unsequencedLevel)
+        {
+            GameManager.Instance.GoToLevel(type, useSequencing: true);
+            return;            
+        }
+
         GameManager.Instance.ToNextLevel(type);
     }
 

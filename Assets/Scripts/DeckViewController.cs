@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,20 +23,20 @@ public class DeckViewController : Singleton<DeckViewController>
         removeButton.SetActive(false);
     }
 
-    public void ShowDeckView(bool canRemoveCard)
+    public void ShowDeckView(bool canRemoveCard, List<CardID> deckOverride = null)
     {
         Time.timeScale = 0;
 
         isRemoval = canRemoveCard;
         title.text = isRemoval ? "Choose a Card to Remove" : "Your Deck";
 
-        PopulateDeck();
+        PopulateDeck(deckOverride);
 
         removeButton.SetActive(false);
         viewParent.SetActive(true);
     }
 
-    private void PopulateDeck()
+    private void PopulateDeck(List<CardID> deckOverride)
     {
         for (int i = cardParent.childCount - 1; i >= 0; i--)
         {
@@ -43,7 +44,19 @@ public class DeckViewController : Singleton<DeckViewController>
         }
 
         var player = FindAnyObjectByType<PlayerController>();
-        foreach (var id in player.GetBaselineDeck()) {
+
+        var cards = deckOverride != null ? deckOverride : player.GetBaselineDeck();
+        cards.Sort(SortByRarity);
+        int SortByRarity(CardID a, CardID b)
+        {
+            if (cardLibrary.GetCard(a).rarity < cardLibrary.GetCard(b).rarity)
+                return -1;
+            if (cardLibrary.GetCard(a).rarity > cardLibrary.GetCard(b).rarity)
+                return 1;
+            return 0;
+        }
+
+        foreach (var id in cards) {
             var card = Instantiate(cardPrefab, cardParent);
             card.GetComponent<CardController>().Init(cardLibrary.GetCard(id));
             card.GetComponent<Button>().onClick.AddListener(delegate {OnCardPressed(id);});

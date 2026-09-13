@@ -16,12 +16,75 @@ public class GameManager : Singleton<GameManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentLevel = FindAnyObjectByType<LevelController>();
-    
-        player = Instantiate(playerPrefab, currentLevel.GetSpawn(), Quaternion.identity).GetComponent<PlayerController>();
+        player = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity).GetComponent<PlayerController>();
+
+        if (SaveManager.Instance.GetBool(SaveManager.INTRO_SEEN))
+        {
+            GoToLevel(LevelType.HUB);
+        } else
+        {
+            GoToLevel(LevelType.TUTORIAL);
+            SaveManager.Instance.SaveBool(SaveManager.INTRO_SEEN);
+        }
     }
 
+    // go diretly to level of type
+    public void GoToLevel(LevelType type, CombatDifficulty difficulty = CombatDifficulty.NONE, bool useSequencing = false)
+    {
+        StartCoroutine(NextLevelSequence());
 
+        IEnumerator NextLevelSequence() {
+            player.ToggleInputLock(true);
+            if (useSequencing) {              
+                ScreenWipeManager.Instance.PlayWipeOn();
+                yield return new WaitForSeconds(0.5f);
+            }
+
+            if (currentLevel != null) {
+                LevelType lastLevel = currentLevel.GetLevelType();
+                Destroy(currentLevel.gameObject);
+            }
+
+            if (useSequencing)
+                player.ResetToBaseline();
+
+            List<GameObject> levelList = new(levels);
+            for (int i = 0; i < levelList.Count; i++)
+            {
+                int index = Random.Range(i, levelList.Count);
+                GameObject level = levelList[index];
+                levelList.RemoveAt(index);
+                levelList.Insert(0, level);
+            }
+
+            foreach (var level in levelList)
+            {
+                var levelCon = level.GetComponent<LevelController>();
+                if (levelCon.GetLevelType() == type)
+                {
+                    player.transform.position = levelCon.GetSpawn();
+
+                    currentLevel = Instantiate(level).GetComponent<LevelController>();
+                    break;
+                }
+            }
+
+            var spawns = currentLevel.GetSpawns();
+            if (spawns.Count > 0) { 
+                var scenarios = encounters.GetScenariosForDifficulty(difficulty);
+                var enemies = scenarios[Random.Range(0, scenarios.Count)];
+
+                foreach (var enemy in enemies.spawns)
+                    Instantiate(encounters.GetEnemyPrefab(enemy.type), spawns[enemy.index], Quaternion.identity, currentLevel.GetObjectParent());
+            
+                enemyCount = enemies.spawns.Count;
+            }
+
+            player.ToggleInputLock(false);
+        }
+    }
+
+    // uses previous level setup info to determine next level
     public void ToNextLevel(LevelType type)
     {
         StartCoroutine(NextLevelSequence());

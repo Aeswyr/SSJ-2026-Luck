@@ -57,6 +57,8 @@ MonoBehaviour:
   - {fileID: 2676629492061376651, guid: 492ef8ba86006fd4ebac170d90a103f5, type: 3}
   - {fileID: 2676629492061376651, guid: e2fb1ab474eb435488d05e9a37a173cf, type: 3}
   - {fileID: 2676629492061376651, guid: c59e2b1bdcd749c419c15e93677c5665, type: 3}
+  - {fileID: 2676629492061376651, guid: 0ad9e7b4d130ba740afd9cad984c4790, type: 3}
+  - {fileID: 2676629492061376651, guid: abaa110fb863b7f489179eeb442ff9bf, type: 3}
   encounters: {fileID: 11400000, guid: 8eed4602f939eb14aa4a8dfffdf45f35, type: 2}
 --- !u!114 &5805419451833955563
 MonoBehaviour:

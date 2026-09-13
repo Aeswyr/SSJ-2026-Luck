@@ -189,6 +189,7 @@ public class PlayerController : MonoBehaviour
 			UpdateFacing();
 			
 			animator.SetTrigger("reload");
+			SFXManager.Instance.PlaySound("shuffle");
 			DiscardHand();
 
 			move.StartDeceleration();

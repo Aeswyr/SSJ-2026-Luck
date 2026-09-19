@@ -9,14 +9,14 @@ RECALL	[Fold]. Draw a card for every three folded. Draw 1 additional card.
 HOMECOMING	[Fold]. [Manifest] a Fool for every two folded. 
 ALL_IN	Throw 4 cards for each card in your hand, then discard your hand. Hit for 2. [Stick].
 FINISHING_STROKE	Hit for 4 damage. When you discard any other card, damage increases by 3 until the end of the room. [Stick].
-CALLED_SHOT	[Curse]. Multiply the damage of the next card to hit.
-CALLBACK	[Curse]. [Manifest] a Fool for every 2 hits. [Exhaust].
-PEERLESS_FOCUS	[Curse] . Draw a card for every 4 hits. [Exhaust].
-BLEED_OUT	[Curse]. Target takes damage each second for every 3 stuck cards. [Exhaust].
-THOUSAND_CUTS	[Curse]. Target takes 1 extra damage per hit. [Exhaust].
+CALLED_SHOT	Apply 1 [Mark].
+CALLBACK	Apply 6 [Comedy].
+PEERLESS_FOCUS	Apply 4 [Prescience].
+BLEED_OUT	Apply 10 [Bleed].
+THOUSAND_CUTS	Apply 1 [Pain]. [Exhaust].
 DECK_FIXING	Draw 2 extra cards whenever you draw a new hand. [Imprint]. [Exhaust].
 CLOWN_CAR	[Manifest] 3 Fools whenever you draw a new hand. [Imprint]. [Exhaust].
-MISSED_CONNECTION	Whenever you dodge an attack [Manifest] a Fool. [Imprint]. [Exhaust].
+MISSED_CONNECTION	Whenever you evade an attack [Manifest] a Fool. [Imprint]. [Exhaust].
 INSIGHT	Draw 2 cards.
 FOOLIN_AROUND	[Manifest] 3 Fools.
 DOUBLE_DOWN	[Manifest] two copies of the next card played.
@@ -30,7 +30,15 @@ DEALERS_ADVANTAGE	Whenever you play a card, [Deal] 1. [Imprint]. [Exhaust].
 TRIPLE_DEAL	When the next card is played, [Deal] 3.
 LUCKY_DEAL	When the next card is played, [Deal] 7.
 KINETIC_DRAW	Whenever you draw a new hand [Fold]. Hit for damage equal to the number folded. [Imprint]. [Exhaust].
-DEADLY_GAMBIT	Fold. Hit for damage equal to twice the number folded.
+DEADLY_GAMBIT	[Fold]. Hit for damage equal to twice the number folded.
 CHEATER_JACK	Hit for 2 damage, increased by 5 if the target is cursed. 4 uses. [Stick].
-KINGS_ORDEAL	Hit for 8 damage. [Deal] 4 for each curse on the target, then [Cleanse] them. [Stick].
-QUEENS_MERCY	Hit for 4 damage, doubled for each curse on the target, then [Cleanse] them. [Stick].
+KINGS_ORDEAL	Hit for 8 damage. [Deal] 1 for each curse stack on the target, then [Cleanse] them. [Stick].
+QUEENS_MERCY	Hit for 4 damage, increased significantly based on the number of curse stacks on the target, then [Cleanse] them. [Stick].
+HIGHER_CARD	Your High Cards deal one more damage and have one more use. [Imprint]. [Exhaust].
+HIGHEST_CARD	Your High Cards lose all their uses and instead hit that many times. [Imprint]. [Exhaust].
+JUDGEMENT	Apply 2 [Guilt]. Hit for damage equal to the target's [Guilt].
+TRIAL_BY_STEEL	[Manifest] 3 Judgements.
+SINNERS_GUILT	Whenever you evade an attack [Manifest] a Judgement. [Imprint]. [Exhaust].
+REDEEMER	Hit for damage equal to the target's [Guilt] in a line. Targets explode dealing damage equal to twice their [Guilt]. Remove all [Guilt].
+INESCAPABLE_AGONY	Whenever you apply a [Curse], apply 2 additional stacks. [Imprint]. [Exhaust].
+FINAL_VERDICT	Apply 3 [Guilt]. Then increase the target's [Guilt] by 33%.

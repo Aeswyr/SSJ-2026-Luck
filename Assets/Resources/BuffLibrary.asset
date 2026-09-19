@@ -14,26 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DebuffLibrary
   buffs:
   - id: 0
-    icon: {fileID: 4137296079507206199, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 999999
+    icon: {fileID: -2381227881382376566, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    baseStacks: 1
     isDebuff: 1
   - id: 1
-    icon: {fileID: -2381227881382376566, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 999999
+    icon: {fileID: -4011744088097352285, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    baseStacks: 10
     isDebuff: 1
   - id: 2
-    icon: {fileID: -4011744088097352285, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 999999
+    icon: {fileID: -2629425876488857413, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    baseStacks: 4
     isDebuff: 1
   - id: 3
     icon: {fileID: -3714916792392405455, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 999999
+    baseStacks: 1
     isDebuff: 1
   - id: 4
     icon: {fileID: 7735085303667188755, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 999999
+    baseStacks: 6
     isDebuff: 1
   - id: 5
     icon: {fileID: 1710483956198244179, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
-    baseDuration: 999999
+    baseStacks: 1
     isDebuff: 0
+  - id: 6
+    icon: {fileID: 4137296079507206199, guid: da47ee658be3b9d48981d0a91100ccd5, type: 3}
+    baseStacks: 2
+    isDebuff: 1

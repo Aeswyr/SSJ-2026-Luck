@@ -133,7 +133,7 @@ MonoBehaviour:
     rarity: 1
     icon: {fileID: 3483211487471968235, guid: a573a43e646aa6444b55dba046ea43e2, type: 3}
     type: 3
-    exhaust: 1
+    exhaust: 0
     noDiscard: 0
     charges: 1
     baseDamage: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
     rarity: 1
     icon: {fileID: -3107164437440882409, guid: 22b51e4ebc8dfdb4ca4640a2fad36147, type: 3}
     type: 3
-    exhaust: 1
+    exhaust: 0
     noDiscard: 0
     charges: 1
     baseDamage: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
     rarity: 2
     icon: {fileID: 4262228339964961926, guid: 4b3b0425f0af11b4194ed43092c58c8c, type: 3}
     type: 3
-    exhaust: 1
+    exhaust: 0
     noDiscard: 0
     charges: 1
     baseDamage: 1
@@ -367,4 +367,84 @@ MonoBehaviour:
     noDiscard: 0
     charges: 1
     baseDamage: 1
+    shouldStick: 0
+  - name: Higher Card
+    id: 35
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Highest Card
+    id: 36
+    rarity: 2
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Judgement
+    id: 37
+    rarity: 3
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 0
+    exhaust: 1
+    noDiscard: 1
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Trial By Steel
+    id: 38
+    rarity: 0
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 4
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Sinner's Guilt
+    id: 39
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Redeemer
+    id: 40
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 0
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Inescapable Agony
+    id: 41
+    rarity: 2
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 2
+    exhaust: 1
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
+    shouldStick: 0
+  - name: Final Verdict
+    id: 42
+    rarity: 1
+    icon: {fileID: -3487438023490082363, guid: 4a3199a124b61b3458a44db241469ddf, type: 3}
+    type: 3
+    exhaust: 0
+    noDiscard: 0
+    charges: 1
+    baseDamage: 0
     shouldStick: 0

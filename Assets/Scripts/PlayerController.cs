@@ -52,12 +52,15 @@ public class PlayerController : MonoBehaviour
 	private int handSize => hand.Count;
 
 	private UnityEvent onDrawHand = new();
+	private UnityEvent<int> onDrawCard = new(); // passes index of drawn card in hand
+	private UnityEvent<int> onDrawCardFinal = new(); 
 	private UnityEvent onDodge = new();
 	private UnityEvent onThrow = new();
 
 	private UnityEvent<CardData> onUseCard = new();
 
 	private bool inputsLocked;
+	private int bonusDebuff;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -282,15 +285,37 @@ public class PlayerController : MonoBehaviour
 
 		HitData hitData = new()
 		{
+			source = readiedCard.Value,
 			baseDamage = readiedCard.Value.baseDamage,
-			bonusDamage = buffController.GetBuffCount(BuffType.EMPOWER),
+			bonusDamage = buffController.GetBuffStacks(BuffType.EMPOWER),
 			shouldStick = readiedCard.Value.shouldStick
 		};
 
 		switch (readiedCard.Value.id)
 		{
 			case CardID.HIGH_CARD:
+				if (readiedCard.Value.PersistentStat > 0)
+				{
+					hitData.postDamageCallback += CardAction_EnhancedHighCard;
+				}
 				ThrowCard(hitData);
+
+				void CardAction_EnhancedHighCard(ref HitData hitData, EntityController entity)
+				{
+					StartCoroutine(EchoDamage(hitData));
+
+					IEnumerator EchoDamage(HitData hitData) {
+						for (int i = 1; i < hitData.source.PersistentStat; i++)
+						{
+							yield return new WaitForSeconds(0.15f);
+							if (entity == null)
+								break;
+							entity.ApplyDamage(hitData.totalDamage);
+							if (hitData.shouldStick)
+            					entity.ApplyStick();
+						}
+					}	
+				}
 				break;
 			case CardID.PAIR:
 				ThrowCard(hitData, -1.2f);
@@ -379,7 +404,7 @@ public class PlayerController : MonoBehaviour
 						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
 						if (buff != null && !hurtbox.TouchDisabled())
 						{
-							buff.AddBuff(BuffType.MARK);
+							buff.AddBuff(BuffType.MARK, bonusDebuff);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_MARK, ray.point + Vector2.down, facing == -1);
 						}
 					}
@@ -394,7 +419,7 @@ public class PlayerController : MonoBehaviour
 						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
 						if (buff != null && !hurtbox.TouchDisabled())
 						{
-							buff.AddBuff(BuffType.COMEDY);
+							buff.AddBuff(BuffType.COMEDY, bonusDebuff);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_COMEDY, ray.point + Vector2.down, facing == -1);
 						}
 					}
@@ -409,7 +434,7 @@ public class PlayerController : MonoBehaviour
 						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
 						if (buff != null && !hurtbox.TouchDisabled())
 						{
-							buff.AddBuff(BuffType.LOOT);
+							buff.AddBuff(BuffType.LOOT, bonusDebuff);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_LOOT, ray.point + Vector2.down, facing == -1);
 						}
 					}
@@ -424,7 +449,7 @@ public class PlayerController : MonoBehaviour
 						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
 						if (buff != null && !hurtbox.TouchDisabled())
 						{
-							buff.AddBuff(BuffType.BLEED);
+							buff.AddBuff(BuffType.BLEED, bonusDebuff);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_BLEED, ray.point + Vector2.down, facing == -1);
 						}
 					}
@@ -439,7 +464,7 @@ public class PlayerController : MonoBehaviour
 						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
 						if (buff != null && !hurtbox.TouchDisabled())
 						{
-							buff.AddBuff(BuffType.PAIN);
+							buff.AddBuff(BuffType.PAIN, bonusDebuff);
 							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_PAIN, ray.point + Vector2.down, facing == -1);
 						}
 					}
@@ -574,7 +599,7 @@ public class PlayerController : MonoBehaviour
 			case CardID.KINGS_ORDEAL:
 				hitData.preDamageCallback = CardAction_KingsOrdeal;
 				void CardAction_KingsOrdeal(ref HitData hitData, EntityController entity) {
-					int deals = 4 * entity.GetBuffController().GetBuffCount(true);
+					int deals = entity.GetBuffController().GetBuffCount(true);
 					for (int i = 0; i < deals; i++)
 						DealCard(2f * i / deals + 0.3f);
 				}
@@ -584,7 +609,7 @@ public class PlayerController : MonoBehaviour
 			case CardID.QUEENS_MERCY:
 				hitData.preDamageCallback = CardAction_QueensMercy;
 				void CardAction_QueensMercy(ref HitData hitData, EntityController entity) {
-					hitData.baseDamage = hitData.baseDamage * (2 ^ entity.GetBuffController().GetBuffCount(true));
+					hitData.baseDamage = hitData.baseDamage * (2 ^ (entity.GetBuffController().GetBuffCount(true) / 5));
 				}
 				hitData.postDamageCallback = Cleanse;
 				ThrowCard(hitData);
@@ -618,6 +643,79 @@ public class PlayerController : MonoBehaviour
 
 						StartCoroutine(UnstickSequence(stick.transform.position, stick.cards));
 						stick.ClearCards();
+					}
+				}
+				break;
+			case CardID.HIGHER_CARD:
+				onDrawCard.AddListener(CardAction_HigherCard);
+
+				void CardAction_HigherCard(int index)
+				{
+					var card = hand[index];
+					
+					if (card.id != CardID.HIGH_CARD)
+						return;
+
+					card.charges += 1;
+					card.baseDamage += 1;
+
+					hand[index] = card;
+				}
+				
+				break;
+			case CardID.HIGHEST_CARD:
+				onDrawCardFinal.AddListener(CardAction_HighestCard);
+
+				void CardAction_HighestCard(int index)
+				{
+					var card = hand[index];
+
+					if (card.id != CardID.HIGH_CARD)
+						return;
+
+					if (card.charges > 1) {
+						card.PersistentStat = card.charges;
+						card.charges = 1;
+					} else
+					{
+						card.PersistentStat += 1;
+					}
+
+					hand[index] = card;
+				}
+				break;
+			case CardID.JUDGEMENT:
+				break;
+			case CardID.TRIAL_BY_STEEL:
+				AddCardToHand(CardID.JUDGEMENT, true);
+				AddCardToHand(CardID.JUDGEMENT, true);
+				AddCardToHand(CardID.JUDGEMENT, true);
+				break;
+			case CardID.SINNERS_GUILT:
+				onDodge.AddListener(CardAction_SinnersGuilt);
+				void CardAction_SinnersGuilt()
+				{
+					AddCardToHand(CardID.JUDGEMENT, true);
+				}
+				break;
+			case CardID.REDEEMER:
+			case CardID.INESCAPABLE_AGONY:
+				bonusDebuff += 2;
+				break;
+			case CardID.FINAL_VERDICT:
+				{
+					var ray = Physics2D.Raycast(transform.position + new Vector3(facing * 1.5f, -1), facing * Vector2.right, 128, LayerMask.GetMask(new string[] {"Hurtbox"}));
+					if (ray && ray.collider.transform.parent != null)
+					{
+						BuffController buff = ray.collider.transform.parent.GetComponentInChildren<BuffController>();
+						HurtboxController hurtbox = ray.collider.transform.GetComponent<HurtboxController>();
+						if (buff != null && !hurtbox.TouchDisabled())
+						{
+							buff.AddBuff(BuffType.GUILT, bonusDebuff, 3);
+							VFXManager.Instance.CreateVFX(VFXType.BUFFSPARK_BLEED, ray.point + Vector2.down, facing == -1);
+							int increase = Mathf.CeilToInt(buff.GetBuffStacks(BuffType.GUILT) * 0.33f);
+							buff.AddBuff(BuffType.GUILT, stacksOverride: increase);
+						}
 					}
 				}
 				break;
@@ -671,7 +769,7 @@ public class PlayerController : MonoBehaviour
 		HitData hitData = new()
 		{
 			baseDamage = 1,
-			bonusDamage = buffController.GetBuffCount(BuffType.EMPOWER),
+			bonusDamage = buffController.GetBuffStacks(BuffType.EMPOWER),
 			shouldStick = false
 		};
 
@@ -770,11 +868,11 @@ public class PlayerController : MonoBehaviour
 			card.exhaust = true;
 		}
 
-		hudController.DrawCard(card);
 		hand.Add(card);
-
-
-
+		onDrawCard?.Invoke(hand.Count - 1);
+		onDrawCardFinal?.Invoke(hand.Count - 1);
+		card = hand[hand.Count - 1];
+		hudController.DrawCard(card);
 
 		if (selectedCardIndex == -1)
 		{
@@ -809,6 +907,8 @@ public class PlayerController : MonoBehaviour
 		for (int i = 0; i < hand.Count; i++)
 		{
 				var cardData = hand[i];
+				if (cardData.id != CardID.FINISHING_STROKE)
+					continue;
 				cardData.PersistentStat += 3;
 				hand[i] = cardData;
 		}
@@ -839,9 +939,13 @@ public class PlayerController : MonoBehaviour
 		onDrawHand.RemoveAllListeners();
 		onDodge.RemoveAllListeners();
 		onUseCard.RemoveAllListeners();
+		onDrawCard.RemoveAllListeners();
+		onDrawCardFinal.RemoveAllListeners();
 		hand.Clear();
 		discard.Clear();
 		deck.Clear();
+
+		bonusDebuff = 0;
 
 		buffController.RemoveAllBuff();
 

@@ -524,6 +524,7 @@ Tilemap:
     e33: 1
 --- !u!483693784 &4325580384079121158
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -569,6 +570,7 @@ TilemapRenderer:
   m_SortingLayerID: 414407965
   m_SortingLayer: 6
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -576,7 +578,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1 &5554280701752601733
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +789,7 @@ Tilemap:
     e33: 1
 --- !u!483693784 &179597539082612303
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -833,6 +835,7 @@ TilemapRenderer:
   m_SortingLayerID: -226086553
   m_SortingLayer: 2
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 11.875, y: 6.625, z: 0}
   m_MaxChunkCount: 16
@@ -840,7 +843,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1 &7821623340397106123
 GameObject:
   m_ObjectHideFlags: 0
@@ -16014,6 +16016,7 @@ Tilemap:
     e33: 1
 --- !u!483693784 &7925011709643504100
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16059,6 +16062,7 @@ TilemapRenderer:
   m_SortingLayerID: 414407965
   m_SortingLayer: 6
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -16066,7 +16070,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!19719996 &5564711352366784827
 TilemapCollider2D:
   m_ObjectHideFlags: 0

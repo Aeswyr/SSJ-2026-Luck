@@ -242,7 +242,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 2
-      y: 51
+      y: 49
       width: 12
       height: 12
     spriteID: 8cc81467ed4d51a4a8d78252abd8551d
@@ -283,8 +283,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 18
-      y: 35
+      x: 20
+      y: 33
       width: 12
       height: 12
     spriteID: 6c462bf40ac415d4b9adcb44e995b34c
@@ -325,8 +325,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 17
-      y: 20
+      x: 19
+      y: 18
       width: 12
       height: 12
     spriteID: a635032a5643dea43801fe679aed7f5e
@@ -351,6 +351,27 @@ ScriptedImporter:
       width: 12
       height: 12
     spriteID: 2bd3788c9c691a54db545021bef4f72c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: debuffs_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 19
+      y: 2
+      width: 12
+      height: 12
+    spriteID: 9bfbbf888d445084cb04d92e1c04e630
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -427,6 +448,15 @@ ScriptedImporter:
         width: 10
         height: 10
       spriteId: cd4484e43b0361d4b8c50aca12e89a46
+    - name: Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 3
+        width: 8
+        height: 7
+      spriteId: 5d891b73a8b1451409c718c75b50ca1d
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -473,4 +503,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 12, y: 12}
-  previousTextureSize: {x: 32, y: 64}
+  previousTextureSize: {x: 64, y: 64}

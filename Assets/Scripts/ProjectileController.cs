@@ -87,6 +87,7 @@ public class ProjectileController : MonoBehaviour
 
 public struct HitData
 {
+    public CardData source;
     public int baseDamage;
     public int bonusDamage;
     public bool shouldStick;

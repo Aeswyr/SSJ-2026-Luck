@@ -20,15 +20,15 @@ public class EntityController : MonoBehaviour
     public void OnHit(HitData hitData)
     {
         
-        if (hitData.shouldStick && stick != null)
-            stick.StickCard();
+        if (hitData.shouldStick)
+            ApplyStick();
 
         buffs.OnHitBuff();
 
         if (hitData.preDamageCallback != null)
             hitData.preDamageCallback(ref hitData, this);
 
-        hitData.bonusDamage += 1 * buffs.GetBuffCount(BuffType.PAIN);
+        hitData.bonusDamage += 1 * buffs.GetBuffStacks(BuffType.PAIN);
         int markCount = buffs.RemoveAllBuff(BuffType.MARK);
         hitData.bonusDamage += 3 * markCount + (int)(hitData.baseDamage * 0.5f * markCount);
 
@@ -41,6 +41,12 @@ public class EntityController : MonoBehaviour
     public BuffController GetBuffController()
     {
         return buffs;
+    }
+
+    public void ApplyStick()
+    {
+        if (stick != null)
+            stick.StickCard();
     }
 
     public void ApplyDamage(int amount)

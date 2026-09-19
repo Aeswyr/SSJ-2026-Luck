@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class BuffController : MonoBehaviour
 {
@@ -18,29 +19,69 @@ public class BuffController : MonoBehaviour
         entityController = transform.GetComponentInParent<EntityController>();
         stick = transform.parent.GetComponentInChildren<CardStickable>();
     }
-    public void AddBuff(BuffType type)
+    public void AddBuff(BuffType type,int stacksBonus = 0, int stacksOverride = -1)
     {
         var buff = buffLibrary.GetBuff(type);
 
-        GameObject icon = Instantiate(buffObject, buffHolder);
-        icon.SetActive(true);
-        icon.GetComponent<Image>().sprite = buff.icon;
+        GameObject icon = null;
+        BuffInstance instance = null;
+        foreach (var b in buffs)
+        {
+            if (b.data.id == type)
+            {
+                icon = b.icon;
+                instance = b;
+                break;
+            }
+        }
 
-        BuffInstance instance = new();
-        instance.data = buff;
-        instance.icon = icon;
-        instance.expiration = Time.time + buff.baseDuration;
+        if (icon == null) {
+            icon = Instantiate(buffObject, buffHolder);
+            icon.SetActive(true);
+            icon.GetComponent<Image>().sprite = buff.icon;
 
-        buffs.Add(instance);
+            instance = new();
+            instance.data = buff;
+            instance.icon = icon;
+            instance.stacks = 0;
+
+            buffs.Add(instance);
+        }
+
+        instance.stacks += stacksOverride != -1 ? stacksOverride : buff.baseStacks;
+        icon.GetComponentInChildren<TextMeshProUGUI>().text = instance.stacks.ToString();
     }
 
-    public int GetBuffCount(BuffType type)
+    // returns true if buff was removed
+    public bool SpendBuffStack(BuffType type)
+    {
+        for (int i = 0; i < buffs.Count; i++)
+        {
+            BuffInstance b = buffs[i];
+            if (b.data.id == type)
+            {
+                b.stacks--;
+                if (b.stacks > 0)
+                    b.icon.GetComponentInChildren<TextMeshProUGUI>().text = b.stacks.ToString();
+                else
+                {
+                    buffs.RemoveAt(i);
+                    Destroy(b.icon);
+                    return true;
+                }
+                break;
+            }
+        }
+        return false;
+    }
+
+    public int GetBuffStacks(BuffType type)
     {
         int count = 0;
         
         foreach (var buff in buffs)
             if (buff.data.id == type)
-                count++;
+                count = buff.stacks;
         
         return count;
     }
@@ -52,7 +93,7 @@ public class BuffController : MonoBehaviour
             int count = 0;
             foreach (var buff in buffs)
                 if (buff.data.isDebuff)
-                    count++;
+                    count += buff.stacks;
             return count;
         }
         return buffs.Count;
@@ -66,10 +107,10 @@ public class BuffController : MonoBehaviour
         {
             if (buffs[i].data.id == type)
             {
+                count += buffs[i].stacks;
                 Destroy(buffs[i].icon);
                 buffs.RemoveAt(i);
                 i--;
-                count++;
             }
         }
 
@@ -93,16 +134,19 @@ public class BuffController : MonoBehaviour
 
     public void OnHitBuff()
     {
-        foreach (var buff in buffs)
+        for (int i = 0; i < buffs.Count; i++)
         {
+            var buff = buffs[i];
             switch (buff.data.id)
             {
                 case BuffType.LOOT:
                     buff.misc++;
-                    if (buff.misc >= 4)
+                    if (buff.misc >= 2)
                     {
                         buff.misc = 0;
                         FindAnyObjectByType<PlayerController>().DrawCard();
+                        if (SpendBuffStack(BuffType.LOOT))
+                            i--;
                     }
                     break;
                 case BuffType.COMEDY:
@@ -111,6 +155,8 @@ public class BuffController : MonoBehaviour
                     {
                         buff.misc = 0;
                         FindAnyObjectByType<PlayerController>().AddCardToHand(CardID.JOKER);
+                        if (SpendBuffStack(BuffType.COMEDY))
+                            i--;
                     }
                     break;
                 default:
@@ -128,15 +174,9 @@ public class BuffController : MonoBehaviour
                 if (Time.time > buff.nextTick) {
                     entityController.ApplyDamage(1 + stick.cards / 3);
                     buffs[i].nextTick = Time.time + 1;
+                    if (SpendBuffStack(BuffType.BLEED))
+                        i--;
                 }
-
-
-            if (Time.time > buff.expiration)
-            {
-                Destroy(buff.icon);
-                buffs.RemoveAt(i);
-                i--;
-            }
         }
     }
 
@@ -144,24 +184,24 @@ public class BuffController : MonoBehaviour
     private class BuffInstance
     {
         public BuffData data;
-        public float expiration;
         public GameObject icon;
 
         public int misc;
         public float nextTick = 0;
+        public int stacks;
     }
 }
 
 public enum BuffType
 {
-    MARK, BLEED, LOOT, PAIN, COMEDY, EMPOWER, NONE
+    MARK, BLEED, LOOT, PAIN, COMEDY, EMPOWER, GUILT, NONE
 }
 
 [Serializable] public struct BuffData
 {
     public BuffType id;
     public Sprite icon;
-    public float baseDuration;
+    public int baseStacks;
     public bool isDebuff;
 }
 

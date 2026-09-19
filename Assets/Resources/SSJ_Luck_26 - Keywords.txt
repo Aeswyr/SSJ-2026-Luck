@@ -1,9 +1,16 @@
 ID	Name	Description	Color
-STICK	Stick	Leave a card stuck in enemies hit.	#FF0000
+STICK	Stick	Leave a card stuck in enemies hit.	#BBBBBB
 MANIFEST	Manifest	Add a copy of a card to your hand. The copy vanishes when it leaves your hand.	#FFFF00
 FOLD	Fold	Remove all stuck cards from all enemies.	#FFBB00
 CURSE	Curse	Apply a lingering effect to the target.	#330099
-DEAL	Deal	Create a ghostly card which hits for 1.	#00BBFF
-EXHAUST	Exhaust	When played, remove this card from the deck until the next room.	#AAAAAA
+DEAL	Deal	Create a ghostly projectile which hits for 1.	#00BBFF
+EXHAUST	Exhaust	When played, remove this card from the deck until the next room.	#666666
 IMPRINT	Imprint	When played, this card remains in effect until the next room.	#0000FF
 CLEANSE	Cleanse	Remove all curses on the target.	#DB7CD1
+COMEDY	Comedy	[Curse]. For every 2 hits on the target, remove one stack and [Manifest] a Fool.	#AAAA00
+MARK	Mark	[Curse]. Multiply the damage of the next card to hit, then remove all stacks.	#00AA00
+BLEED	Bleed	[Curse]. Each second remove one stack and deal damage for every 3 stuck cards.	#FF0000
+PAIN	Pain	[Curse]. The target takes extra damage from attacks equal to the number of stacks.	#AA0000
+EMPOWER	Empower	[Curse]. The target deals extra damage equal to the number of stacks.	#FF8888
+PRESCIENCE	Prescience	[Curse]. For every 2 hits on the target, remove one stack and draw a card.	#8888FF
+GUILT	Guilt	[Curse]. Some cards deal additional damage based on guilt applied.	#AA0055

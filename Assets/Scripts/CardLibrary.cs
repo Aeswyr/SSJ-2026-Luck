@@ -76,6 +76,17 @@ public class CardLibrary : ScriptableObject
             }
         }
 
+        for (int i = 0; i < data.keywords.Count; i++)
+        {
+            string keywordRaw = keywords[data.keywords[i]].description;
+            foreach (var keyword in keywords)
+            {
+                string target = $"[{keyword.Value.name}]";
+                if (keywordRaw.Contains(target))
+                    data.keywords.Add(keyword.Key);
+            }
+        }
+
         return data;
     }
 
@@ -116,7 +127,13 @@ public class CardLibrary : ScriptableObject
 
     public string GetKeywordText(KeywordID id)
     {
-        return keywords[id].description;
+        var raw = keywords[id].description;
+        foreach (var keyword in keywords)
+        {
+            string target = $"[{keyword.Value.name}]";
+            raw = raw.Replace(target, $"<{keyword.Value.color.Trim()}>{keyword.Value.name}</color>");
+        }
+        return raw;
     }
 
     public List<CardData> GetAllCards(bool unlockedOnly = false) {

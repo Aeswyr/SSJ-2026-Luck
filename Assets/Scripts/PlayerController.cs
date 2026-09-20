@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -685,6 +686,27 @@ public class PlayerController : MonoBehaviour
 				}
 				break;
 			case CardID.JUDGEMENT:
+				{
+					var hits = Physics2D.BoxCastAll(transform.position + new Vector3(facing * 1.5f, -1), new(2, 2), 0, facing * Vector2.right, 3, LayerMask.GetMask(new string[] {"Hurtbox"}));
+					foreach (var hit in hits)
+					{
+						var parent = hit.collider.transform.parent;
+						if (hit && parent != null && parent != transform)
+						{
+							var entity = parent.GetComponent<EntityController>();
+							var buff = parent.GetComponentInChildren<BuffController>();
+							HurtboxController hurtbox = hit.collider.transform.GetComponent<HurtboxController>();
+							
+							if (buff != null && !hurtbox.TouchDisabled())
+							{
+								buff.AddBuff(BuffType.GUILT, bonusDebuff, 2);
+								hitData.baseDamage = buff.GetBuffStacks(BuffType.GUILT);
+								entity.OnHit(hitData);
+								VFXManager.Instance.CreateVFX(VFXType.HITSPARK_SMALL, entity.transform.position, facing == -1);
+							}
+						}
+					}
+				}
 				break;
 			case CardID.TRIAL_BY_STEEL:
 				AddCardToHand(CardID.JUDGEMENT, true);
@@ -699,6 +721,49 @@ public class PlayerController : MonoBehaviour
 				}
 				break;
 			case CardID.REDEEMER:
+				{
+					var hits = Physics2D.BoxCastAll(transform.position + new Vector3(facing * 1.5f, -1), new(2, 2), 0, facing * Vector2.right, 12, LayerMask.GetMask(new string[] {"Hurtbox"}));
+					foreach (var hit in hits)
+					{
+						var parent = hit.collider.transform.parent;
+						if (hit && parent != null && parent != transform)
+						{
+							var entity = parent.GetComponent<EntityController>();
+							var buff = parent.GetComponentInChildren<BuffController>();
+							HurtboxController hurtbox = hit.collider.transform.GetComponent<HurtboxController>();
+							
+							if (buff != null && !hurtbox.TouchDisabled())
+							{
+								int stacks = buff.GetBuffStacks(BuffType.GUILT);
+								hitData.baseDamage = stacks;
+								entity.OnHit(hitData);
+								VFXManager.Instance.CreateVFX(VFXType.HITSPARK_SMALL, entity.transform.position, facing == -1);
+								StartCoroutine(Detonation(stacks, entity));
+								buff.RemoveAllBuff(BuffType.GUILT);
+							}
+						}
+					}
+
+					IEnumerator Detonation(int stacks, EntityController source)
+					{
+						var secondaryHitData = hitData;
+						secondaryHitData.baseDamage = stacks * 2;
+						yield return new WaitForSeconds(Random.Range(0.15f, 0.6f));
+
+						var explosion = Physics2D.BoxCastAll(source.transform.position, new(12, 12), 0, Vector2.zero, 0, LayerMask.GetMask(new string[] {"Hurtbox"}));
+						
+						foreach (var hit in explosion)
+						{
+							var parent = hit.collider.transform.parent;
+							if (hit && parent != null && parent != transform)
+							{
+								var entity = parent.GetComponent<EntityController>();
+								entity.OnHit(secondaryHitData);
+							}
+						}
+					}
+				}
+				break;
 			case CardID.INESCAPABLE_AGONY:
 				bonusDebuff += 2;
 				break;
